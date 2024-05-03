@@ -1,16 +1,44 @@
 ---
-
+import MainLayout from "../layouts/MainLayout.astro";
+import EventCard from "../components/EventCard.astro";
+import TestimonialsStar from "../components/TestimonialsStar.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Forside">
+<section class="hero"></section>
+<section class="cta">
+	<div class="events">
+		<h2></h2>
+		<p></p>
+		<button></button>
+	</div>
+	<div class="booking">
+		<h2></h2>
+		<p></p>
+		<button></button>
+	</div>
+</section>
+<section class="kommende_events">
+	<h2></h2>
+	<article class="cards">
+		<EventCard></EventCard>
+		<EventCard></EventCard>
+		<EventCard></EventCard>
+	</article>
+</section>
+<section class="andre_siger">
+	<h2></h2>
+	<article class="testimonials">
+		<div class="testimonial">
+			<TestimonialsStar></TestimonialsStar>
+		</div>
+		<div class="testimonial2">
+			<TestimonialsStar></TestimonialsStar>
+			<TestimonialsStar></TestimonialsStar>
+		</div>
+		<div class="testimonial">
+			<TestimonialsStar></TestimonialsStar>
+		</div>
+	</article>
+</section>
+</MainLayout>
