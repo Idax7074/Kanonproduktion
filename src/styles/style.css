@@ -18,6 +18,10 @@
   --color-text-h3-primary: #1e1e1e;
   --color-text-h3-secondary: #fe5900;
   --color-text-h4-secondary: #fafafa;
+  --color-button-primary: #fafafa;
+  --color-button-primary-hover: #0021d2;
+  --color-button-secondary-hover: #fe5900;
+  --color-button-tertiary-hover: #666;
   --color-text-body: #1e1e1e;
   --color-text-footer: #1e1e1e;
 
@@ -49,8 +53,135 @@
   --color-icon-some-hover: #0021d2;
 
   /*Typografi*/
+  --Display-large: 6.2475rem;
+  --Display-medium: 5.20813rem;
+  --Display-small: 2.07375rem;
+
+  --Headline1-large: 5.15938rem;
+  --Headline1-medium: 4.29875rem;
+  --Headline1-small: 3.5825rem;
+
+  --Headline2-large: 2.985rem;
+  --Headline2-medium: 2.4875rem;
+  --Headline2-small: 1.7275rem;
+
+  --Headline3-large: 1.7275rem;
+  --Headline3-medium: 1.44rem;
+  --Headline3-small: 1.2rem;
+
+  --Headline4-large: 1.2rem;
+  --Headline4-medium: 1rem;
+  --Headline4-small: 0.83313rem;
+
+  --Label-large: 0.83313rem;
+  --Label-medium: 0.69438rem;
+  --Label-small: 0.57813rem;
+
+  --Button-large: 1.7275rem;
+  --Button-medium: 1.44rem;
+  --Button-small: 1.2rem;
+
+  --Body-large: 1rem;
+  --Body-medium: 0.83313rem;
+  --Body-small: 0.69438rem;
+
+  --Nav-large: 1rem;
+  --Nav-medium: 0.83313rem;
+  --Nav-small: 0.69438rem;
 
   /*Padding*/
+  --spacing-horizontal-button-lg: 1.5625rem;
+  --spacing-horizontal-button-me: 1.5625rem;
+  --spacing-horizontal-button-sm: 1.25rem;
+
+  --spacing-vertical-button-lg: 0.9375rem;
+  --spacing-vertical-button-me: 0.9375rem;
+  --spacing-vertical-button-sm: 0.625rem;
+
+  --padding-horizontal: 4.375rem;
+  --padding-vertical: 2.1875rem;
 
   /*Gap*/
+  --gap-lg: 9.8125rem;
+  --gap-sm: 4.625rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  background-color: var(--color-background-body);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/font/inter.ttf") format("ttf");
+  font-display: swap;
+}
+
+h1 {
+  font-family: "Inter", sans-serif;
+  font-size: var(--Headline1-large);
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: capitalize;
+  color: var(--color-text-h1-primary);
+}
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-size: var(--Headline2-large);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: capitalize;
+  color: var(--color-text-h2-primary);
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-size: var(--Headline3-large);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  color: var(--color-text-h3-primary);
+}
+
+h4 {
+  font-family: "Inter", sans-serif;
+  font-size: var(--Headline4-large);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: capitalize;
+  color: var(--color-text-h4-secondary);
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: var(--Body-large);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: var(--color-text-body);
+}
+
+a {
+  font-family: "Inter", sans-serif;
+  font-size: var(--Button-large);
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  text-transform: capitalize;
+  color: var(--color-button-primary);
 }
