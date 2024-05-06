@@ -1,0 +1,56 @@
+:root {
+  /*Baggrunds farver*/
+  --color-background-body: #fafafa;
+  --color-background-section: #d9d9d9;
+  --color-background-nav: #fafafa;
+  --color-background-footer: #fafafa;
+  --color-background-stroke: #1e1e1e;
+  --color-background-kontakt: #d9d9d9;
+
+  /*Tekst farver*/
+  --color-text-nav: #1e1e1e;
+  --color-text-nav-stroke-hover: #fe5900;
+  --color-text-display: #1e1e1e;
+  --color-text-h1-primary: #1e1e1e;
+  --color-text-h2-primary: #1e1e1e;
+  --color-text-h2-secondary: #fe5900;
+  --color-text-h2-tertiary: #0021d2;
+  --color-text-h3-primary: #1e1e1e;
+  --color-text-h3-secondary: #fe5900;
+  --color-text-h4-secondary: #fafafa;
+  --color-text-body: #1e1e1e;
+  --color-text-footer: #1e1e1e;
+
+  /*Card farver*/
+  --color-card-udsolgt-filter: #666666; /*opacity 80%*/
+  --color-card-event-label: #0021d2;
+  --color-card-prew-event-label: #c2c3c9;
+  --color-card-sold-out: #4c5db3;
+  --color-card-text-dato: #4b4b4b;
+  --color-card-text-pris: #37424d;
+  --color-card-text-few-left: #fe5900;
+
+  /*Knap farver*/
+  --color-background-button-primary: #0021d2;
+  --color-background-button-secondary: #fe5900;
+  --color-background-button-tertiary: #666666;
+  --color-background-button-fourthiary: #d9d9d9;
+  --color-background-button-hover: #fafafa;
+  --color-background-button-primary-stroke: #0021d2;
+  --color-background-button-secondary-stroke: #fe5900;
+  --color-background-button-tertiary-stroke: #666666;
+  --color-background-button-fourthiary-stroke: #d9d9d9;
+
+  /*Ikon farver*/
+  --color-icon-some: #1e1e1e;
+  --color-icon-stars: #fe5900;
+  --color-icon-quote: #0021d2;
+  --color-icon-quote-layer: #0021d2; /*opacity 50%*/
+  --color-icon-some-hover: #0021d2;
+
+  /*Typografi*/
+
+  /*Padding*/
+
+  /*Gap*/
+}
