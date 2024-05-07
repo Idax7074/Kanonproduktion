@@ -9,6 +9,7 @@ import SocialIcon from "./SocialIcon.astro";
     <div class="col_1">
        <img src="/public/lille_logo.svg" alt="kanonproduktion logo">
     </div>
+
     <div class="col_2">
         <h4>Kontakt</h4>
         <a href="mailto:info@kanonproduktion.dk">info@kanonproduktion.dk</a>
@@ -23,6 +24,7 @@ import SocialIcon from "./SocialIcon.astro";
        <a href="#">FAQ</a>
        <a href="#">Program</a>
     </div>
+
     <div class="col_4">
         <h4>Modtag de seneste nyheder</h4>
         <form>
@@ -156,6 +158,64 @@ import SocialIcon from "./SocialIcon.astro";
 
     margin-block: 30px;
   }
+  @media (max-width: 900px) {
+      .footer {
+padding: 0rem 1.5625rem;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 5rem;
+ display: grid;
+grid-template-columns: 1fr 1fr;
+ grid-template-rows: 1fr 1fr 1fr 1fr;
+        /* gap: 5%;
+        row-gap: 10%;
+        margin-inline: 5%; */ */
+      }
 
+      
+
+      .col_1 {
+        grid-column: span 2;
+        margin-inline:auto;
+      }
+
+      .col_2 p{
+        font-size: var(--Body-small);
+      }
+      .col_2 a {
+        font-size: var(--Body-small);
+      }
+
+      .col_2 h4{
+        font-size: var(--Headline4-small);
+      }
+      .col_3 p {
+        font-size: var(--Body-small);
+      }
+
+      .col_3 a {
+        font-size: var(--Body-small);
+      }
+
+      .col_3 h4{
+        font-size: var(--Headline4-small);
+      }
+
+      .col_4 {
+        grid-column: span 2;
+      }
+
+      .col_4 form input {
+    border: 2px solid #51473d;
+    background-color: transparent;
+    width: 12rem;
+    height: 2rem;
+    }
+
+    .designed{
+        margin-top: 0px;
+    }
+}
 
 </style>
