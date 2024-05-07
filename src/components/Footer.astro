@@ -7,7 +7,7 @@ import SocialIcon from "./SocialIcon.astro";
 <footer>
     <div class="footer">
     <div class="col_1">
-        <Logo/>
+       <img src="/public/lille_logo.svg" alt="kanonproduktion logo">
     </div>
     <div class="col_2">
         <h4>Kontakt</h4>
@@ -49,6 +49,7 @@ import SocialIcon from "./SocialIcon.astro";
     padding-bottom: 2%;
     margin-top: 100px;
     border-top: var(--color-background-stroke) solid 1px; 
+
   }
 
   h4 {
@@ -78,7 +79,7 @@ import SocialIcon from "./SocialIcon.astro";
     text-decoration:underline;
   }
 
-
+ 
 
   .footer {
     display: grid;
@@ -99,10 +100,18 @@ import SocialIcon from "./SocialIcon.astro";
   .footer div {
     text-align: center;
   }
-
+ 
   .col_1 {
     display: flex;
     flex-direction: column;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    min-width: 7px;
+    max-width: 160px;
+    padding-left: 5%;
   }
 
   .col_2 {
