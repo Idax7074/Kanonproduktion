@@ -6,15 +6,92 @@ import Logo from "./Logo.astro";
       <Logo />
     </div>
     <nav class="menu">
-      <ul>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
+      <button class="toggle-btn" aria-label="Burgermenu">
+        <span class="bar1"></span>
+        <span class="bar2"></span>
+        <span class="bar3"></span>
+      </button>
+     <ul>
+        <li><a href="/event">Events</a></li>
+        <li><a href="/artister">Artister</a></li>
+        <li><a href="/booking">Booking & promoting</a></li>
+        <li><a href="/about">Om os</a></li>
+        <li><a href="/kontakt">Kontakt</a></li>
       </ul>
     </nav>
   </header>
   
   <script src="../scripts/burger.js"></script>
+
+  <style>
+    header {
+      top: 0;
+      width: 100%;
+      background-color: var(--color-background-nav);
+      padding-block: 20px;
+      z-index: 4;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--color-text-nav);
+      font-size: var(--Nav-large);
+      text-transform: uppercase;
+    }
+    a:hover {
+      border-bottom: 2px solid var(--color-text-nav-stroke-hover);
+    }
+
+    a:active {
+      border-bottom: 2px solid var(--color-text-nav-stroke-hover);
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      padding-inline: var(--gap7);
+
+      gap: var(--gap5);
+    }
+
+    nav {
+      width: 100%;
+      height: 5.9375rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+
+      border-top: 2px solid var(--color-background-stroke);
+      border-bottom: 2px solid var(--color-background-stroke);
+    }
+    .toggle-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      display: none;
+      min-width: 44px;
+      min-height: 44px;
+    }
+
+
+  @media (max-width: 1200px) {
+
+    header {
+      position: fixed;
+    }
+    .banner {
+      background-color: var(--color-background-nav);
+      padding: 0.5rem;
+
+      display: grid;
+      grid
+    }
+
+  }
+  </style>
   

@@ -104,6 +104,10 @@
   /*Gap*/
   --gap-lg: 9.8125rem;
   --gap-sm: 4.625rem;
+
+  --gap5: 1.5625rem;
+  --gap7: 2.1875rem;
+  --gap8: 2.5rem;
 }
 
 * {
