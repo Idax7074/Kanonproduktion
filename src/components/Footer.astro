@@ -1,13 +1,133 @@
 ---
 import Button from "../components/Button.astro";
 import Logo from "../components/Logo.astro";
+import SocialIcon from "./SocialIcon.astro";
 ---
 
 <footer>
-    <div class="col_1"></div>
-    <div class="col_2"></div>
-    <div class="col_3"></div>
-    <div class="col_4"></div>
-    <div class="social"></div>
-    <div class="designed"></div>
+    <div class="footer">
+    <div class="col_1">
+        <Logo/>
+    </div>
+    <div class="col_2">
+        <h4>Kontakt</h4>
+        <a href="mailto:info@kanonproduktion.dk">info@kanonproduktion.dk</a>
+        <p>+45 40793435</p>
+        <p>Kanonproduktion.aps</p>
+        <p>CVR: 26905486</p>
+    </div>
+    <div class="col_3">
+        <h4>Generelt</h4>
+       <a href="#">Om os</a>
+       <a href="#">Kontakt</a>
+       <a href="#">FAQ</a>
+       <a href="#">Program</a>
+    </div>
+    <div class="col_4">
+        <h4>Modtag de seneste nyheder</h4>
+        <form>
+            <input type="email" placeholder=" info@kanonproduktion.dk" required />
+            <br />
+            <Button variant="primary">Tilmeld</Button>
+          </form>
+    </div>
+</div>
+    <div class="social">
+<SocialIcon></SocialIcon>
+    </div>
+    <div class="designed">
+        <p>Copyright © 2024 Kanonproduktion</p>
+        <p>Web design by RESI</p>
+    </div>
 </footer>
+
+<style>
+     footer {
+    width: 100%;
+    background-color: var(--color-background-footer);
+    padding-top: 5%;
+    padding-bottom: 2%;
+    margin-top: 100px;
+    border-top: var(--color-background-stroke) solid 1px; 
+  }
+
+  h4 {
+    color: var(--color-text-footer);
+    font-size: var(--Headline4-large);
+    text-transform: uppercase;
+
+  }
+
+  p{
+    color: var(--color-text-footer);
+    font-size: var( --Body-large);
+    text-decoration: none;
+    padding-top: 3%;
+    
+  }
+
+  a{
+    color: var(--color-text-footer);
+    font-size: var( --Body-large);
+    text-decoration: none;
+    font-weight: 450;
+    padding-top: 3%;
+  }
+
+  a:hover{
+    text-decoration:underline;
+  }
+
+
+
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    padding-bottom: 5%;
+    border-bottom: var(--color-background-stroke) solid 1px;
+
+}
+
+
+  .designed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .footer div {
+    text-align: center;
+  }
+
+  .col_1 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .col_3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .col_4 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col_4 form input {
+    border: 2px solid #51473d;
+    background-color: transparent;
+    width: 50%;
+    height: 50%;
+
+    margin-block: 30px;
+  }
+</style>
