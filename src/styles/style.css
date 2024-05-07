@@ -6,6 +6,7 @@
   --color-background-footer: #fafafa;
   --color-background-stroke: #1e1e1e;
   --color-background-kontakt: #d9d9d9;
+  --color-background-label: #0021d2;
 
   /*Tekst farver*/
   --color-text-nav: #1e1e1e;
@@ -17,6 +18,7 @@
   --color-text-h2-tertiary: #0021d2;
   --color-text-h3-primary: #1e1e1e;
   --color-text-h3-secondary: #fe5900;
+  --color-text-h3-tertiary: #fafafa;
   --color-text-h4-secondary: #fafafa;
   --color-button-primary: #fafafa;
   --color-button-primary-hover: #0021d2;
