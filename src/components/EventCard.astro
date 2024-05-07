@@ -1,0 +1,61 @@
+---
+//Props er en stedholder for vores ting fra databasen
+
+import Button from "./Button.astro"
+---
+
+<a href="/">
+    <article>
+        <div class="billede">
+            <img src="/public/img/jens_jacob_BW.png" alt="billede af artisten">
+            <h3>Navn på event</h3>
+        </div>
+        <div>
+            <p>Type</p>
+        </div>
+        <div class="information">
+            <div>
+                <p class="dato">Datoen</p>
+            </div>
+            <div>
+                <p class="pris"> pris kr.</p>
+            </div>
+        </div>
+        <div class="button">
+            <Button variant="primary"><a href="/">Køb billet</a></Button>
+            <Button variant="tertiary"><a href="/">Læs mere</a></Button>
+        </div>
+    </article>
+</a>
+
+<style>
+    article{
+        width: 22.5rem;
+        height: 33rem;
+
+        border: 2px solid var(--color-background-stroke);
+        background-color: var(--color-background-body);
+    }
+
+    .billede {
+        width: 20.75rem;
+        height: 21.4375rem;
+    }
+
+    .billede h3 {
+        display: flex;
+        width: 16.5625rem;
+        height: var(--gap11);
+        padding: var(--gap1) var(--gap11) var(--gap1) var(--gap2);
+        align-items: center;
+        gap: var(--gap2);
+
+        text-transform: capitalize;
+        background-color: var(--color-card-event-label);
+        color: var(--color-button-primary);
+    }
+
+    div p {
+        text-transform: capitalize;
+    }
+</style>
