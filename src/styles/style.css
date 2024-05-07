@@ -26,7 +26,7 @@
   --color-text-footer: #1e1e1e;
 
   /*Card farver*/
-  --color-card-udsolgt-filter: #666666; /*opacity 80%*/
+  --color-card-udsolgt-filter: rgba(102, 102, 102, 0.8);
   --color-card-event-label: #0021d2;
   --color-card-prew-event-label: #c2c3c9;
   --color-card-sold-out: #4c5db3;
@@ -49,7 +49,7 @@
   --color-icon-some: #1e1e1e;
   --color-icon-stars: #fe5900;
   --color-icon-quote: #0021d2;
-  --color-icon-quote-layer: #0021d2; /*opacity 50%*/
+  --color-icon-quote-layer: rgba(0, 33, 210, 0.5);
   --color-icon-some-hover: #0021d2;
 
   /*Typografi*/
