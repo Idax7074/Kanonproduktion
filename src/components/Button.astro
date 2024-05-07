@@ -1,0 +1,79 @@
+---
+const { variant } = Astro.props;
+---
+
+<button class={variant}> <p><slot /></p></button>
+
+<style>
+  button {
+    padding-inline: var(--spacing-horizontal-button-sm);
+    padding-block: var(--spacing-vertical-button-sm);
+    border: none;
+    outline: none;
+  }
+
+  button p {
+    font-size: var(--Button-small);
+    color: var(--color-button-primary);
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  
+
+  @media (max-width: 400px) {
+    button {
+        padding-inline: var(--spacing-horizontal-button-sm);
+    padding-block: var(--spacing-vertical-button-sm);
+    }
+
+    button p {
+        font-size: var(--Button-small);
+    }
+  }
+
+  .primary{
+    background-color: var(--color-background-button-primary);
+    color: var(--color-button-primary);
+  }
+
+  .primary:hover {
+    background-color: var(--color-background-body);
+    border: 2px solid var(--color-background-button-primary-stroke) ;
+    color: var(--color-button-primary-hover);
+  }
+
+  .primary p:hover {
+    color: var(--color-button-primary-hover);
+  }
+
+  .secondary{
+    background-color: var(--color-background-button-secondary);
+    color: var(--color-button-primary);
+  }
+
+
+  .secondary:hover {
+    background-color: var(--color-background-body);
+    border: 2px solid var(--color-background-button-secondary-stroke);
+    color: var(--color-button-secondary-hover);
+  }
+
+  .secondary p:hover {
+    color: var(--color-button-secondary-hover);
+  }
+  .tertiary{
+    background-color: var(--color-background-button-tertiary);
+    color: var(--color-button-primary);
+  }
+
+  .tertiary:hover {
+    background-color: var(--color-background-body);
+    border: 2px solid var(--color-background-button-tertiary-stroke);
+    color: var(--color-button-tertiary-hover);
+  }
+
+  .tertiary p:hover {
+    color: var(--color-button-tertiary-hover);
+  }
+
+</style>
