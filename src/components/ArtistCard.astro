@@ -2,7 +2,7 @@
 import SocialIcon from "./SocialIcon.astro";
 ---
 
-<article>
+<article class="artister">
     <div class="billede">
         <img src="/public/img/alberte_winding.webp" alt="billede af artisten">
         <h3>Navn på artist</h3>
@@ -18,9 +18,14 @@ import SocialIcon from "./SocialIcon.astro";
     
     <style>
 
+       
+
 .billede {
-        width: 20.75rem;
-        height: 21.4375rem;
+        /* width: 20.75rem;
+        height: 21.4375rem; */
+
+        width: 27rem;
+        height: 29rem;
     }
 
     h3{
@@ -41,7 +46,8 @@ import SocialIcon from "./SocialIcon.astro";
         display: flex;
     flex-direction: row;
  padding-top: 1rem;
- padding-left: 6rem;
+ justify-content: center;
+
     }
         .social-links a {
           color: var(--color-icon-some);
@@ -51,5 +57,28 @@ import SocialIcon from "./SocialIcon.astro";
         .social-links a:hover{
             color: var(--color-icon-some-hover);
         }
+
+        @media (max-width: 900px) {
+            .billede {
+        width: auto;
+        height: auto;
+    }
+
+    h3{
+        font-size: var(--Headline3-small);
+    }
+    .social-links i {
+          font-size: var(--Headline3-small);
+          
+        }
+
+        .social-links{
+
+ padding-top: 0rem;
+
+
+    }
+  
+}
     
     </style>
