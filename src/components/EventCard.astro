@@ -6,24 +6,27 @@ import Button from "./Button.astro"
 
 <a href="/">
     <article>
-        <div class="billede">
-            <img src="/public/img/jens_jacob_BW.png" alt="billede af artisten">
-            <h3>Navn på event</h3>
-        </div>
-        <div>
-            <p>Type</p>
+        <div class="hvem">
+            <div class="billede">
+                <img src="/public/img/jens_jacob_BW.png" alt="billede af artisten">
+                <h3>Navn på event</h3>
+            </div>
+            <div class="type">
+                <p>Type</p>
+            </div>
         </div>
         <div class="information">
-            <div>
+            <div class="place">
                 <p class="dato">Datoen</p>
+                <p class="sted">Sted</p>
             </div>
-            <div>
+            <div class="price">
                 <p class="pris"> pris kr.</p>
             </div>
         </div>
-        <div class="button">
-            <Button variant="primary"><a href="/">Køb billet</a></Button>
-            <Button variant="tertiary"><a href="/">Læs mere</a></Button>
+        <div class="knap">
+        <Button variant="primary">Køb billet</Button>
+        <Button variant="tertiary">Læs mere</Button>
         </div>
     </article>
 </a>
@@ -32,6 +35,11 @@ import Button from "./Button.astro"
     article{
         width: 22.5rem;
         height: 33rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
 
         border: 2px solid var(--color-background-stroke);
         background-color: var(--color-background-body);
@@ -42,6 +50,11 @@ import Button from "./Button.astro"
         height: 21.4375rem;
     }
 
+    .hvem {
+        position: relative;
+        height: 23rem;
+    }
+
     .billede h3 {
         display: flex;
         width: 16.5625rem;
@@ -50,12 +63,85 @@ import Button from "./Button.astro"
         align-items: center;
         gap: var(--gap2);
 
-        text-transform: capitalize;
+        text-transform: none;
         background-color: var(--color-card-event-label);
         color: var(--color-button-primary);
+
+        position: absolute;
+        bottom: 40px;
+        left: -5px;
+    }
+    .type p {
+        display: inline-flex;
+        padding: 0.284rem;
+        align-items: center;
+        text-transform: uppercase;
+
+        background-color: var(--color-card-event-label);
+        color: var(--color-button-primary);
+        font-size: var(--Label-large);
+        font-weight: 900;
+        font-size: 0.83313rem;
+
+        position: absolute;
+        left: -5px;
+        bottom: 5px;
     }
 
-    div p {
-        text-transform: capitalize;
+    .information {
+        display: flex;
+        width: 20.625rem;
+        align-items: center;
+        gap: 2.00569rem;
     }
+
+    .place {
+        display: flex;
+        width: 9.63544rem;
+        height: 3.125rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0.26044rem;
+    }
+
+
+    .dato {
+        color: var(--color-card-text-dato);
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: 1.10025rem;
+    }
+
+    .sted {
+        color: var(--color-card-text-dato);
+        font-style: italic;
+        font-weight: 300;
+        font-size: 0.76388rem;
+    }
+
+    .price {
+        display: flex;
+        width: 7.29169rem;
+        padding: 0.52081rem;
+        justify-content: center;
+        align-items: center;
+        gap: 1.97919rem;
+
+        border-left: 0.833px solid var(--color-background-stroke);
+    }
+
+    .pris {
+        color: var(--color-card-text-pris);
+        font-weight: 400;
+        font-size: 1.10025rem;
+    }
+
+    .knap {
+        display: flex;
+        flex-direction: row;
+        gap: 1.6875rem;
+        width: 20.625rem;
+    }
+
 </style>
