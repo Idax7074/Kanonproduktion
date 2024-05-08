@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import ArtistCard from "../components/ArtistCard.astro";
 ---
+<MainLayout>
 <section class="intro">
     <h1>Artister</h1>
     <h3>Se de skønne artister vi samarbejder med.</h3>
@@ -21,3 +22,31 @@ import ArtistCard from "../components/ArtistCard.astro";
     <ArtistCard></ArtistCard>
     <ArtistCard></ArtistCard>
 </section>
+</MainLayout>
+
+<style>
+    section {
+        padding-inline: var(--gap11);
+    }
+    .artister{
+        display: flex;
+margin-inline: auto;
+justify-content: center;
+align-items: center;
+align-content: center;
+gap: 1.875rem;
+flex-shrink: 0;
+flex-wrap: wrap;
+padding-top: 2rem;
+    
+    }
+
+    @media (max-width: 1200px) {
+        .artister{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    
+    }
+
+    }
+</style>

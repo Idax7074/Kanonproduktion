@@ -37,7 +37,7 @@ import SocialIcon from "./SocialIcon.astro";
     </div>
 </div>
     <div class="social">
-<SocialIcon></SocialIcon>
+<SocialIcon>
     </div>
     <div class="designed">
         <p>Copyright © 2024 Kanonproduktion</p>
@@ -53,7 +53,7 @@ import SocialIcon from "./SocialIcon.astro";
     gap: var(--gap13);
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 0px;
     border-top: var(--color-background-stroke) solid 1px; 
 
   }
@@ -79,14 +79,17 @@ import SocialIcon from "./SocialIcon.astro";
     text-decoration: none;
     font-weight: 450;
     padding-top: 3%;
+    text-transform: none;
   }
 
-  a:hover{
-    text-decoration:underline;
-  }
+  a:hover {
+      border-bottom: 2px solid var(--color-text-nav-stroke-hover);
+    }
 
  .social{
-    
+border-top: var(--color-background-stroke) solid 1px; 
+margin-top: 4rem;
+padding-top: 2rem;
 
  }
 
@@ -104,8 +107,8 @@ import SocialIcon from "./SocialIcon.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
-    border-top: var(--color-background-stroke) solid 1px; 
+    margin-top: 0px;
+ 
    
  
   }

@@ -6,6 +6,7 @@
   --color-background-footer: #fafafa;
   --color-background-stroke: #1e1e1e;
   --color-background-kontakt: #d9d9d9;
+  --color-background-label: #0021d2;
 
   /*Tekst farver*/
   --color-text-nav: #1e1e1e;
@@ -17,6 +18,7 @@
   --color-text-h2-tertiary: #0021d2;
   --color-text-h3-primary: #1e1e1e;
   --color-text-h3-secondary: #fe5900;
+  --color-text-h3-tertiary: #fafafa;
   --color-text-h4-secondary: #fafafa;
   --color-button-primary: #fafafa;
   --color-button-primary-hover: #0021d2;
@@ -142,7 +144,7 @@ h1 {
   font-style: normal;
   font-weight: 800;
   line-height: normal;
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: var(--color-text-h1-primary);
 }
 
@@ -152,7 +154,7 @@ h2 {
   font-style: normal;
   font-weight: 900;
   line-height: normal;
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: var(--color-text-h2-primary);
 }
 
@@ -171,7 +173,7 @@ h4 {
   font-style: normal;
   font-weight: 900;
   line-height: normal;
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: var(--color-text-h4-secondary);
 }
 

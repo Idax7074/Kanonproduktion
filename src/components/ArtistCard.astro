@@ -1,0 +1,84 @@
+---
+import SocialIcon from "./SocialIcon.astro";
+---
+
+<article class="artister">
+    <div class="billede">
+        <img src="/public/img/alberte_winding.webp" alt="billede af artisten">
+        <h3>Navn på artist</h3>
+    </div>
+        <div class="social-links">
+            <a class="fb" href="#" aria-label="Følg link til Facebook"> <i class="fa-brands fa-facebook"></i></a>
+            <a class="ig" href="#" aria-label="Følg link til instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a class="bell" href="#" aria-label="Få notifikationer fra artisterne"> <i class="fa-regular fa-bell"></i></a>
+        </div>
+    </article>
+
+  
+    
+    <style>
+
+       
+
+.billede {
+        /* width: 20.75rem;
+        height: 21.4375rem; */
+
+        width: 27rem;
+        height: 29rem;
+    }
+
+    h3{
+            background-color: var(--color-background-label);
+            color: var(--color-text-h3-tertiary);
+            display: flex;
+            padding: 0.3125rem 0rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.625rem;
+        }
+           .social-links i {
+          font-size: var(--Headline3-large);
+          margin-inline: 0.5%;
+          
+        }
+    .social-links{
+        display: flex;
+    flex-direction: row;
+ padding-top: 1rem;
+ justify-content: center;
+
+    }
+        .social-links a {
+          color: var(--color-icon-some);
+          padding: 0.5rem;
+        }
+    
+        .social-links a:hover{
+            color: var(--color-icon-some-hover);
+        }
+
+        @media (max-width: 900px) {
+            .billede {
+        width: auto;
+        height: auto;
+    }
+
+    h3{
+        font-size: var(--Headline3-small);
+    }
+    .social-links i {
+          font-size: var(--Headline3-small);
+          
+        }
+
+        .social-links{
+
+ padding-top: 0rem;
+
+
+    }
+  
+}
+    
+    </style>
