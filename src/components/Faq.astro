@@ -107,7 +107,7 @@ main {
 span{
 
   font-family: "Inter", sans-serif;
-  font-size: var(--Headline3-medium);
+  font-size: var(--Headline3-large);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -202,20 +202,34 @@ svg{
   line-height: 1.5;
   max-width: 800px;
 }
-@media (max-width: 900px){
+
+@media (max-width: 1024px){
     span{
-
-font-size: var(----Headline3-small);
-
-
+font-size: var(--Headline3-medium);
+max-width: 600px;
 }
 
 ul, p{
-
-font-size: var(--Body-small);
-
-
+font-size: var(--Body-medium);
 }
+}
+@media (max-width: 450px){
+
+    main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gap5);
+}
+    span{
+font-size: var(--Headline3-small);
+max-width: 250px;
+}
+
+ul, p{
+font-size: var(--Body-small);
+}
+
 }
 
   </style>
