@@ -37,14 +37,48 @@ import Button from "../components/Button.astro";
 	<h2>Hvad andre siger om os</h2>
 	<article class="testimonials">
 		<div class="testimonial">
-			<TestimonialsStar></TestimonialsStar>
+			<div class="stars">
+				<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+		</div>
+			<p>“Jeg kan godt lide, når det ikke er
+				kæmpe koncerter. Derfor deltager
+				 jeg ofte i Kanonproduktions arrangementer!”</p>
 		</div>
 		<div class="testimonial2">
-			<TestimonialsStar></TestimonialsStar>
-			<TestimonialsStar></TestimonialsStar>
+			<div class="testimonial3">
+				<div class="stars">
+				<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+		</div>
+		<p>“Kanonproduktion formår altid at skabe den bedste oplevelse!”</p>
+		</div>
+		<div class="testimonial4">
+			<div class="stars">
+				<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+		</div>
+			<p>“Virkelig en dejlig oplevelse, med en virkelig engageret vært, som bød os varmt velkommen da vi kom.”</p>
+		</div>
 		</div>
 		<div class="testimonial">
-			<TestimonialsStar></TestimonialsStar>
+			<div class="stars">
+				<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
+		</div>
+		<p>“Der er lidt til enhver smag -
+				jeg har før været til koncerter, 
+				men har nu også prøvet comedy. Super oplevelse endnu engang.”</p>
 		</div>
 	</article>
 </section>
@@ -54,4 +88,65 @@ import Button from "../components/Button.astro";
 	section {
 		padding-inline: var(--gap11);
 	}
+	.stars{
+        display: flex;
+        flex-direction: row;
+    justify-content: center;
+	padding-bottom: 2rem;
+    }
+.testimonials{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: center;
+	margin-inline: auto;
+	text-align: center;
+	width: auto;
+	margin: 5rem 0rem;
+}
+
+.testimonial{
+	border: 2px solid var(--color-background-stroke);
+	padding: 7.66rem 2rem;
+
+}
+
+.testimonial3{
+	border-top: 2px solid var(--color-background-stroke);
+	border-bottom: 2px solid var(--color-background-stroke);
+	padding: 2rem 2rem;
+}
+.testimonial4{
+	border-bottom: 2px solid var(--color-background-stroke);
+	padding: 2rem 2rem;
+}
+
+@media (max-width: 1200px){
+	.testimonials{
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	margin-inline: auto;
+	text-align: center;
+	width: auto;
+	margin: 5rem 0;
+}
+
+.testimonial3{
+	border: 2px solid var(--color-background-stroke);
+	margin: 2rem 0;
+	padding: 4rem 2rem;
+}
+
+.testimonial4{
+	border: 2px solid var(--color-background-stroke);
+	margin: 2rem 0;
+	padding: 4rem 2rem;
+}
+.testimonial{
+	border: 2px solid var(--color-background-stroke);
+	padding: 4rem 2rem;
+
+}
+
+}
 </style>
