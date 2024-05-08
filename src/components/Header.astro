@@ -1,7 +1,7 @@
 ---
 import Logo from "./Logo.astro"
 ---
-<header class="banner">
+<header class="banner" id="myHeader">
     <div class="logo">
       <Logo/>
     </div>
@@ -24,6 +24,8 @@ import Logo from "./Logo.astro"
   <script src="../scripts/burger.js"></script>
 
   <style>
+
+    @media screen and (min-width: 1026px) {
     header {
       top: 0;
       width: 100%;
@@ -41,7 +43,6 @@ import Logo from "./Logo.astro"
     .logo {
       height: 100%;
       width: 100%;
-
     }
 
     a {
@@ -84,21 +85,123 @@ import Logo from "./Logo.astro"
       min-width: 44px;
       min-height: 44px;
     }
-
-
-  @media (max-width: 1200px) {
+  }
+  @media (max-width: 1025px) {
 
     header {
-      position: fixed;
+      width: 100%;
+      background-color: var(--color-background-nav);
+      z-index: 4;
+      gap: var(--gap8);
     }
     .banner {
       background-color: var(--color-background-nav);
-      padding: 0.5rem;
+      padding: var(--gap5) var(--gap3);
 
-      display: grid;
-      grid
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px 40px;
     }
 
+    .sticky {
+      position: sticky;
+      top: 0;
+      width: 100%;
+    }
+
+    .menu.shown a {
+      text-decoration: none;
+      color: var(--color-text-nav);
+      font-size: var(--Nav-medium);
+      text-transform: uppercase;
+      line-height: 1.5rem;
+    }
+
+    .menu.shown a:hover {
+      border-bottom: 2px solid var(--color-text-nav-stroke-hover);
+    }
+
+    .toggle-btn {
+      display: block;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      min-width: 45px;
+      min-height: 45px;
+    }
+
+    .toggle-btn span {
+      display: block;
+    }
+
+    .menu.shown {
+      display: contents;
+    }
+
+    .menu ul {
+      display: none;
+    }
+
+    .menu.shown > {
+      border-top: 2px solid var(--color-background-stroke);
+      padding-top: 1rem;
+    }
+
+    .menu.shown ul {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      flex-basis: 100%;
+      list-style: none;
+      gap: var(--gap4);
+    }
+
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: var(--color-background-stroke);
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    .change .bar1 {
+      transform: translate(0, 11px) rotate(-45deg);
+    }
+
+    .change .bar2 {
+      opacity: 0;
+    }
+
+    .change .bar3 {
+      transform: translate(0, -11px) rotate(45deg);
+    }
+  }
+
+  @media (max-width: 430px) {
+    .menu.shown a {
+      font-size: var(--Nav-small);
+    }
   }
   </style>
   
+  <script>
+    //Når brugeren scroller på siden, begynd myFynction
+    window.onscroll = function () {myFunction()};
+
+    //Tag head
+    var header = document.getElementById("myHeader")
+
+    //Tag positionen af nav baren
+    var sticky = header.offsetTop
+
+    //Tilføj klassen sticky til header når du når scroll postitionen. "Sticky" forsvinder når du forlader scroll positionen
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky")
+      }
+    }
+  </script>
