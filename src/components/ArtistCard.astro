@@ -4,13 +4,13 @@ import SocialIcon from "./SocialIcon.astro";
 
 <article class="artister">
     <div class="billede">
-        <img src="/public/img/alberte_winding.webp" alt="billede af artisten">
+        <img src="/img/alberte_winding.webp" alt="billede af artisten">
         <h3>Navn på artist</h3>
     </div>
         <div class="social-links">
-            <a class="fb" href="#" aria-label="Følg link til Facebook"> <i class="fa-brands fa-facebook"></i></a>
-            <a class="ig" href="#" aria-label="Følg link til instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a class="bell" href="#" aria-label="Få notifikationer fra artisterne"> <i class="fa-regular fa-bell"></i></a>
+            <a href="#" aria-label="Følg link til Facebook"> <i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="Følg link til instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Få notifikationer fra artisterne"> <i class="fa-regular fa-bell"></i></a>
         </div>
     </article>
 
@@ -52,6 +52,11 @@ import SocialIcon from "./SocialIcon.astro";
         .social-links a {
           color: var(--color-icon-some);
           padding: 0.5rem;
+        }
+
+        .fa-bell {
+          color: var(--color-icon-stars);
+    
         }
     
         .social-links a:hover{
