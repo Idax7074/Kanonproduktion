@@ -1,15 +1,17 @@
 ---
 import SocialIcon from "./SocialIcon.astro";
+
+const {image, name, insta, face} = Astro.props;
 ---
 
 <article class="artister">
     <div class="billede">
-        <img src="/img/alberte_winding.webp" alt="billede af artisten">
-        <h3>Navn på artist</h3>
+        <img src={image} alt="billede af artisten">
+        <h3>{name}</h3>
     </div>
         <div class="social-links">
-            <a href="#" aria-label="Følg link til Facebook"> <i class="fa-brands fa-facebook"></i></a>
-            <a href="#" aria-label="Følg link til instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href={insta} aria-label="Følg link til instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href={face} aria-label="Følg link til Facebook"> <i class="fa-brands fa-facebook"></i></a>
             <a href="#" aria-label="Få notifikationer fra artisterne"> <i class="fa-regular fa-bell"></i></a>
         </div>
     </article>
@@ -24,8 +26,8 @@ import SocialIcon from "./SocialIcon.astro";
         /* width: 20.75rem;
         height: 21.4375rem; */
 
-        width: 27rem;
-        height: 29rem;
+        width: 25rem;
+        height: 27rem;
     }
 
     h3{
@@ -63,14 +65,31 @@ import SocialIcon from "./SocialIcon.astro";
             color: var(--color-icon-some-hover);
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1024px){
             .billede {
-        width: auto;
+                width: auto;
         height: auto;
+    }
+            h3{
+        font-size: var(--Headline3-medium);
+    }
+    .social-links i {
+          font-size: var(--Headline3-medium);
+          
+        }
+        .social-links{
+ padding-top: 1rem;
+    }
+        }
+
+        @media (max-width: 430px) {
+            .billede {
+                width: 10rem;
+        height: 10rem;
     }
 
     h3{
-        font-size: var(--Headline3-small);
+        font-size: var(--Headline4-small);
     }
     .social-links i {
           font-size: var(--Headline3-small);
@@ -78,11 +97,9 @@ import SocialIcon from "./SocialIcon.astro";
         }
 
         .social-links{
-
- padding-top: 0rem;
-
-
+ padding-top: 1rem;
     }
+  
   
 }
     
