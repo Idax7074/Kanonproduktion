@@ -1,37 +1,47 @@
 ---
 //Props er en stedholder for vores ting fra databasen
+const { image, name, price, date, place, type, status, tags, slug } = Astro.props;
 
 import Button from "./Button.astro"
 ---
 
-<a href="/">
-    <article>
+    <article class={status}>
         <div class="hvem">
-            <div class="billede">
-                <img src="/public/img/jens_jacob_BW.png" alt="billede af artisten">
-                <h3>Navn på event</h3>
+            <div class="kunstner">
+                <div class="billede">
+                    <span class="tekst">Udsolgt</span>
+                    <img src={image} alt="billede af artisten">
+                </div>
+                <h3>{name}</h3>
             </div>
             <div class="type">
-                <p>Type</p>
+                <p>{type}</p>
             </div>
         </div>
         <div class="information">
             <div class="place">
-                <p class="dato">Datoen</p>
-                <p class="sted">Sted</p>
+                <p class="dato">{date}</p>
+                <p class="sted">{place}</p>
             </div>
+            <div class="omPris">
+                <span class="tilbage">Få tilbage!</span>
             <div class="price">
-                <p class="pris"> pris kr.</p>
+                <p class="pris">{price} kr.</p>
+            </div>
             </div>
         </div>
         <div class="knap">
-        <Button variant="primary">Køb billet</Button>
-        <Button variant="tertiary">Læs mere</Button>
+        <Button variant="primary"><a href={`../../artist/${slug}`}>Køb billet</a></Button>
+        <Button variant="tertiary"><a href={`../../artist/${slug}`}>Læs mere</a></Button>
         </div>
     </article>
 </a>
 
 <style>
+
+    article:hover {
+        box-shadow: 10px 10px 2px var(--color-card-event-label);
+    }
     article{
         width: 22.5rem;
         height: 33rem;
@@ -40,12 +50,13 @@ import Button from "./Button.astro"
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
+        transition: 0.3s;
 
         border: 2px solid var(--color-background-stroke);
         background-color: var(--color-background-body);
     }
 
-    .billede {
+    .kunstner {
         width: 20.75rem;
         height: 21.4375rem;
     }
@@ -55,7 +66,7 @@ import Button from "./Button.astro"
         height: 23rem;
     }
 
-    .billede h3 {
+    .kunstner h3 {
         display: flex;
         width: 16.5625rem;
         height: var(--gap11);
@@ -70,6 +81,12 @@ import Button from "./Button.astro"
         position: absolute;
         bottom: 40px;
         left: -5px;
+    }
+
+    span {
+        display: block;
+        width: 0;
+        height: 0;
     }
     .type p {
         display: inline-flex;
@@ -104,7 +121,6 @@ import Button from "./Button.astro"
         align-items: flex-start;
         gap: 0.26044rem;
     }
-
 
     .dato {
         color: var(--color-card-text-dato);
@@ -142,6 +158,47 @@ import Button from "./Button.astro"
         flex-direction: row;
         gap: 1.6875rem;
         width: 20.625rem;
+    }
+
+    .knap a {
+        color: var(--color-button-primary);
+        font-size: var(--Button-small);
+    }
+
+    .udsolgt .billede {
+        width: 20rem;
+        height: 20rem;
+        filter: blur(2px);
+    }
+
+    .udsolgt .tekst {
+        color: var(--color-background-body);
+        font-size: 3rem;
+        font-weight: 800;
+        background-color: var(--color-card-sold-out);
+
+        display: inline-flex;
+        transform: rotate(-31.633deg);
+        padding: var(--gap2);
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 25%;
+        left: 10%;
+    }
+
+    .faatilbage .tilbage {
+        color: var(--color-card-text-few-left);
+        font-size: var(--Label-large);
+        font-style: italic;
+        font-weight: 300;
+        text-transform: uppercase;
+
+        display: flex;
+        width: 7.29169rem;
+        padding-block: 0.52081rem;
+        justify-content: center;
+        align-items: center;
     }
 
 </style>

@@ -1,4 +1,20 @@
 ---
+//Lav variablen "url" med vores URL fra supabase
+const url = "https://muqgfdguddfkghqhbdai.supabase.co/rest/v1/kanonproduktion_events?limit=3";
+
+//Lav variablen "api" med vores api nøgle
+const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11cWdmZGd1ZGRma2docWhiZGFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3NTI1MjcsImV4cCI6MjAzMDMyODUyN30.V1cmTeBITytZYDHSYEemvpkdSObU40QtSWsIqANjXBY";
+
+//Lav variablen "data" som venter på url fetchet med GET metode
+//API nøgle godkener adgang
+const data = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: api,
+  },
+}).then((res) => res.json());
+//Dataen bliver hentet som JSON-fil
+
 import MainLayout from "../layouts/MainLayout.astro";
 import EventCard from "../components/EventCard.astro";
 import TestimonialsStar from "../components/TestimonialsStar.astro";
@@ -28,9 +44,7 @@ import Button from "../components/Button.astro";
 <section class="kommende_events">
 	<h2>Kommende events</h2>
 	<article class="cards">
-		<EventCard></EventCard>
-		<EventCard></EventCard>
-		<EventCard></EventCard>
+		{data.map((person) => <EventCard image={`/img/${person.image}`} name={person.name} price={person.price} date={person.date} type={person.type} place={person.place} status={person.status}/>)}
 	</article>
 </section>
 <section class="andre_siger">
