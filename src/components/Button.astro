@@ -1,36 +1,74 @@
 ---
-const { variant } = Astro.props;
+const { variant, link, size } = Astro.props;
 ---
 
-<button class={variant}> <p><slot /></p></button>
+<a id={size} class={variant} href={link}><slot /></a>
 
 <style>
-  button {
-    padding-inline: var(--spacing-horizontal-button-sm);
-    padding-block: var(--spacing-vertical-button-sm);
-    border: none;
-    outline: none;
-  }
 
-  button p {
-    font-size: var(--Button-small);
+  a {
     color: var(--color-button-primary);
     text-transform: uppercase;
-    font-weight: 900;
   }
+
+  #lg {
+    display: flex;
+    padding: var(--spacing-vertical-button-lg) var(--spacing-horizontal-button-lg);
+    justify-content: center;
+    align-items: center;
+    font-size: var(--Button-large);
+
+    width: 198px;
+    height: 63px
+  }  
   
-
-  @media (max-width: 400px) {
-    button {
-        padding-inline: var(--spacing-horizontal-button-sm);
-    padding-block: var(--spacing-vertical-button-sm);
-    }
-
-    button p {
-        font-size: var(--Button-small);
-    }
+  #lg:hover {
+    display: flex;
+    padding: var(--spacing-vertical-button-lg) var(--spacing-horizontal-button-lg);
+    justify-content: center;
+    align-items: center;
   }
 
+  #me {
+    display: flex;
+    padding: var(--spacing-vertical-button-me) var(--spacing-horizontal-button-me);
+    justify-content: center;
+    align-items: center; 
+    font-size: var(--Button-medium);
+
+    width: 150px;
+    height: 50px
+  }
+
+  #me:hover {
+    display: flex;
+    padding: var(--spacing-vertical-button-me) var(--spacing-horizontal-button-me);
+    justify-content: center;
+    align-items: center;
+  }
+
+  #sm {
+    display: flex;
+    padding: var(--spacing-vertical-button-sm) var(--spacing-horizontal-button-sm);
+    justify-content: center;
+    align-items: center;
+    font-size: var(--Button-small);
+
+    width: 160px;
+    height: 50px;
+  }
+
+  /* #sm:hover {
+    display: flex;
+    padding: var(--spacing-vertical-button-sm) var(--spacing-horizontal-button-sm);
+    justify-content: center;
+    align-items: center;
+    font-size: var(--Button-small);
+
+    width: 160px;
+    height: 50px;
+  } */
+  
   .primary{
     background-color: var(--color-background-button-primary);
     color: var(--color-button-primary);
@@ -42,7 +80,7 @@ const { variant } = Astro.props;
     color: var(--color-button-primary-hover);
   }
 
-  .primary p:hover {
+  .primary a:hover {
     color: var(--color-button-primary-hover);
   }
 
@@ -51,14 +89,13 @@ const { variant } = Astro.props;
     color: var(--color-button-primary);
   }
 
-
   .secondary:hover {
     background-color: var(--color-background-body);
     border: 2px solid var(--color-background-button-secondary-stroke);
     color: var(--color-button-secondary-hover);
   }
 
-  .secondary p:hover {
+  .secondary a:hover {
     color: var(--color-button-secondary-hover);
   }
   .tertiary{
@@ -72,7 +109,7 @@ const { variant } = Astro.props;
     color: var(--color-button-tertiary-hover);
   }
 
-  .tertiary p:hover {
+  .tertiary a:hover {
     color: var(--color-button-tertiary-hover);
   }
 
