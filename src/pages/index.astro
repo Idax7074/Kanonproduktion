@@ -26,25 +26,26 @@ import Button from "../components/Button.astro";
 <section class="cta">
 	<div class="events">
 		<h2>Find dit næste event</h2>
-		<p>Er du også på udkig efter de fedeste events, den næste gave til fødselaren eller bare en unik oplevelse med dem du holder af? 
-			Kanonproduktion har det hele lige fra de største danske artister, til de sjoveste komikere og den fedeste fest eller event. 
+		<p>Er du også på udkig efter de fedeste events, den næste gave til fødselaren eller bare en unik oplevelse med dem du holder af?
+			Kanonproduktion har det hele lige fra de største danske artister, til de sjoveste komikere og den fedeste fest eller event.
 			Tjek vores kalender for at se det næste event tæt på dig.
 			</p>
-		<Button>Se events</Button>
+			<Button size="lg" link="/events" variant="primary">Se events</Button>
 	</div>
+	<div class="line"></div>
 	<div class="booking">
 		<h2>Booking og promoting</h2>
-		<p>Hos kanonproduktion tilbyder vi professionelle skræddersyet løsninger i underholdningsbranchen. 
-			Vi arbejder projektorienteret med artister, events og færdig produktion af radio podcast og liveoptræden. 
+		<p>Hos kanonproduktion tilbyder vi professionelle skræddersyet løsninger i underholdningsbranchen.
+			Vi arbejder projektorienteret med artister, events og færdig produktion af radio podcast og liveoptræden.
 			Vi tilbyder en lang række af danske artister og færdige koncepter, lige fra de små lokale scener til de store venues, kontakt os nu og lad os snakke om dit næste event allerede i dag.
 			</p>
-		<Button>Læs mere</Button>
+			<Button size="lg" link="/booking" variant="secondary">Læs mere</Button>
 	</div>
 </section>
 <section class="kommende_events">
 	<h2>Kommende events</h2>
 	<article class="cards">
-		{data.map((person) => <EventCard image={`/img/${person.image}`} name={person.name} price={person.price} date={person.date} type={person.type} place={person.place} status={person.status}/>)}
+		{data.map((person) => <EventCard image={`/img/${person.image}`} status={`${person.status}`} name={person.name} price={person.price} date={person.date} type={person.type} place={person.place} />)}
 	</article>
 </section>
 <section class="andre_siger">
@@ -99,43 +100,120 @@ import Button from "../components/Button.astro";
 </MainLayout>
 
 <style>
-	section {
+
+	/* @media screen and (min-width: 1400px) {
+		.cards {
+			gap: var(--gap11);
+		}
+	} */
+	article{
 		padding-inline: var(--gap11);
 	}
-	.stars{
-        display: flex;
-        flex-direction: row;
-    justify-content: center;
-	padding-bottom: 2rem;
-    }
-.testimonials{
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	align-items: center;
-	margin-inline: auto;
-	text-align: center;
-	width: auto;
-	margin: 5rem 0rem;
-	border: 2px solid var(--color-background-stroke);
-}
 
-.testimonial{
+	section {
+		padding-block: 74px;
+	}
+
+	.cta {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		padding: 0px var(--gap11);
+		gap: var(--gap13);
+		height: 520px;
+	}
+	.events h2 {
+		color: var(--color-text-h2-tertiary);
+		padding-bottom: 30px;
+		width: 500px;
+	}
+
+	.events p {
+		width: 500px;
+		padding-bottom: 70px;
+	}
+
+	.booking h2 {
+		color: var(--color-text-h2-secondary);
+		padding-bottom: 30px;
+		width: 500px;
+	}
+
+	.booking p {
+		width: 550px;
+		padding-bottom: 70px;
+	}
+
+	.line {
+		border-left: 2px solid var(--color-background-stroke);
+		height: 475px;
+	}
+
+	.kommende_events {
+		display: flex;
+		flex-direction: column;
+		gap: 74px;
+	}
+
+	.kommende_events h2 {
+		padding-block: var(--gap7);
+		border-top: 2px solid var(--color-background-stroke);
+		border-bottom: 2px solid var(--color-background-stroke);
+
+		display: flex;
+		justify-content: center;
+	}
+	.cards {
+		display: flex;
+		gap: var(--gap7);
+		justify-content: center;
+	}
+
+	.andre_siger {
+		display: flex;
+		flex-direction: column;
+		gap: 74px;
+	}
 	
-	padding: 7.66rem 2rem;
+	.andre_siger h2 {
+		padding-block: var(--gap7);
+		border-top: 2px solid var(--color-background-stroke);
+		border-bottom: 2px solid var(--color-background-stroke);
 
-}
+		display: flex;
+		justify-content: center;
+	}
+	.stars{
+    	display: flex;
+    	flex-direction: row;
+    	justify-content: center;
+		padding-bottom: 2rem;
+    }
+	.testimonials{
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		align-items: center;
+		margin-inline: auto;
+		text-align: center;
+		width: auto;
+		border: 2px solid var(--color-background-stroke);
+	}
 
-.testimonial3{
-	border-right: 2px solid var(--color-background-stroke);
-	border-left: 2px solid var(--color-background-stroke);
-	border-bottom: 2px solid var(--color-background-stroke);
-	padding: 2rem 2rem;
-}
-.testimonial4{
-	border-right: 2px solid var(--color-background-stroke);
-	border-left: 2px solid var(--color-background-stroke);
-	padding: 2rem 2rem;
-}
+	.testimonial{
+		padding: 3rem;
+	}
+	.testimonial3{
+		border-right: 2px solid var(--color-background-stroke);
+		border-left: 2px solid var(--color-background-stroke);
+		border-bottom: 2px solid var(--color-background-stroke);
+		padding: 3rem 3rem;
+	}
+	.testimonial4{
+		border-right: 2px solid var(--color-background-stroke);
+		border-left: 2px solid var(--color-background-stroke);
+		padding: 3rem 3rem;
+	}
 
 @media (max-width: 1200px){
 	.testimonials{

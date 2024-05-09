@@ -18,16 +18,8 @@ const { variant, link, size } = Astro.props;
     align-items: center;
     font-size: var(--Button-large);
 
-    width: 198px;
-    height: 63px
+    width: 205px;
   }  
-  
-  #lg:hover {
-    display: flex;
-    padding: var(--spacing-vertical-button-lg) var(--spacing-horizontal-button-lg);
-    justify-content: center;
-    align-items: center;
-  }
 
   #me {
     display: flex;
@@ -35,16 +27,6 @@ const { variant, link, size } = Astro.props;
     justify-content: center;
     align-items: center; 
     font-size: var(--Button-medium);
-
-    width: 150px;
-    height: 50px
-  }
-
-  #me:hover {
-    display: flex;
-    padding: var(--spacing-vertical-button-me) var(--spacing-horizontal-button-me);
-    justify-content: center;
-    align-items: center;
   }
 
   #sm {
@@ -55,19 +37,7 @@ const { variant, link, size } = Astro.props;
     font-size: var(--Button-small);
 
     width: 160px;
-    height: 50px;
   }
-
-  /* #sm:hover {
-    display: flex;
-    padding: var(--spacing-vertical-button-sm) var(--spacing-horizontal-button-sm);
-    justify-content: center;
-    align-items: center;
-    font-size: var(--Button-small);
-
-    width: 160px;
-    height: 50px;
-  } */
   
   .primary{
     background-color: var(--color-background-button-primary);
@@ -76,7 +46,9 @@ const { variant, link, size } = Astro.props;
 
   .primary:hover {
     background-color: var(--color-background-body);
-    border: 2px solid var(--color-background-button-primary-stroke) ;
+    outline-style: solid;
+    outline-color: var(--color-background-button-primary-stroke);
+    outline-width: 2px;
     color: var(--color-button-primary-hover);
   }
 
@@ -91,7 +63,9 @@ const { variant, link, size } = Astro.props;
 
   .secondary:hover {
     background-color: var(--color-background-body);
-    border: 2px solid var(--color-background-button-secondary-stroke);
+    outline-style: solid;
+    outline-color: var(--color-background-button-secondary-stroke);
+    outline-width: 2px;
     color: var(--color-button-secondary-hover);
   }
 
@@ -105,7 +79,9 @@ const { variant, link, size } = Astro.props;
 
   .tertiary:hover {
     background-color: var(--color-background-body);
-    border: 2px solid var(--color-background-button-tertiary-stroke);
+    outline-style: solid;
+    outline-color: var(--color-background-button-tertiary-stroke);
+    outline-width: 2px;
     color: var(--color-button-tertiary-hover);
   }
 
