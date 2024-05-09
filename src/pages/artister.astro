@@ -17,12 +17,13 @@ const data = await fetch(url, {
 
 import MainLayout from "../layouts/MainLayout.astro";
 import ArtistCard from "../components/ArtistCard.astro";
+import Sti from "../components/Sti.astro";
 ---
 <MainLayout>
 <section class="intro">
     <h1>Artister</h1>
     <h3>Se de skønne artister vi samarbejder med.</h3>
-    <div class="sti"></div>
+<Sti></Sti>
 </section>
 <section class="artister">
     {data.map((person) => <ArtistCard image={`/img/${person.image}`} name={person.name} face={person.facebook} insta={person.instagram}/>)}
