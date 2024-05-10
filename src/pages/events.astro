@@ -1,32 +1,203 @@
 ---
+//Lav variablen "url" med vores URL fra supabase
+const url = "https://muqgfdguddfkghqhbdai.supabase.co/rest/v1/kanonproduktion_events?tags";
+
+//Lav variablen "api" med vores api nøgle
+const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11cWdmZGd1ZGRma2docWhiZGFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3NTI1MjcsImV4cCI6MjAzMDMyODUyN30.V1cmTeBITytZYDHSYEemvpkdSObU40QtSWsIqANjXBY";
+
+//Lav variablen "data" som venter på url fetchet med GET metode
+//API nøgle godkener adgang
+const data = await fetch(url, {
+  method: "GET",
+  headers: {
+    apikey: api,
+  },
+}).then((res) => res.json());
+//Dataen bliver hentet som JSON-fil
 import MainLayout from "../layouts/MainLayout.astro";
 import EventCard from "../components/EventCard.astro";
+import Button from "../components/Button.astro";
 ---
-<section class="intro">
-    <h1>Events</h1>
-    <h3>Se kommende events her og lad dig inspirere.</h3>
-    <div class="sti"></div>
-</section>
-<section class="juni">
-    <h2>Juni - 2024</h2>
-    <div class="artister">
-        <EventCard></EventCard>
-        <EventCard></EventCard>
-        <EventCard></EventCard>
-    </div>
-</section>
-<section class="juli">
-    <h2>Juli - 2024</h2>
-    <div class="artister">
-        <EventCard></EventCard>
-        <EventCard></EventCard>
-    </div>
-</section>
-<section class="august">
-    <h2>August - 2024</h2>
-    <div class="artister">
-        <EventCard></EventCard>
-        <EventCard></EventCard>
-        <EventCard></EventCard>
-    </div>
-</section>
+<MainLayout title="Events">
+    <section class="intro">
+        <article>
+            <div class="text">
+                <h1>Events</h1>
+                <h3>Se kommende events her og lad dig inspirere.</h3>
+            </div>
+        <div class="sti"></div>
+        </article>
+    </section>
+    <div id="animated-text-strip">
+        <span class="marquee">Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span>&nbsp;</span>
+        <span class="marquee">Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span>&nbsp;</span>
+        <span class="marquee">Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span>&nbsp;</span>
+      </div>
+        <article class="artister">
+            {data.map((person) => 
+            <EventCard 
+                image={`/img/${person.image}`} 
+                status={`${person.status}`} 
+                name={person.name} 
+                price={person.price} 
+                date={person.date} 
+                type={person.type} 
+                place={person.place}
+                link={person.link}
+                slug={person.slug} 
+                />
+            )}
+        </article>
+    </section>
+    <section class="juli">
+        <div id="animated-text-strip-reverse">
+            <span class="marquee">Juli 2024 <span class="circle"></span> Juli 2024 <span class="circle"></span> Juli 2024 <span class="circle"></span> Juli 2024 <span class="circle"></span>&nbsp;</span>
+            <span class="marquee">Juli 2024 <span class="circle"></span> Juli 2024 <span class="circle"></span> Juli 2024 <span class="circle"></span> Juli 2024 <span class="circle"></span>&nbsp;</span>
+            <span class="marquee">Juli 2024 <span class="circle"></span> Juli 2024 <span class="circle"></span> Juli 2024 <span class="circle"></span> Juli 2024 <span class="circle"></span>&nbsp;</span>
+          </div>
+        <article class="artister">
+            {data.map((person) => 
+                <EventCard 
+                    image={`/img/${person.image}`} 
+                    status={`${person.status}`} 
+                    name={person.name} 
+                    price={person.price} 
+                    date={person.date} 
+                    type={person.type} 
+                    place={person.place}
+                    link={person.link}
+                    slug={person.slug} 
+                    />
+                )}
+        </article>
+    </section>
+    <section class="august">
+        <div id="animated-text-strip">
+            <span class="marquee">August 2024 <span class="circle"></span> August 2024 <span class="circle"></span> August 2024 <span class="circle"></span>&nbsp;</span>
+            <span class="marquee">August 2024 <span class="circle"></span> August 2024 <span class="circle"></span> August 2024 <span class="circle"></span>&nbsp;</span>
+            <span class="marquee">August 2024 <span class="circle"></span> August 2024 <span class="circle"></span> August 2024 <span class="circle"></span>&nbsp;</span>
+          </div>
+        <article class="artister">
+            {data.map((person) => 
+                <EventCard 
+                    image={`/img/${person.image}`} 
+                    status={`${person.status}`} 
+                    name={person.name} 
+                    price={person.price} 
+                    date={person.date} 
+                    type={person.type} 
+                    place={person.place}
+                    link={person.link}
+                    slug={person.slug} 
+                    />
+                )}
+        </article>
+    </section>
+</MainLayout>
+
+<style>
+    article {
+        padding-inline: var(--gap11);
+    }
+
+    section {
+        padding-block: 74px;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .text h3 {
+        font-size: 27.64px;
+        font-weight: 400;
+    }
+
+    #animated-text-strip{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        overflow: hidden;
+
+        padding-block: var(--gap7);
+		border-top: 2px solid var(--color-background-stroke);
+		border-bottom: 2px solid var(--color-background-stroke);
+    }
+
+    #animated-text-strip .marquee {
+        white-space: nowrap;
+        animation: marquee 10s linear infinite;
+        max-width: none;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(-100%, 0);
+        }
+    }
+
+    #animated-text-strip-reverse{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        overflow: hidden;
+
+        padding-block: var(--gap7);
+		border-top: 2px solid var(--color-background-stroke);
+		border-bottom: 2px solid var(--color-background-stroke);
+    }
+
+    #animated-text-strip-reverse .marquee {
+        white-space: nowrap;
+        animation: other 10s linear infinite;
+        max-width: none;
+    }
+
+    @keyframes other {
+        0% {
+            transform: translate(-100%, 0);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    .marquee {
+        font-family: "Inter", sans-serif;
+        font-size: var(--Headline2-large);
+        font-style: normal;
+        font-weight: 900;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+
+    .circle {
+        display: inline-flex;
+        width: var(--gap4);
+        height: var(--gap4);
+        border-radius: 50%;
+        background-color: var(--color-background-stroke);
+        margin-bottom: 5px;
+    }
+
+
+
+.text-scroll {
+    padding: var(--gap7) 0px;
+    border-top: 2px solid var(--Color-Background-Stroke, #1E1E1E);
+border-bottom: 2px solid var(--Color-Background-Stroke, #1E1E1E);
+}
+    
+    .artister {
+		display: flex;
+        flex-wrap: wrap;
+		gap: var(--gap7);
+		justify-content: center;
+        padding-block: var(--gap7);
+	}
+</style>

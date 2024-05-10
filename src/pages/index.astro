@@ -45,7 +45,19 @@ import Button from "../components/Button.astro";
 <section class="kommende_events">
 	<h2>Kommende events</h2>
 	<article class="cards">
-		{data.map((person) => <EventCard image={`/img/${person.image}`} status={`${person.status}`} name={person.name} price={person.price} date={person.date} type={person.type} place={person.place} />)}
+		{data.map((person) => 
+            <EventCard 
+                image={`/img/${person.image}`} 
+                status={person.status}
+                name={person.name} 
+                price={person.price} 
+                date={person.date} 
+                type={person.type} 
+                place={person.place}
+                link={person.link}
+                slug={person.slug} 
+                />
+            )}
 	</article>
 </section>
 <section class="andre_siger">
