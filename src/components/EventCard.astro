@@ -1,6 +1,6 @@
 ---
 //Props er en stedholder for vores ting fra databasen
-const { image, name, price, date, place, type, status, slug } = Astro.props;
+const { image, name, price, date, place, type, status, slug, link } = Astro.props;
 
 import Button from "./Button.astro"
 ---
@@ -31,7 +31,7 @@ import Button from "./Button.astro"
             </div>
         </div>
         <div class="knap">
-            <Button size="sm" link={`../../artist/${slug}`} variant="primary">Køb billet</Button>
+            <Button size="sm" link={`${link}`} variant="primary">Køb billet</Button>
             <Button size="sm" link={`../../artist/${slug}`} variant="tertiary">Læs mere</Button>
         </div>
     </article>
