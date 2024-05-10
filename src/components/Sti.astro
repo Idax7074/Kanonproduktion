@@ -1,19 +1,34 @@
 <section class="sti">
     <div class="kommende">
-        <p>Kommende events</p>
+        <a>Kommende events</a>
     </div>
     <div class="tidligere">
-        <p>Tidligere events</p>
+        <a>Tidligere events</a>
     </div>
     <div class="artister">
-        <p>Artister</p>
+        <a>Artister</a>
     </div>
 </section>
 
 <style>
 
-.sti{
-    display: flex;
-    flex-direction: row;
-}
+    a {
+        font-size: var(--Label-large);
+        font-weight: 900;
+        color: var(--color-text-body);
+        outline-style: solid;
+        outline-color: var(--color-background-stroke);
+        outline-width: 2px;
+
+        display: flex;
+        padding: var(--gap3) var(--gap2);
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .sti{
+        display: flex;
+        flex-direction: row;
+        gap: var(--gap3);
+    }
 </style>

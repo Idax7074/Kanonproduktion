@@ -19,45 +19,105 @@ import MainLayout from "../layouts/MainLayout.astro";
 import ArtistCard from "../components/ArtistCard.astro";
 import Sti from "../components/Sti.astro";
 ---
-<MainLayout>
+<MainLayout title="Artister">
 <section class="intro">
+  <article>
+    <div class="text">
     <h1>Artister</h1>
     <h3>Se de skønne artister vi samarbejder med.</h3>
-<Sti></Sti>
+</div>
+    <div class="sti">
+      <div class="kommende">
+          <a href="/events">Kommende events</a>
+      </div>
+      <div class="tidligere">
+          <a href="/tidligere">Tidligere events</a>
+      </div>
+      <div class="artister">
+          <a href="/artister">Artister</a>
+      </div>
+  </div>
+  </article>
 </section>
-<section class="artister">
+<article class="artister">
     {data.map((person) => <ArtistCard image={`/img/${person.image}`} name={person.name} face={person.facebook} insta={person.instagram}/>)}
-</section>
+</article>
 </MainLayout>
 
 <style>
-    section {
-        padding-inline: var(--gap11);
-        padding-bottom: var(--gap11);
+
+  article {
+    padding-inline: var(--gap11);
+  }
+  
+  section {
+    padding-block: 74px;
     }
-    .artister{
+
+    .artister {
+		display: flex;
+    flex-wrap: wrap;
+		gap: var(--gap7);
+		justify-content: center;
+    padding-block: var(--gap7);
+	}
+
+  .text {
         display: flex;
-margin-inline: auto;
-justify-content: center;
-align-items: center;
-align-content: center;
-gap: 1.875rem;
-flex-shrink: 0;
-flex-wrap: wrap;
-padding-top: 2rem;
-    
+        flex-direction: column;
+        gap: 24px;
+
+      padding-bottom: var(--gap7);
     }
 
-    h1{
-      padding-top: var(--gap11);
-      padding-left: var(--gap11);
-    }
-
-    h3{
+    .text h3 {
+        font-size: 27.64px;
         font-weight: 400;
-        padding-bottom: var(--gap11);
-        padding-top: var(--gap8);
-        padding-left: var(--gap11);
+    }
+
+    a {
+        font-size: var(--Label-large);
+        font-weight: 900;
+        color: var(--color-text-body);
+        outline-style: solid;
+        outline-color: var(--color-background-stroke);
+        outline-width: 2px;
+
+        display: flex;
+        padding: var(--gap3) var(--gap2);
+        justify-content: center;
+        align-items: center;
+    }
+
+    a:hover {
+        color: var(--color-background-button-hover);
+        background-color: var(--color-background-stroke);
+        outline-style: solid;
+        outline-color: var(--color-background-stroke);
+        outline-width: 2px;
+    }
+    
+    .sti{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--gap3);
+    }
+
+    .artister a {
+        background-color: var(--color-background-button-secondary);
+        outline-style: solid;
+        outline-color: var(--color-background-button-hover);
+        outline-width: 2px;
+        color: var(--color-background-button-hover);
+    }
+
+    .artister a:hover {
+        background-color: var(--color-button-primary);
+        color: var(--color-background-button-secondary);
+        outline-style: solid;
+        outline-color: var(--color-background-button-secondary);
+        outline-width: 2px;
     }
 
     @media (max-width: 1024px) {

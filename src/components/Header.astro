@@ -1,4 +1,5 @@
 ---
+const { visited } = Astro.props
 import Logo from "./Logo.astro"
 ---
 <header class="banner" id="myHeader">
@@ -12,11 +13,11 @@ import Logo from "./Logo.astro"
         <span class="bar3"></span>
       </button>
      <ul>
-        <li><a href="/events">Events</a></li>
-        <li><a href="/artister">Artister</a></li>
-        <li><a href="/booking">Booking & promoting</a></li>
-        <li><a href="/about">Om os</a></li>
-        <li><a href="/kontakt">Kontakt</a></li>
+        <li class={visited}><a href="/events">Events</a></li>
+        <li class={visited}><a href="/artister">Artister</a></li>
+        <li class={visited}><a href="/booking">Booking & promoting</a></li>
+        <li class={visited}><a href="/about">Om os</a></li>
+        <li class={visited}><a href="/kontakt">Kontakt</a></li>
       </ul>
     </nav>
   </header>
@@ -55,7 +56,7 @@ import Logo from "./Logo.astro"
       border-bottom: 2px solid var(--color-text-nav-stroke-hover);
     }
 
-    a:active {
+    a:visited {
       border-bottom: 2px solid var(--color-text-nav-stroke-hover);
     }
     ul {
