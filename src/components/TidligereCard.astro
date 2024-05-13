@@ -1,0 +1,87 @@
+---
+//Props er en stedholder for vores ting fra databasen
+const { image, name, price, date, place, type, status, slug, link } = Astro.props;
+
+import Button from "./Button.astro";
+---
+
+<article>
+    <div class="hvem">
+        <div class="kunstner">
+            <div class="billede">
+                <img src={image} alt="billede af artisten">
+            </div>
+            <h3>{name}</h3>
+        </div>
+        <div class="type">
+            <p>{type}</p>
+        </div>
+    </div>
+    <div class="information">
+        <div class="place">
+            <p class="dato">{date}</p>
+        </div>
+    </div>
+</article>
+
+<style>
+article{
+        width: 22.5rem;
+        height: 25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: 0.3s;
+
+        border: 2px solid var(--color-background-stroke);
+        background-color: var(--color-background-body);
+    }
+
+    .kunstner {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .hvem {
+        position: relative;
+        height: 23rem;
+    }
+
+    .kunstner h3 {
+        display: flex;
+        width: 16.5625rem;
+        height: var(--gap11);
+        padding: var(--gap1) var(--gap11) var(--gap1) var(--gap2);
+        align-items: center;
+        gap: var(--gap2);
+
+        text-transform: none;
+        background-color: var(--color-background-button-secondary);
+        color: var(--color-button-primary);
+
+        position: absolute;
+        bottom: 40px;
+        left: -5px;
+    }
+
+    .type p {
+        display: inline-flex;
+        padding: 0.284rem;
+        align-items: center;
+        text-transform: uppercase;
+
+        background-color: var(--color-text-body);
+        color: var(--color-button-primary);
+        font-size: var(--Label-large);
+        font-weight: 900;
+        font-size: 0.83313rem;
+
+        position: absolute;
+        left: -5px;
+        bottom: 5px;
+    }
+
+
+</style>
