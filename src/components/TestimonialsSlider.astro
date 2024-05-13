@@ -1,0 +1,106 @@
+<div class="carousel">
+    <div class="carousel-inner">
+        <div class="testimonial">
+            <h3>Jens Jacob Tychsen</h3>
+            <p>“Jeg har samarbejdet med Kanonproduktion de sidste par måneder nu, og jeg må bare sige - de leverer som de lover! Teknik, mandskab og planlægning har altid siddet lige i skabet.”.</p>
+        </div>
+        <div class="testimonial">
+            <h3>Gorm Synger Larsen</h3>
+            <p>“Jeg kunne ikke være mere tilfreds med mit samarbejde med Kanonproduktion! Deres professionalisme, talent og engagement har virkelig løftet mine koncerter til nye højder. Fra start til slut har de været utroligt støttende og har leveret en fantastisk service. Jeg kan varmt anbefale dem til enhver, der søger en topkvalitetsproduktion!"</p>
+        </div>
+        <div class="testimonial">
+            <h3>Karen-Marie Lillelund</h3>
+            <p>“Arbejdet med Kanonproduktion har været en ren fornøjelse fra begyndelsen til slutningen! Deres dedikation, kreativitet og ekspertise har gjort hele processen både glat og sjov. Jeg er taknemmelig for det fantastiske samarbejde og kan kun anbefale Kanonproduktion til enhver, der søger en professionel og passioneret partner til deres projekt.”
+            </p>
+        </div>
+    </div>
+    <div class="prev">&#10094;</div>
+    <div class="next">&#10095;</div>
+</div>
+
+<style>
+        .carousel {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+        margin-top: 74px;		
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+
+    .testimonial {
+        flex: 0 0 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--gap3);
+    }
+
+    .testimonial p {
+        width: 486px;
+    }
+
+    .carousel .prev, .carousel .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 35px;
+        color: var(--color-text-h3-tertiary);
+        background-color: var(--color-background-button-primary);
+        z-index: 1;
+        padding: 120px;
+    }
+
+    .carousel .prev {
+        left: 0;
+    }
+
+    .carousel .next {
+        right: 0;
+    }
+
+    .carousel .prev:hover, .carousel .next:hover {
+    }
+
+    .carousel .prev.disabled, .carousel .next.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const carouselInner = document.querySelector('.carousel-inner');
+        const testimonials = document.querySelectorAll('.testimonial');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentIndex = 0;
+
+        function showTestimonial(index) {
+            carouselInner.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', function() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                showTestimonial(currentIndex);
+            }
+        });
+
+        nextBtn.addEventListener('click', function() {
+            if (currentIndex < testimonials.length - 1) {
+                currentIndex++;
+                showTestimonial(currentIndex);
+            }
+        });
+    });
+</script>

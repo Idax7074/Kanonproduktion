@@ -37,13 +37,13 @@ import Button from "../components/Button.astro";
 </section>
 <section class="testimonials">
  <h2>Hvad artisterne siger</h2>
- <article>
+ <article class="testimonial">
   <TestimonialsSlider></TestimonialsSlider>
  </article>
   </section>
   <section class="kontakt">
     <h2>Kontakt os</h2>
-    <article>
+    <article class="kontaktform">
     <KontaktFormular></KontaktFormular>
     </article>
   </section>
@@ -53,6 +53,14 @@ import Button from "../components/Button.astro";
   	article{
 		padding-inline: var(--gap11);
 	}
+
+  .testimonial {
+    padding-inline: 0px;
+  }
+
+  .kontaktform {
+    padding-inline: 0px;
+  }
 
   h1 {
     padding-bottom: 74px;
