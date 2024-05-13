@@ -2,7 +2,25 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import KontaktFormular from "../components/KontaktFormular.astro";
 ---
+<MainLayout title="Kontakt">
 <section class="kontakt">
+    <article>
     <h1>Kontakt</h1>
     <KontaktFormular></KontaktFormular>
+    </article>
 </section>
+</MainLayout>
+
+<style>
+      	article{
+		padding-inline: var(--gap11);
+	}
+
+  h1 {
+    padding-bottom: 74px;
+  }
+
+	section {
+		padding-block: 74px;
+	}
+</style>

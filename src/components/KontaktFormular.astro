@@ -1,0 +1,178 @@
+---
+
+const { size } = Astro.props
+---
+<div class="container">
+    <div class="form">
+    <form action="contact_form" class={size}>
+
+        <div class="flex">
+            <div class="firma">
+                <label for="firma">Firma</label>
+                <input type="text" id="firma" name="firma" placeholder="Dit firmas navn...">
+        </div>
+    
+            <div class="email">
+                <label for="email">Email <span class="req">*</span> </label>
+                <input type="text" id="email" name="email" placeholder="Din email adresse..." required>
+            </div>
+        </div>
+    
+        <div class="flex">
+            <div class="navn">
+                <label for="navn">Navn <span class="req">*</span></label>
+                <input type="text" id="navn" name="navn" placeholder="Dit navn..." required>
+            </div>
+    
+            <div class="telefon">
+                <label for="telefon">Telefon <span class="req">*</span></label>
+                <input type="tel" id="telefon" name="telefon" pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" placeholder="12 23 45 67" required>
+            </div>
+        </div>
+    
+        <div class="besked">
+            <label for="besked">Besked</label>
+            <textarea name="besked" id="besked" placeholder="Skriv din besked..." style="height: 150px;"></textarea>
+        </div>
+
+        <div class="knapper">
+            <div class="knap">
+                <input type="radio" id="opringning" name="fortraaker" value="opringning">
+                <label for="opringning">Ønsker opringning</label>
+            </div>
+            <div class="knap">
+                <input type="radio" id="mail" name="fortraaker" value="mail">
+                <label for="mail">Ønsker dialog på mail</label>
+            </div>
+        </div>
+    </div>
+
+        <div class="indsend">
+        <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+<style> 
+
+form {
+    border-top: 2px solid var(--color-background-stroke);
+    border-right: 2px solid var(--color-background-stroke);
+    border-left: 2px solid var(--color-background-stroke);
+
+    padding: var(--gap4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    width: 530px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background-color: var(--color-background-button-fourthiary);
+}
+textarea {
+    width: 1092px;
+}
+
+input::placeholder  {
+    color: var(--color-text-body);
+    opacity: 1;
+
+    font-family: "Inter", sans-serif;
+    font-size: var(--Body-large);
+    font-weight: 300;
+}
+
+textarea::placeholder  {
+    color: var(--color-text-body);
+    opacity: 1;
+
+    font-family: "Inter", sans-serif;
+    font-size: var(--Body-large);
+    font-weight: 300;
+}
+
+input[type=submit] {
+    background-color: var(--color-background-button-secondary);
+    color: var(--color-button-primary);
+    display: flex;
+    padding: var(--spacing-vertical-button-lg) var(--spacing-horizontal-button-lg);
+    justify-content: center;
+    align-items: center;
+    font-size: var(--Button-large);
+    font-family: "Inter", sans-serif;
+    font-weight: 900;
+    width: 205px;
+}
+
+.indsend {
+    padding-top: 3rem;
+
+    display: flex;
+    width: 100%;
+    height: 3px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-bottom: 2px solid var(--color-background-stroke);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.telefon, .firma, .email, .navn, .besked, .knapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap1);
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap6);
+}
+
+.req {
+  color: var(--color-icon-stars);
+}
+
+label {
+    font-family: "Inter", sans-serif;
+    color: var(--color-text-body);
+    font-size: var(--Headline4-large);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.knapper {
+margin-bottom: 2rem;
+width: 1089px;
+}
+
+input[type=radio] {
+    width: auto;
+}
+
+.knap {
+    display: flex;
+    flex-direction: row;
+}
+
+
+</style>

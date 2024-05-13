@@ -3,42 +3,152 @@ import MainLayout from "../layouts/MainLayout.astro";
 import KontaktFormular from "../components/KontaktFormular.astro";
 import Video from "../components/Video.astro";
 ---
+
+<MainLayout title="Manden bag">
+    <section>
+            <h1>Manden bag</h1>
+        <article class="citat1">
+            <h2>"Livet, stemningen, menneskerne"</h2>
+        </article>
+    </section>
 <section class="manden_bag">
-    <h1>Manden bag</h1>
-    <h2></h2>
     <article class="om">
-        <img src="" alt="">
-        <div class="om_tekst">
-            <div class="citat">
-                <p></p>
-                <p></p>
+        <img src="/img/uffe_holm.webp" alt="">
+         <div class="line"></div>
+            <div class="om_tekst">
+                <div class="citat2">
+                    <span>"</span>
+                    <div class="tekst">
+                       <p>Lorem ipsum</p>
+                    <p>-Torsten Gutterman</p> 
+                    </div>
             </div>
-            <div class="tekst">
-                <p></p>
-            </div>
+                <p>Vi er et firma der tilbyder professionelle skræddersyet løsninger i underholdningsbranchen. 
+                Vi arbejder projektorienteret med artister, events og færdig produktion af radiobroadcast og liveoptræden. Kanonproduktion </p>
         </div>
     </article>
 </section>
 <section class="video">
-    <h2></h2>
+    <h2>Placeholder intro</h2>
     <Video></Video>
 </section>
 <section class="manden_bag">
-    <h2></h2>
+    <h2>Placeholder intro</h2>
     <article class="om">
         <div class="om_tekst">
-            <div class="citat">
-                <p></p>
-                <p></p>
-            </div>
-            <div class="tekst">
-                <p></p>
-            </div>
+            <div class="citat2 blue">
+                <span>"</span>
+                <div class="tekst">
+                   <p>Lorem ipsum</p>
+                <p>-Torsten Gutterman</p> 
+                </div>
         </div>
-        <img src="" alt="">
+            <p>Vi er et firma der tilbyder professionelle skræddersyet løsninger i underholdningsbranchen. 
+            Vi arbejder projektorienteret med artister, events og færdig produktion af radiobroadcast og liveoptræden. Kanonproduktion </p>
+    </div>
+    <div class="line"></div>
+    <img src="/img/uffe_holm.webp" alt="">
     </article>
 </section>
 <section class="kontakt">
     <h2></h2>
     <KontaktFormular></KontaktFormular>
 </section>
+</MainLayout>
+
+<style>
+    article{
+		padding-inline: var(--gap11);
+	}
+
+  h1 {
+    padding-bottom: 74px;
+  }
+
+	section {
+		padding-block: 74px;
+	}
+
+    .line {
+		border-left: 2px solid var(--color-background-stroke);
+		height: 679px;
+	}
+
+    .om {
+    display: grid;
+    grid-template-columns: 2fr auto 2fr;
+	justify-content: center;
+	align-items: center;
+
+	padding: 0px var(--gap11);
+	gap: var(--gap13);
+  }
+
+  .citat2 span{
+    color: var(--color-text-h3-secondary);
+    font-size: 102.019px;
+    font-weight: 800;
+  }
+
+  .citat2 p {
+    color: var(--color-text-h3-secondary);
+    font-size: 27.64px;
+    font-weight: 900;
+  }
+
+  .tekst {
+    padding: var(--gap2);
+  }
+
+  .citat2 {
+    display: flex;
+    gap: var(--gap2);
+  }
+
+  .om_tekst p {
+    width: 510px;
+  }
+
+  .om_tekst {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap8);
+  }
+
+  .citat1 {
+    display: flex;
+	justify-content: center;
+
+    padding-block: var(--gap7);
+    border-top: 2px solid var(--color-background-stroke);
+    border-bottom: 2px solid var(--color-background-stroke);
+  }
+
+  .video h2 {
+    display: flex;
+	justify-content: center;
+
+    padding-block: var(--gap7);
+    border-top: 2px solid var(--color-background-stroke);
+    border-bottom: 2px solid var(--color-background-stroke);
+  }
+
+  .manden_bag h2 {
+    display: flex;
+	justify-content: center;
+
+    padding-block: var(--gap7);
+    border-top: 2px solid var(--color-background-stroke);
+    border-bottom: 2px solid var(--color-background-stroke);
+
+    margin-bottom: 74px;
+  }
+
+  .blue span {
+    color: var(--color-text-h2-tertiary);
+  }
+
+  .blue p {
+    color: var(--color-text-h2-tertiary);
+  }
+</style>
