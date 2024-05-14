@@ -17,39 +17,54 @@ const data = await fetch(url, {
 
 import MainLayout from "../layouts/MainLayout.astro";
 import TidligereCard from "../components/TidligereCard.astro";
+import Sti from "../components/Sti.astro";
 ---
 <MainLayout title="Tidligere events">
     <section class="intro">
-        <h1>Tidligere events</h1>
-        <h3>Se tidligere events og skab dig et overblik over vores events.</h3>
-        <div class="sti">
-            <div class="kommende">
-                <a href="/events">Kommende events</a>
+        <article>
+            <div class="text">
+                <h1>Tidligere events</h1>
+                <h3>Se tidligere events og skab dig et overblik over vores events.</h3>
             </div>
-            <div class="tidligere">
-                <a href="/tidligere">Tidligere events</a>
+            <div class="sti">
+                <div class="kommende">
+                    <a href="/events">Kommende events</a>
+                </div>
+                <div class="tidligere">
+                    <a href="/tidligere">Tidligere events</a>
+                </div>
+                <div class="artister">
+                    <a href="/artister">Artister</a>
+                </div>
             </div>
-            <div class="artister">
-                <a href="/artister">Artister</a>
-            </div>
-        </div>
+        </article>
     </section>
     <section class="tidligere">
-        <h2>Året 2023</h2>
-        <div class="artister">
-            {data.map((person) => 
-                <TidligereCard 
-                    image={`/img/${person.image}`} 
-                    name={person.name} 
-                    date={person.date} 
-                    type={person.type} 
-                    />
-                )}
-        </div>
+        <article>
+            <h2>Året 2023</h2>
+            <div class="artister">
+                {data.map((person) => 
+                    <TidligereCard 
+                        image={`/img/${person.image}`} 
+                        name={person.name} 
+                        date={person.date} 
+                        type={person.type} 
+                        />
+                    )}
+            </div>
+        </article>
     </section>
 </MainLayout>
 
 <style>
+
+article {
+        padding-inline: var(--gap11);
+    }
+
+    section {
+        padding-block: 74px;
+    }
         a {
         font-size: var(--Label-large);
         font-weight: 900;
@@ -79,6 +94,19 @@ import TidligereCard from "../components/TidligereCard.astro";
         gap: var(--gap3);
     }
 
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        padding-bottom: var(--gap7);
+    }
+
+    .text h3 {
+        font-size: 27.64px;
+        font-weight: 400;
+    }
+
     .tidligere a {
         background-color: var(--color-background-button-secondary);
         outline-style: solid;
@@ -94,4 +122,13 @@ import TidligereCard from "../components/TidligereCard.astro";
         outline-color: var(--color-background-button-secondary);
         outline-width: 2px;
     }
+
+    .artister {
+		display: flex;
+        flex-wrap: wrap;
+		column-gap: var(--gap6);
+        row-gap: var(--gap7);
+		justify-content: flex-start;
+        padding-block: var(--gap7);
+	}
 </style>

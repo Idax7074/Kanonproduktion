@@ -1,6 +1,6 @@
 ---
 //Props er en stedholder for vores ting fra databasen
-const { image, name, price, date, place, type, status, slug, link } = Astro.props;
+const { image, name, date, type } = Astro.props;
 
 import Button from "./Button.astro";
 ---
@@ -12,22 +12,22 @@ import Button from "./Button.astro";
                 <img src={image} alt="billede af artisten">
             </div>
             <h3>{name}</h3>
-        </div>
-        <div class="type">
-            <p>{type}</p>
-        </div>
+        </div>   
     </div>
-    <div class="information">
-        <div class="place">
-            <p class="dato">{date}</p>
-        </div>
-    </div>
+        <div class="information">
+            <div class="type">
+                <p>{type}</p>
+            </div>
+            <div class="place">
+                <p class="dato">{date}</p>
+            </div>
+        </div>    
 </article>
 
 <style>
 article{
         width: 22.5rem;
-        height: 25rem;
+        height: 27rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -62,9 +62,10 @@ article{
         color: var(--color-button-primary);
 
         position: absolute;
-        bottom: 40px;
+        bottom: 0px;
         left: -5px;
     }
+
 
     .type p {
         display: inline-flex;
@@ -77,11 +78,19 @@ article{
         font-size: var(--Label-large);
         font-weight: 900;
         font-size: 0.83313rem;
-
-        position: absolute;
-        left: -5px;
-        bottom: 5px;
     }
 
+    .place p {
+        font-size: 1.13475rem;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+
+    .information {
+        width: 20.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
 </style>

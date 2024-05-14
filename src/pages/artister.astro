@@ -40,7 +40,12 @@ import Sti from "../components/Sti.astro";
   </article>
 </section>
 <article class="artister">
-    {data.map((person) => <ArtistCard image={`/img/${person.image}`} name={person.name} face={person.facebook} insta={person.instagram}/>)}
+    {data.map((person) => 
+    <ArtistCard 
+    image={`/img/${person.image}`} 
+    name={person.name} 
+    face={person.facebook} 
+    insta={person.instagram}/>)}
 </article>
 </MainLayout>
 
@@ -57,8 +62,9 @@ import Sti from "../components/Sti.astro";
     .artister {
 		display: flex;
     flex-wrap: wrap;
-		gap: var(--gap7);
-		justify-content: center;
+		column-gap: var(--gap6);
+    row-gap: var(--gap7);
+		justify-content: flex-start;
     padding-block: var(--gap7);
 	}
 
