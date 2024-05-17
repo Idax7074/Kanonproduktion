@@ -126,15 +126,17 @@ import Sti from "../components/Sti.astro";
         outline-width: 2px;
     }
 
-    @media (max-width: 1514px) {
-        .artister {
-		display: flex;
-    flex-wrap: wrap;
-		column-gap: var(--gap13);
-    row-gap: var(--gap7);
-		justify-content: flex-start;
-    padding-block: var(--gap7);
+    @media (min-width: 1513px){
+
+    .artister {
+		column-gap: var(--gap11);
 	}
+    }
+
+    @media (max-width: 1450px){
+.artister {
+    column-gap: var(--gap11);
+}
     }
 
     @media (max-width: 1024px) {
@@ -169,5 +171,9 @@ import Sti from "../components/Sti.astro";
     article {
     padding-inline: var(--gap5);
   }
+
+  .artister {
+    column-gap: var(--gap3);
+}
     }
 </style>
