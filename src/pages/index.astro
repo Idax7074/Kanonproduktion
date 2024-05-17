@@ -20,12 +20,14 @@ const filterJuni= data.filter((one)=> one.tags === "juni")
 
 import MainLayout from "../layouts/MainLayout.astro";
 import EventCard from "../components/EventCard.astro";
-import TestimonialsStar from "../components/TestimonialsStar.astro";
+import Video from "../components/Video.astro";
 import Button from "../components/Button.astro";
 ---
 
 <MainLayout title="Forside">
-<section class="hero"></section>
+<section class="hero">
+	<Video/>
+</section>
 <section class="cta">
 	<div class="events">
 		<h2>Find dit næste event</h2>
