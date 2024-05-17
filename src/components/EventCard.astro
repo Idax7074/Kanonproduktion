@@ -33,9 +33,14 @@ console.log("props",Astro.props)
             </div>
             </div>
         </div>
-        <div class="knap">
+        <div class="knap large">
             <Button size="sm" link=`${link}` variant="primary">Køb billet</Button>
             <Button size="sm" link={`../../artist/${slug}`} variant="tertiary">Læs mere</Button>
+        </div>
+
+        <div class="knap small">
+            <Button size="xs" link=`${link}` variant="primary">Køb billet</Button>
+            <Button size="xs" link={`../../artist/${slug}`} variant="tertiary">Læs mere</Button>
         </div>
     </article>
 
@@ -165,6 +170,10 @@ console.log("props",Astro.props)
         font-size: var(--Button-small);
     }
 
+    .small {
+        display: none;
+    }
+
     .udsolgt .billede {
         width: 20rem;
         height: 20rem;
@@ -203,35 +212,61 @@ console.log("props",Astro.props)
 
     @media (max-width: 430px){
         article{
-        width: 20rem; 
+        width: 15rem; 
+        height: 24rem;
+    }
+
+    .hvem{
+        height: 15rem;
     }
 
     .kunstner {
-        width: 18rem;
+        width: 13.33331rem;
+        height: 16.33331rem;
        
     }
 
     .kunstner h3 {
-        width: 16rem;
-        height: 3.5rem;
-        left: -12px;
+        width: 11rem;
+        height: 3rem;
+        left: 0px;
+        bottom: 20px; 
     }
 
     h3{
-        font-size: var(--Headline3-small);
+        font-size: 0.83313rem;
     }
     .type p {
-        font-size: var(--Label-small);
-        left: -12px;
+        font-size: 0.57813rem;
+        left: 0px;
+        bottom: -5px;
 
     }
 
     .information {
-        width: 18rem;
+        width: 12.75rem;
+        gap: 1.33713rem;
+    }
+
+    .price {
+        width: 4.86113rem;
+        padding: 0.34725rem;
+        gap: 1.31944rem;
+    }
+
+    .large {
+        display: none;
+    }
+
+    .small {
+        display: flex;
+        justify-content: center;
     }
 
     .knap {
-        gap: 0.5rem;
+        gap: 1.125rem;
+        width: auto;
+        padding: 0.625rem;
     }
 
     }
