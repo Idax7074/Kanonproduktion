@@ -13,7 +13,7 @@ import Video from "../components/Video.astro";
     </section>
 <section class="manden_bag">
     <article class="om">
-        <img src="/img/torsten-frame.wepb" alt="">
+        <img src="/img/torsten-frame.webp" alt="">
          <div class="line"></div>
             <div class="om_tekst">
                 <div class="citat2">
@@ -57,6 +57,11 @@ import Video from "../components/Video.astro";
 </MainLayout>
 
 <style>
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
     article{
 		padding-inline: var(--gap11);
 	}
@@ -150,5 +155,59 @@ import Video from "../components/Video.astro";
 
   .blue p {
     color: var(--color-text-h2-tertiary);
+  }
+
+  @media (max-width: 1024px) {
+
+    h1{
+		padding-inline: var(--gap6);
+	}
+    article{
+		padding-inline: var(--gap6);
+	}
+
+  .line {
+    display: none;
+  }
+
+  .om {
+    display: flex;
+    flex-direction: column;
+    padding: 0px var(--gap6);
+  }
+  }
+
+  @media (max-width:390px) {
+
+    h1{
+		padding-inline: var(--gap4);
+	}
+    article{
+		padding-inline: var(--gap4);
+	}
+
+  .om {
+    display: flex;
+    flex-direction: column;
+    padding: 0px var(--gap4);
+
+    gap: var(--gap8);
+  }
+    .om_tekst p {
+    width: 326px;
+  }
+
+  .tekst p {
+    width: 284px;
+  }
+
+  .citat2 span{
+    font-size: 64.412px;
+  }
+
+  .citat2 p {
+    font-size: 13.33px;
+  }
+
   }
 </style>

@@ -21,4 +21,17 @@ import KontaktFormular from "../components/KontaktFormular.astro";
 	section {
 		padding-block: 74px;
 	}
+
+  @media (max-width:1024px) {
+    h1 {
+    padding-bottom: 0px;		
+    padding-inline: var(--gap6);
+  }
+  }
+
+  @media (max-width:390px) {
+    h1 {		
+    padding-inline: var(--gap4);
+  }
+  }
 </style>

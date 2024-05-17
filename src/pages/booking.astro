@@ -25,7 +25,6 @@ import Button from "../components/Button.astro";
       <Button size="lg" link="/booking" variant="secondary">Læs mere</Button>
       </div>
   </div>
- 
   <img src="/img/uffe_holm.webp" alt="">
   </article>
 </section>
@@ -147,4 +146,50 @@ import Button from "../components/Button.astro";
     border-right:  2px solid var(--color-background-stroke);
   }
 
+  @media (max-width: 1024px) {
+    article{
+		padding-inline: var(--gap6);
+	}
+
+  .om {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+
+		padding: 0px 0px;
+		gap: var(--gap13);
+  }
+
+  .tekst {
+    padding-inline: var(--gap6);
+  }
+
+  .tekst > * {
+    width: 40rem;
+  }
+
+  .indhold {
+    height: auto;
+    border-right: none;
+  }
+
+  .button {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-bottom: 2px solid var(--color-background-stroke);
+  }
+  }
+
+  @media (max-width: 391px) {
+    article{
+		padding-inline: var(--gap4);
+	}
+
+  .tekst > * {
+    width: 22rem;
+  }
+  }
 </style>

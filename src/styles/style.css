@@ -200,3 +200,55 @@ a {
   text-decoration: none;
   color: var(--color-button-primary);
 }
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: var(--Headline1-medium);
+  }
+
+  h2 {
+    font-size: var(--Headline2-medium);
+  }
+
+  h3 {
+    font-size: var(--Headline3-medium);
+  }
+
+  h4 {
+    font-size: var(--Headline4-medium);
+  }
+
+  p {
+    font-size: var(--Body-medium);
+  }
+
+  a {
+    font-size: var(--Button-medium);
+  }
+}
+
+@media (max-width: 390px) {
+  h1 {
+    font-size: var(--Headline1-small);
+  }
+
+  h2 {
+    font-size: var(--Headline2-small);
+  }
+
+  h3 {
+    font-size: var(--Headline3-small);
+  }
+
+  h4 {
+    font-size: var(--Headline4-small);
+  }
+
+  p {
+    font-size: var(--Body-small);
+  }
+
+  a {
+    font-size: var(--Button-small);
+  }
+}

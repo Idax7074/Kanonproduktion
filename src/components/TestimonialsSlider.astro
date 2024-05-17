@@ -64,9 +64,6 @@
         left: 0;
     }
 
-
-
-
     .carousel .next {
         right: 0;
     }
@@ -77,6 +74,21 @@
     .carousel .prev.disabled, .carousel .next.disabled {
         pointer-events: none;
         opacity: 0.5;
+    }
+
+    @media (max-width: 1025px) {
+        .carousel .prev, .carousel .next {
+        padding: 100px;
+    }
+
+    @media (max-width: 391px) {
+        .carousel .prev, .carousel .next {
+        padding-inline: 20px;
+    }
+
+    .testimonial p {
+        width: 15rem;
+    }
     }
 </style>
 
