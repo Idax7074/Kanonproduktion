@@ -35,7 +35,12 @@ import Button from "../components/Button.astro";
 			Kanonproduktion har det hele lige fra de største danske artister, til de sjoveste komikere og den fedeste fest eller event.
 			Tjek vores kalender for at se det næste event tæt på dig.
 			</p>
+			<div class="large">
 			<Button size="lg" link="/events" variant="primary">Se events</Button>
+		</div>
+		<div class="small">
+			<Button size="sm" link="/events" variant="primary">Se events</Button>
+		</div>
 	</div>
 	<div class="line"></div>
 	<div class="booking">
@@ -44,7 +49,12 @@ import Button from "../components/Button.astro";
 			Vi arbejder projektorienteret med artister, events og færdig produktion af radio podcast og liveoptræden.
 			Vi tilbyder en lang række af danske artister og færdige koncepter, lige fra de små lokale scener til de store venues, kontakt os nu og lad os snakke om dit næste event allerede i dag.
 			</p>
+			<div class="large">
 			<Button size="lg" link="/booking" variant="secondary">Læs mere</Button>
+		</div>
+		<div class="small">
+			<Button size="sm" link="/booking" variant="secondary">Læs mere</Button>
+		</div>
 	</div>
 </section>
 <section class="kommende_events">
@@ -173,6 +183,10 @@ import Button from "../components/Button.astro";
 		height: 475px;
 	}
 
+	.small{
+		display: none;
+	}
+
 	.kommende_events {
 		display: flex;
 		flex-direction: column;
@@ -238,9 +252,11 @@ import Button from "../components/Button.astro";
 		padding: 3rem 3rem;
 	}
 
+
 	@media (max-width: 1450px){
 		.events h2 {
 		width: 450px;
+		padding-top: 2rem;
 	}
 
 	.events p {
@@ -257,6 +273,7 @@ import Button from "../components/Button.astro";
 	}
 
 @media (max-width: 1024px){
+
 
 	h2{
 		font-size: var(--Headline2-medium);
@@ -299,6 +316,15 @@ padding-bottom: 4rem;
 	.booking p {
 		font-size: var(--body-medium);
 	}
+
+	.large {
+        display: none;
+    }
+
+    .small {
+        display: flex;
+    
+    }
 
 	.cards {
 		overflow: auto;
