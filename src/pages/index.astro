@@ -232,7 +232,76 @@ import Button from "../components/Button.astro";
 		padding: 3rem 3rem;
 	}
 
-@media (max-width: 1200px){
+	@media (max-width: 1450px){
+		.events h2 {
+		width: 450px;
+	}
+
+	.events p {
+		width: 450px;
+	}
+
+	.booking h2 {
+		width: 450px;
+	}
+
+	.booking p {
+		width: 450px;
+	}
+	}
+
+@media (max-width: 1024px){
+
+	h2{
+		font-size: var(--Headline2-medium);
+	}
+	article{
+		padding-inline: var(--gap7);
+	}
+
+	.line {
+		display: none;
+	}
+
+	.cta {
+		display: flex;
+		flex-direction: column;
+	height: auto;
+	padding: 0px var(--gap11);
+		gap: var(--gap11);
+	}
+
+	.events h2 {
+		padding-bottom: 30px;
+		font-size: var(--Headline2-medium);
+	}
+
+	.events{
+		border-bottom: 2px solid var(--color-background-stroke);
+padding-bottom: 4rem;
+	}
+
+	.events p {
+		padding-bottom: 70px;
+		font-size: var(--body-medium);
+	}
+
+	.booking h2 {
+		font-size: var(--Headline2-medium);
+	}
+
+	.booking p {
+		font-size: var(--body-medium);
+	}
+
+	.cards {
+		overflow: auto;
+    flex-wrap: nowrap;
+        white-space: nowrap;
+        width:100%;
+        margin-inline: auto;
+		justify-content:flex-start;
+	}
 	.testimonials{
 	display: grid;
 	grid-template-columns: 1fr;
@@ -240,8 +309,13 @@ import Button from "../components/Button.astro";
 	margin-inline: auto;
 	text-align: center;
 	width: auto;
-	margin: 5rem 0;
+	margin: 2rem 0;
 	border: 0px solid var(--color-background-stroke);
+}
+
+.testimonials p{
+	width: 500px;
+	margin-inline:auto;
 }
 
 .testimonial3{
@@ -262,4 +336,68 @@ import Button from "../components/Button.astro";
 }
 
 }
+
+@media (max-width: 430px){
+
+	h2{
+		font-size: var(--Headline2-small);
+	}
+	article{
+		padding-inline: var(--gap7);
+	}
+
+	.line {
+		display: none;
+	}
+
+	.cta {
+		display: flex;
+		flex-direction: column;
+	height: auto;
+	padding: 0px var(--gap7);
+	}
+
+	.events h2 {
+		padding-bottom: 30px;
+		width: auto;
+		font-size: var(--Headline2-small);
+	}
+
+	.events{
+		border-bottom: 2px solid var(--color-background-stroke);
+padding-bottom: 4rem;
+	}
+
+	.events p {
+		width: auto;
+		padding-bottom: 70px;
+		font-size: var(--body-small);
+	}
+
+	.booking h2 {
+		font-size: var(--Headline2-small);
+		width: auto;
+	}
+
+	.booking p {
+		width: auto;
+		font-size: var(--body-small);
+	}
+
+	.cards {
+		overflow: auto;
+    flex-wrap: nowrap;
+        white-space: nowrap;
+        width:100%;
+        margin-inline: auto;
+		justify-content:flex-start;
+	}
+
+	.testimonials p{
+	width: auto;
+	margin-inline:auto;
+}
+}
+
+
 </style>
