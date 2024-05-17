@@ -2,7 +2,10 @@
 //Props er en stedholder for vores ting fra databasen
 const { image, name, price, date, place, type, status, slug, link } = Astro.props;
 
+
+
 import Button from "./Button.astro"
+console.log("props",Astro.props)
 ---
 
     <article class={status}>

@@ -50,13 +50,13 @@ import MainLayout from "../../layouts/MainLayout.astro";
 <MainLayout title="Artist">
     <section class="artist">
         <h1>{person.name}</h1>
-        <img src={`/img/${person.im}`} alt="">
+        <img src={`/img/${person.img}`} alt="">
         <p></p>
         <div class="information">
             <div class="tekst">
                 <h2>{person.name}</h2>
                 <p>{person.description}</p>
-                <h4>FØLG MED PÅ VORES PROFIL OG SE NÅR ___ GÅR PÅ NÆSTE GANG!</h4>
+                <h4>{person.social}</h4>
                 <SocialIcon></SocialIcon>
             </div>
             <div class="infoboks">

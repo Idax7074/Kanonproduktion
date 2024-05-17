@@ -1,6 +1,6 @@
 ---
 //Lav variablen "url" med vores URL fra supabase
-const url = "https://muqgfdguddfkghqhbdai.supabase.co/rest/v1/kanonproduktion_events?limit=3";
+const url = "https://muqgfdguddfkghqhbdai.supabase.co/rest/v1/kanonproduktion_events?";
 
 //Lav variablen "api" med vores api nøgle
 const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11cWdmZGd1ZGRma2docWhiZGFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3NTI1MjcsImV4cCI6MjAzMDMyODUyN30.V1cmTeBITytZYDHSYEemvpkdSObU40QtSWsIqANjXBY";
@@ -14,6 +14,8 @@ const data = await fetch(url, {
   },
 }).then((res) => res.json());
 //Dataen bliver hentet som JSON-fil
+
+const filterJuni= data.filter((one)=> one.tags === "juni")
 
 
 import MainLayout from "../layouts/MainLayout.astro";
@@ -46,7 +48,7 @@ import Button from "../components/Button.astro";
 <section class="kommende_events">
 	<h2>Kommende events</h2>
 	<article class="cards">
-		{data.map((person) => 
+		{filterJuni.map((person) => 
             <EventCard 
                 image={`/img/${person.image}`} 
                 status={person.status}

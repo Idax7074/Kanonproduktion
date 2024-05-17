@@ -14,7 +14,15 @@ const data = await fetch(url, {
   },
 }).then((res) => res.json());
 
-console.log(data);
+const filterJuni= data.filter((one)=> one.tags === "juni")
+
+const filterJuli= data.filter((one)=> one.tags === "juli")
+
+const filterAugust= data.filter((one)=> one.tags === "august")
+
+console.log(filterJuni)
+
+/* console.log(data); */
 //Dataen bliver hentet som JSON-fil
 import MainLayout from "../layouts/MainLayout.astro";
 import EventCard from "../components/EventCard.astro";
@@ -46,7 +54,7 @@ import Button from "../components/Button.astro";
         <span class="marquee">Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span>&nbsp;</span>
       </div>
         <article class="artister">
-            {data.map((person) => 
+            {filterJuni.map((person) => 
             <EventCard 
                 image={`/img/${person.image}`} 
                 status={person.status} 
@@ -68,7 +76,7 @@ import Button from "../components/Button.astro";
             <span class="marquee">Juli 2024 <span class="circle"></span> Juli 2024 <span class="circle"></span> Juli 2024 <span class="circle"></span> Juli 2024 <span class="circle"></span>&nbsp;</span>
           </div>
         <article class="artister">
-            {data.map((person) => 
+            {filterJuli.map((person) => 
                 <EventCard 
                     image={`/img/${person.image}`} 
                     status={`${person.status}`} 
@@ -90,7 +98,7 @@ import Button from "../components/Button.astro";
             <span class="marquee">August 2024 <span class="circle"></span> August 2024 <span class="circle"></span> August 2024 <span class="circle"></span>&nbsp;</span>
           </div>
         <article class="artister">
-            {data.map((person) => 
+            {filterAugust.map((person) => 
                 <EventCard 
                     image={`/img/${person.image}`} 
                     status={`${person.status}`} 
