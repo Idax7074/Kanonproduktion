@@ -13,11 +13,11 @@ import Logo from "./Logo.astro"
         <span class="bar3"></span>
       </button>
      <ul>
-        <li class={visited}><a href="/events">Events</a></li>
-        <li class={visited}><a href="/artister">Artister</a></li>
-        <li class={visited}><a href="/booking">Booking & promoting</a></li>
-        <li class={visited}><a href="/about">Om os</a></li>
-        <li class={visited}><a href="/kontakt">Kontakt</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/artister">Artister</a></li>
+        <li><a href="/booking">Booking & promoting</a></li>
+        <li><a href="/about">Om os</a></li>
+        <li><a href="/kontakt">Kontakt</a></li>
       </ul>
     </nav>
   </header>
@@ -26,7 +26,7 @@ import Logo from "./Logo.astro"
 
   <style>
 
-    @media screen and (min-width: 1026px) {
+    @media screen and (min-width: 1025px) {
     header {
       top: 0;
       width: 100%;
@@ -45,6 +45,16 @@ import Logo from "./Logo.astro"
       height: 100%;
       width: 100%;
     }
+
+    .sticky {
+      position: sticky;
+      top: 0;
+      width: 100%;
+    }
+
+    .sticky .logo {
+      display: none;
+    } 
 
     a {
       text-decoration: none;
@@ -87,7 +97,7 @@ import Logo from "./Logo.astro"
       min-height: 44px;
     }
   }
-  @media (max-width: 1025px) {
+  @media (max-width: 1024px) {
 
     header {
       width: 100%;
@@ -97,7 +107,7 @@ import Logo from "./Logo.astro"
     }
     .banner {
       background-color: var(--color-background-nav);
-      padding: var(--gap5) var(--gap3);
+      padding: var(--gap5) var(--gap4);
 
       display: flex;
       justify-content: space-between;
@@ -183,6 +193,10 @@ import Logo from "./Logo.astro"
   @media (max-width: 430px) {
     .menu.shown a {
       font-size: var(--Nav-small);
+    }
+
+    .logo {
+      width: 250px;
     }
   }
   </style>
