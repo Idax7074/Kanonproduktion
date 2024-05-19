@@ -58,12 +58,17 @@ import MainLayout from "../../layouts/MainLayout.astro";
     </section>
     <section class="information">
         <div class="tekst">
+          <div class="info">
             <h2>{person.name}</h2>
             <p>{person.description}</p>
+          </div>
+          <div class="social">
             <h4>{person.social}</h4>
             <SocialIcon></SocialIcon>
+          </div>
         </div>
-        <div class="infoboks">
+        <div class="box">
+          <div class="infoboks">
             <div class="dato">
                 <p>{person.day}</p>
                 <h3>{person.date}</h3>
@@ -80,8 +85,9 @@ import MainLayout from "../../layouts/MainLayout.astro";
                 <p>Pris inkl. gebyr</p>
                 <h3>{person.price}</h3>
             </div>
-            <Button></Button>
-        </div>
+            </div>
+            <Button size="lg" link=`${person.link}` variant="primary">Køb billet</Button>
+        </div>  
     </section>
 </MainLayout>
 
@@ -123,6 +129,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
   .tekst {
     display: flex;
     flex-direction: column;
+    gap: var(--gap9);
   }
 
   .tekst > *{
@@ -132,9 +139,44 @@ import MainLayout from "../../layouts/MainLayout.astro";
   .information {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
   h4 {
     color: var(--color-text-body);
+  }
+
+  .infoboks {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap5);
+    width: 477px;
+    height: auto;
+  }
+
+  .box {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: var(--color-background-stroke);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 25px;
+    padding-inline: 15px;
+    gap: var(--gap9);
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap5);
+  }
+
+  .social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap5);
   }
 </style>
