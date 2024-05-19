@@ -158,7 +158,7 @@ import Button from "../components/Button.astro";
     .kommende a {
         background-color: var(--color-background-button-secondary);
         outline-style: solid;
-        outline-color: var(--color-background-button-hover);
+        outline-color: var(--color-background-button-secondary-stroke);
         outline-width: 2px;
         color: var(--color-background-button-hover);
     }
@@ -264,30 +264,36 @@ import Button from "../components/Button.astro";
 	}
 
     @media (max-width: 1024px){
- .artister{
-    overflow: auto;
-    flex-wrap: nowrap;
-        white-space: nowrap;
-        width:100%;
-        margin-inline: auto;
-    
-    } 
+    article {
+    padding-inline: var(--gap6);
     }
-
-
-    @media (max-width: 430px){
- .artister{
-    overflow: auto;
-    flex-wrap: nowrap;
+    .artister{
+        overflow: auto;
+        flex-wrap: nowrap;
         white-space: nowrap;
         width:100%;
         margin-inline: auto;
-    
+    } 
+}
+    @media (max-width: 430px){
+    .artister{
+        overflow: auto;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        width:100%;
+        margin-inline: auto;
     } 
 
     article {
-        padding-inline: var(--gap5);
+    padding-inline: var(--gap4);
     }
+
+    a {
+        font-size: var(--Label-small);
     }
+    .text h3 {
+        font-size: 13.33px;
+    }
+}
    
 </style>

@@ -51,33 +51,90 @@ import MainLayout from "../../layouts/MainLayout.astro";
     <section class="artist">
         <h1>{person.name}</h1>
         <img src={`/img/${person.img}`} alt="">
-        <p></p>
-        <div class="information">
-            <div class="tekst">
-                <h2>{person.name}</h2>
-                <p>{person.description}</p>
-                <h4>{person.social}</h4>
-                <SocialIcon></SocialIcon>
+        <a class="tidligere" href="/events">
+          <div class="pil">&#10094;</div>
+          <p>Andre artister</p>
+        </a>
+    </section>
+    <section class="information">
+        <div class="tekst">
+            <h2>{person.name}</h2>
+            <p>{person.description}</p>
+            <h4>{person.social}</h4>
+            <SocialIcon></SocialIcon>
+        </div>
+        <div class="infoboks">
+            <div class="dato">
+                <p>{person.day}</p>
+                <h3>{person.date}</h3>
             </div>
-            <div class="infoboks">
-                <div class="dato">
-                    <p>{person.day}</p>
-                    <h3>{person.date}</h3>
-                </div>
-                <div class="aabner">
-                    <p>Dørene åbner</p>
-                    <h3>{person.doors}</h3>
-                </div>
-                <div class="tid">
-                    <p>Showet starter</p>
-                    <h3>{person.begin}</h3>
-                </div>
-                <div class="pris">
-                    <p>Pris inkl. gebyr</p>
-                    <h3>{person.price}</h3>
-                </div>
-                <Button></Button>
+            <div class="aabner">
+                <p>Dørene åbner</p>
+                <h3>{person.doors}</h3>
             </div>
+            <div class="tid">
+                <p>Showet starter</p>
+                <h3>{person.begin}</h3>
+            </div>
+            <div class="pris">
+                <p>Pris inkl. gebyr</p>
+                <h3>{person.price}</h3>
+            </div>
+            <Button></Button>
         </div>
     </section>
 </MainLayout>
+
+<style>
+  section {
+		padding-block: 74px;
+    padding-inline: var(--gap11);
+	}
+  h1{
+    text-align: center;
+    padding-bottom: 74px;
+  }
+
+  .tidligere{
+    padding-top: 74px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap4);
+  }
+
+  .artist {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tidligere p {
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .pil {
+    cursor: pointer;
+    font-size: 35px;
+    color: var(--color-text-body);
+  }
+
+  .tekst {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tekst > *{
+    width: 539px;
+  }
+
+  .information {
+    display: flex;
+    flex-direction: row;
+  }
+
+  h4 {
+    color: var(--color-text-body);
+  }
+</style>
