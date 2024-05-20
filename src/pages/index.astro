@@ -127,6 +127,7 @@ import Button from "../components/Button.astro";
 </MainLayout>
 
 <script>
+
 	import { gsap } from "gsap";
     
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -139,12 +140,37 @@ import Button from "../components/Button.astro";
 		scrub: true,
 		trigger: ".hero",
 		start: "100 start",
+		end: "600 center",
+		 //markers: true,
+	},
+	opacity:0.4,
+	duration:0.5,
+	}); 
+
+	gsap.from(".kommende_events", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".cta",
+		start: "0 start",
 		end: "1000 center",
-		markers: true,
+		//markers: true,
 	},
 	opacity:0,
 	duration:0.5,
 	}); 
+
+	gsap.from(".andre_siger", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".kommende_events",
+		start: "100 start",
+		end: "1000 center",
+		//markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
 </script>
 
 <style>

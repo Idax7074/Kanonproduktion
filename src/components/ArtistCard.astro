@@ -12,7 +12,7 @@ const {image, name, insta, face} = Astro.props;
         <div class="social-links">
             <a href={insta} aria-label="Følg link til instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href={face} aria-label="Følg link til Facebook"> <i class="fa-brands fa-facebook"></i></a>
-            <a href="#" aria-label="Få notifikationer fra artisterne"> <i class="fa-regular fa-bell"></i></a>
+            <!-- <a href="#" aria-label="Få notifikationer fra artisterne"> <i class="fa-regular fa-bell"></i></a> -->
         </div>
     </article>
 
@@ -53,11 +53,11 @@ const {image, name, insta, face} = Astro.props;
           padding: 0.5rem;
         }
 
-        .fa-bell {
+        /* .fa-bell {
           color: var(--color-icon-stars);
           
-        }
-        .fa-bell:hover {
+        } */
+        /* .fa-bell:hover {
             animation: fa-bell 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
         }
         @keyframes fa-bell {
@@ -85,7 +85,7 @@ const {image, name, insta, face} = Astro.props;
   90% {
     transform: rotate(2deg);
   }
-}
+} */
 
     
         .social-links a:hover{
@@ -120,7 +120,7 @@ const {image, name, insta, face} = Astro.props;
         font-size: var(--Headline4-small);
     }
     .social-links i {
-          font-size: var(--Headline3-small);
+          font-size: var(--Headline2-small);
           
         }
 
