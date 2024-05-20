@@ -50,6 +50,12 @@ import Logo from "./Logo.astro"
       height: auto;
     }
 
+    .logo img {
+      height: auto;
+      width: 75%;
+      margin-inline: auto;
+    }
+
     .logo {
       transition: all 0.3s ease-in-out;
     }
@@ -126,7 +132,16 @@ import Logo from "./Logo.astro"
       min-height: 44px;
     }
   }
-  @media (max-width: 1025px) {
+  @media (max-width: 1024px) {
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+
+    .stickLogo {
+      display: none;
+    }
 
     header {
       width: 100%;
@@ -145,8 +160,8 @@ import Logo from "./Logo.astro"
       gap: 30px 40px;
     }
 
-    .sticky {
-      position: sticky;
+    .banner.sticky {
+      position: fixed;
       top: 0;
       width: 100%;
     }
@@ -234,24 +249,6 @@ import Logo from "./Logo.astro"
   </style>
   
   <script>
-    //Når brugeren scroller på siden, begynd myFynction
-    window.onscroll = function () {myFunction()};
-
-    //Tag head
-    var header = document.getElementById("myHeader")
-
-    //Tag positionen af nav baren
-    var sticky = header.offsetTop
-
-    //Tilføj klassen sticky til header når du når scroll postitionen. "Sticky" forsvinder når du forlader scroll positionen
-    function myFunction() {
-      if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-      } else {
-        header.classList.remove("sticky")
-      }
-    }
-
 // Add this script at the end of your HTML or in a separate JS file
 window.onscroll = function() {makeSticky()};
 
@@ -265,6 +262,4 @@ function makeSticky() {
     header.classList.remove("sticky");
   }
 }
-
-
   </script>
