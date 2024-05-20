@@ -30,10 +30,10 @@ import Sti from "../components/Sti.astro";
                 <div class="kommende">
                     <a href="/events">Kommende events</a>
                 </div>
-                <div class="tidligere">
+                <div class="tidligere1">
                     <a href="/tidligere">Tidligere events</a>
                 </div>
-                <div class="artister">
+                <div class="artist">
                     <a href="/artister">Artister</a>
                 </div>
             </div>
@@ -62,6 +62,38 @@ import Sti from "../components/Sti.astro";
     </section>
 </MainLayout>
 
+<script>
+      import { gsap } from "gsap";
+    
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    
+    
+    gsap.registerPlugin(ScrollTrigger);
+  
+      gsap.from(".animeret", {
+    scrollTrigger: {
+      scrub: true,
+      trigger: ".logo",
+      start: "0 start",
+      end: "1000 center",
+      markers: true,
+    },
+    opacity:0,
+    duration:0.5,
+    }); 
+
+    gsap.from(".tidligere", {
+    scrollTrigger: {
+      scrub: true,
+      trigger: ".menu",
+      start: "0 start",
+      end: "1000 center",
+      markers: true,
+    },
+    opacity:0,
+    duration:0.5,
+    }); 
+</script>
 <style>
 
 article {
@@ -117,7 +149,7 @@ article {
         font-weight: 400;
     }
 
-    .tidligere a {
+    .tidligere1 a {
         background-color: var(--color-background-button-secondary);
         outline-style: solid;
         outline-color: var(--color-background-button-secondary-stroke);
@@ -125,7 +157,7 @@ article {
         color: var(--color-background-button-hover);
     }
 
-    .tidligere a:hover {
+    .tidligere1 a:hover {
         background-color: var(--color-button-primary);
         color: var(--color-background-button-secondary);
         outline-style: solid;

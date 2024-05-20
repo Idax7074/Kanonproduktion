@@ -48,6 +48,7 @@ import Button from "../components/Button.astro";
             </div>
         </article>
     </section>
+    <section class="juni">
     <div id="animated-text-strip">
         <span class="marquee">Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span>&nbsp;</span>
         <span class="marquee">Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span> Juni 2024 <span class="circle"></span>&nbsp;</span>
@@ -114,6 +115,54 @@ import Button from "../components/Button.astro";
         </article>
     </section>
 </MainLayout>
+
+<script>
+    import { gsap } from "gsap";
+    
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	
+	
+	gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".juni", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".logo",
+		start: "0 start",
+		end: "1000 center",
+		//markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+
+    gsap.from(".juli", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".artister",
+		start: "0 start",
+		end: "1000 center",
+		//markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+    gsap.from(".august", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: "#animated-text-strip-reverse",
+		start: "0 start",
+		end: "1000 center",
+		//markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+	
+	
+</script>
 
 <style>
     article {

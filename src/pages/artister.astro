@@ -33,7 +33,7 @@ import Sti from "../components/Sti.astro";
       <div class="tidligere">
           <a href="/tidligere">Tidligere events</a>
       </div>
-      <div class="artister">
+      <div class="artist">
           <a href="/artister">Artister</a>
       </div>
   </div>
@@ -48,6 +48,27 @@ import Sti from "../components/Sti.astro";
     insta={person.instagram}/>)}
 </article>
 </MainLayout>
+
+<script>
+   import { gsap } from "gsap";
+    
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+    
+    
+    gsap.registerPlugin(ScrollTrigger);
+  
+      gsap.from(".artister", {
+    scrollTrigger: {
+      scrub: true,
+      trigger: ".logo",
+      start: "0 start",
+      end: "1000 center",
+      //markers: true,
+    },
+    opacity:0,
+    duration:0.5,
+    }); 
+</script>
 
 <style>
 
@@ -110,7 +131,7 @@ import Sti from "../components/Sti.astro";
         gap: var(--gap3);
     }
 
-    .artister a {
+    .artist a {
         background-color: var(--color-background-button-secondary);
         outline-style: solid;
         outline-color: var(--color-background-button-secondary-stroke);
@@ -118,7 +139,7 @@ import Sti from "../components/Sti.astro";
         color: var(--color-background-button-hover);
     }
 
-    .artister a:hover {
+    .artist a:hover {
         background-color: var(--color-button-primary);
         color: var(--color-background-button-secondary);
         outline-style: solid;
