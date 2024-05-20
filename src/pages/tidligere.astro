@@ -67,6 +67,12 @@ import Sti from "../components/Sti.astro";
     
     import { ScrollTrigger } from "gsap/ScrollTrigger";
     
+      //Web + iPad
+  // create
+  let mm = gsap.matchMedia();
+
+// add a media query. When it matches, the associated function will run
+mm.add("(min-width: 431px)", () => {
     
     gsap.registerPlugin(ScrollTrigger);
   
@@ -74,11 +80,11 @@ import Sti from "../components/Sti.astro";
     scrollTrigger: {
       scrub: true,
       trigger: ".logo",
-      start: "0 start",
+      start: "-300 start",
       end: "1000 center",
-      markers: true,
+     // markers: true,
     },
-    opacity:0.4,
+    opacity:0,
     duration:0.5,
     }); 
 
@@ -88,11 +94,46 @@ import Sti from "../components/Sti.astro";
       trigger: ".menu",
       start: "0 start",
       end: "1000 center",
+     // markers: true,
+    },
+    opacity:0,
+    duration:0.5,
+    }); 
+}); 
+
+//iPhone
+  // create
+  let sm = gsap.matchMedia();
+
+  // add a media query. When it matches, the associated function will run
+  sm.add("(max-width: 430px)", () => {
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".animeret", {
+    scrollTrigger: {
+      scrub: true,
+      trigger: ".logo",
+      start: "-100 start",
+      end: "1000 center",
       markers: true,
     },
     opacity:0,
     duration:0.5,
     }); 
+
+    gsap.from(".tidligere", {
+    scrollTrigger: {
+      scrub: true,
+      trigger: ".menu",
+      start: "-100 start",
+      end: "1000 center",
+      markers: true,
+    },
+    opacity:0,
+    duration:0.5,
+    }); 
+}); 
 </script>
 <style>
 
