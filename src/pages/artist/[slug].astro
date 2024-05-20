@@ -91,6 +91,83 @@ import MainLayout from "../../layouts/MainLayout.astro";
     </section>
 </MainLayout>
 
+<script>
+	import { gsap } from "gsap";
+    
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  //Web + iPad
+  // create
+  let mm = gsap.matchMedia();
+
+  // add a media query. When it matches, the associated function will run
+  mm.add("(min-width: 431px)", () => {
+	
+	gsap.registerPlugin(ScrollTrigger);
+	
+	gsap.from(".artist", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".artist",
+		start: "-300 start",
+		end: "500 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+  gsap.from(".information", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".artist",
+		start: "400 start",
+		end: "1500 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+});
+
+  //iPhone
+  // create
+  let sm = gsap.matchMedia();
+
+  // add a media query. When it matches, the associated function will run
+  sm.add("(max-width: 430px)", () => {
+	
+	gsap.registerPlugin(ScrollTrigger);
+	
+	gsap.from(".artist", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".artist",
+		start: "-300 start",
+		end: "800 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+  gsap.from(".information", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".artist",
+		start: "0 start",
+		end: "800 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+});
+</script>
+
+
 <style>
   section {
 		padding-block: 74px;
@@ -140,6 +217,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: var(--gap5);
   }
 
   h4 {
@@ -178,5 +256,42 @@ import MainLayout from "../../layouts/MainLayout.astro";
     flex-direction: column;
     align-items: flex-start;
     gap: var(--gap5);
+  }
+
+
+  @media (max-width: 1024px) {
+    section{
+		padding-inline: var(--gap6);
+	}
+
+  .tekst > *{
+    width: 485px;
+  }
+
+  .infoboks {
+    width: 340px;
+  }
+  }
+
+  @media (max-width: 430px) {
+    section{
+		padding-inline: var(--gap4);
+	}
+
+  .tekst > *{
+    width: 100%;
+  }
+
+  .information {
+    flex-direction: column;
+  }
+
+  .infoboks {
+    width: 100%;
+  }
+
+  .artist {
+    padding-bottom: 0px;
+  }
   }
 </style>
