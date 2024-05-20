@@ -139,7 +139,7 @@ img {
 
 @font-face {
   font-family: "Inter";
-  src: url("/font/inter.ttf") format("ttf");
+  src: url("/font/Inter.woff2") format("woff2");
   font-display: swap;
 }
 
