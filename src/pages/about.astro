@@ -5,8 +5,10 @@ import Video from "../components/Video.astro";
 ---
 
 <MainLayout title="Manden bag">
-    <section>
-            <h1>Manden bag</h1>
+    <section class="citat">
+      <article>
+        <h1>Manden bag</h1>
+      </article>
         <article class="citat1">
             <h2>"Livet, stemningen, menneskerne"</h2>
         </article>
@@ -32,7 +34,7 @@ import Video from "../components/Video.astro";
     <h2>Placeholder intro</h2>
     <Video></Video>
 </section>
-<section class="manden_bag">
+<section class="manden">
     <h2>Placeholder intro</h2>
     <article class="om">
         <div class="om_tekst">
@@ -51,10 +53,146 @@ import Video from "../components/Video.astro";
     </article>
 </section>
 <section class="kontakt">
-    <h2></h2>
+    <h2>Kontakt os</h2>
     <KontaktFormular></KontaktFormular>
 </section>
 </MainLayout>
+
+<script>
+	import { gsap } from "gsap";
+    
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  //Web + iPad
+  // create
+  let mm = gsap.matchMedia();
+
+  // add a media query. When it matches, the associated function will run
+  mm.add("(min-width: 431px)", () => {
+	
+	gsap.registerPlugin(ScrollTrigger);
+	
+	gsap.from(".citat", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".citat",
+		start: "-300 start",
+		end: "500 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+  gsap.from(".manden_bag", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".citat",
+		start: "-300 start",
+		end: "700 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+  gsap.from(".video", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".manden_bag",
+		start: "50 start",
+		end: "1200 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	});  
+
+  gsap.from(".manden", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".video",
+		start: "600 start",
+		end: "1500 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+  gsap.from(".kontakt", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".manden",
+		start: "200 start",
+		end: "1500 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+});
+
+  //iPhone
+  // create
+  let sm = gsap.matchMedia();
+
+  // add a media query. When it matches, the associated function will run
+  sm.add("(max-width: 430px)", () => {
+	
+	gsap.registerPlugin(ScrollTrigger);
+	
+	gsap.from(".booking", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".booking",
+		start: "-100 start",
+		end: "800 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+  gsap.from(".faq", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".button",
+		start: "-500 start",
+		end: "500 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+  gsap.from(".testimonials", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".faq",
+		start: "200 start",
+		end: "1200 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	});  
+
+  gsap.from(".kontakt", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".testimonials",
+		start: "-100 start",
+		end: "1000 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+});
+</script>
 
 <style>
 
@@ -139,6 +277,28 @@ import Video from "../components/Video.astro";
   }
 
   .manden_bag h2 {
+    display: flex;
+	justify-content: center;
+
+    padding-block: var(--gap7);
+    border-top: 2px solid var(--color-background-stroke);
+    border-bottom: 2px solid var(--color-background-stroke);
+
+    margin-bottom: 74px;
+  }
+
+  .manden h2 {
+    display: flex;
+	justify-content: center;
+
+    padding-block: var(--gap7);
+    border-top: 2px solid var(--color-background-stroke);
+    border-bottom: 2px solid var(--color-background-stroke);
+
+    margin-bottom: 74px;
+  }
+
+  .kontakt h2 {
     display: flex;
 	justify-content: center;
 
