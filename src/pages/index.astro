@@ -35,8 +35,11 @@ import Button from "../components/Button.astro";
 			Kanonproduktion har det hele lige fra de største danske artister, til de sjoveste komikere og den fedeste fest eller event.
 			Tjek vores kalender for at se det næste event tæt på dig.
 			</p>
-			<div class="large">
+		<div class="large">
 			<Button size="lg" link="/events" variant="primary">Se events</Button>
+		</div>
+		<div class="medium">
+			<Button size="me" link="/events" variant="primary">Se events</Button>
 		</div>
 		<div class="small">
 			<Button size="sm" link="/events" variant="primary">Se events</Button>
@@ -49,8 +52,11 @@ import Button from "../components/Button.astro";
 			Vi arbejder projektorienteret med artister, events og færdig produktion af radio podcast og liveoptræden.
 			Vi tilbyder en lang række af danske artister og færdige koncepter, lige fra de små lokale scener til de store venues, kontakt os nu og lad os snakke om dit næste event allerede i dag.
 			</p>
-			<div class="large">
+		<div class="large">
 			<Button size="lg" link="/booking" variant="secondary">Læs mere</Button>
+		</div>
+		<div class="medium">
+			<Button size="me" link="/events" variant="primary">Se events</Button>
 		</div>
 		<div class="small">
 			<Button size="sm" link="/booking" variant="secondary">Læs mere</Button>
@@ -230,20 +236,12 @@ import Button from "../components/Button.astro";
 </script>
 
 <style>
-
-	/* @media screen and (min-width: 1400px) {
-		.cards {
-			gap: var(--gap11);
-		}
-	} */
 	article{
 		padding-inline: var(--gap11);
 	}
 
 	.hero{
-
 		padding-block: 0px;
-
 	}
 
 	section {
@@ -284,6 +282,10 @@ import Button from "../components/Button.astro";
 	.line {
 		border-left: 2px solid var(--color-background-stroke);
 		height: 475px;
+	}
+
+	.medium {
+		display: none;
 	}
 
 	.small{
@@ -356,8 +358,25 @@ import Button from "../components/Button.astro";
 	}
 
 
-	@media (max-width: 1450px){
-		.events h2 {
+@media (max-width: 1024px){
+
+	article{
+		padding-inline: var(--gap6);
+	}
+
+	.cta {
+		gap: var(--gap4);
+	}
+
+	.events h2 {
+		padding-bottom: 30px;
+	}
+
+	.events p {
+		padding-bottom: 70px;
+	}
+
+	.events h2 {
 		width: 450px;
 		padding-top: 2rem;
 	}
@@ -373,60 +392,13 @@ import Button from "../components/Button.astro";
 	.booking p {
 		width: 450px;
 	}
-	}
-
-@media (max-width: 1024px){
-
-
-	h2{
-		font-size: var(--Headline2-medium);
-	}
-	article{
-		padding-inline: var(--gap7);
-	}
-
-	.line {
-		display: none;
-	}
-
-	.cta {
-		display: flex;
-		flex-direction: column;
-	height: auto;
-	padding: 0px var(--gap11);
-		gap: var(--gap11);
-	}
-
-	.events h2 {
-		padding-bottom: 30px;
-		font-size: var(--Headline2-medium);
-	}
-
-	.events{
-		border-bottom: 2px solid var(--color-background-stroke);
-padding-bottom: 4rem;
-	}
-
-	.events p {
-		padding-bottom: 70px;
-		font-size: var(--body-medium);
-	}
-
-	.booking h2 {
-		font-size: var(--Headline2-medium);
-	}
-
-	.booking p {
-		font-size: var(--body-medium);
-	}
 
 	.large {
         display: none;
     }
 
-    .small {
+    .medium {
         display: flex;
-    
     }
 
 	.cards {
@@ -473,12 +445,8 @@ padding-bottom: 4rem;
 }
 
 @media (max-width: 430px){
-
-	h2{
-		font-size: var(--Headline2-small);
-	}
 	article{
-		padding-inline: var(--gap7);
+		padding-inline: var(--gap4);
 	}
 
 	.line {
@@ -495,29 +463,32 @@ padding-bottom: 4rem;
 	.events h2 {
 		padding-bottom: 30px;
 		width: auto;
-		font-size: var(--Headline2-small);
 	}
 
 	.events{
 		border-bottom: 2px solid var(--color-background-stroke);
-padding-bottom: 4rem;
+		padding-bottom: 4rem;
 	}
 
 	.events p {
 		width: auto;
 		padding-bottom: 70px;
-		font-size: var(--body-small);
 	}
 
 	.booking h2 {
-		font-size: var(--Headline2-small);
 		width: auto;
 	}
 
 	.booking p {
 		width: auto;
-		font-size: var(--body-small);
 	}
+	.medium {
+        display: none;
+    }
+
+	.small {
+        display: flex;
+    }
 
 	.cards {
 		overflow: auto;

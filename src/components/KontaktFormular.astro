@@ -48,7 +48,7 @@ const { size } = Astro.props
     </div>
 
         <div class="indsend">
-        <input type="submit" value="Submit">
+        <input type="submit" value="Indsend">
         </div>
     </form>
 </div>
@@ -173,8 +173,7 @@ input[type=radio] {
 }
 
 
-@media (max-width: 1025px) {
-
+@media (max-width: 1024px) {
     form {
         gap: var(--gap4);
     }
@@ -182,12 +181,15 @@ input[type=radio] {
         flex-direction: column;
         gap: var(--gap4);
     }
-
     input, textarea {
-    width: 730px;
-}
-.knapper {
-width: 730px;
+        width: 730px;
+    }
+    .knapper {
+        width: 730px;
+    }
+    input[type=submit] {
+        font-size: var(--Button-medium);
+        width: 185px;
 }
 }
 
@@ -197,6 +199,12 @@ width: 344.5px;
 }
 .knapper {
 width: 344.5px;
+}
+
+input[type=submit] {
+    font-size: var(--Button-small);
+
+    width: 160px;
 }
 }
 

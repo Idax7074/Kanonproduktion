@@ -206,7 +206,7 @@ mm.add("(min-width: 431px)", () => {
 	scrollTrigger: {
 		scrub: true,
 		trigger: "#animated-text-strip-reverse",
-		start: "-100 start",
+		start: "-300 start",
 		end: "1000 center",
 		//markers: true,
 	},
@@ -222,8 +222,6 @@ mm.add("(min-width: 431px)", () => {
     article {
         padding-inline: var(--gap11);
     }
-
-  
 
     section {
         padding-block: 74px;
@@ -377,6 +375,15 @@ mm.add("(min-width: 431px)", () => {
         width:100%;
         margin-inline: auto;
     } 
+
+    .marquee {
+        font-size: var(--Headline2-medium);
+    }
+
+    .circle {
+        width: var(--gap3);
+        height: var(--gap3);
+    }
 }
     @media (max-width: 430px){
     .artister{
@@ -396,6 +403,15 @@ mm.add("(min-width: 431px)", () => {
     }
     .text h3 {
         font-size: 13.33px;
+    }
+
+    .marquee {
+        font-size: var(--Headline2-small);
+    }
+
+    .circle {
+        width: var(--gap2);
+        height: var(--gap2);
     }
 }
    
