@@ -126,6 +126,27 @@ import Button from "../components/Button.astro";
 </section>
 </MainLayout>
 
+<script>
+	import { gsap } from "gsap";
+    
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	
+	
+	gsap.registerPlugin(ScrollTrigger);
+	
+	gsap.from(".cta", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".hero",
+		start: "100 start",
+		end: "1000 center",
+		markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+</script>
+
 <style>
 
 	/* @media screen and (min-width: 1400px) {
