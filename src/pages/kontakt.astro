@@ -11,6 +11,57 @@ import KontaktFormular from "../components/KontaktFormular.astro";
 </section>
 </MainLayout>
 
+<script>
+	import { gsap } from "gsap";
+    
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  //Web + iPad
+  // create
+  let mm = gsap.matchMedia();
+
+  // add a media query. When it matches, the associated function will run
+  mm.add("(min-width: 431px)", () => {
+	
+	gsap.registerPlugin(ScrollTrigger);
+	
+	gsap.from(".kontakt", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".kontakt",
+		start: "-300 start",
+		end: "500 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+
+});
+
+  //iPhone
+  // create
+  let sm = gsap.matchMedia();
+
+  // add a media query. When it matches, the associated function will run
+  sm.add("(max-width: 430px)", () => {
+	
+	gsap.registerPlugin(ScrollTrigger);
+	
+	gsap.from(".kontakt", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".kontakt",
+		start: "-200 start",
+		end: "600 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	}); 
+});
+</script>
+
 <style>
 
   h1 {

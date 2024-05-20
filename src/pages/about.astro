@@ -143,11 +143,11 @@ import Video from "../components/Video.astro";
 	
 	gsap.registerPlugin(ScrollTrigger);
 	
-	gsap.from(".booking", {
+	gsap.from(".citat", {
 	scrollTrigger: {
 		scrub: true,
-		trigger: ".booking",
-		start: "-100 start",
+		trigger: ".citat",
+		start: "-200 start",
 		end: "800 center",
 		// markers: true,
 	},
@@ -155,11 +155,11 @@ import Video from "../components/Video.astro";
 	duration:0.5,
 	}); 
 
-  gsap.from(".faq", {
+  gsap.from(".manden_bag", {
 	scrollTrigger: {
 		scrub: true,
-		trigger: ".button",
-		start: "-500 start",
+		trigger: ".citat",
+		start: "-100 start",
 		end: "500 center",
 		// markers: true,
 	},
@@ -167,11 +167,11 @@ import Video from "../components/Video.astro";
 	duration:0.5,
 	}); 
 
-  gsap.from(".testimonials", {
+  gsap.from(".video", {
 	scrollTrigger: {
 		scrub: true,
-		trigger: ".faq",
-		start: "200 start",
+		trigger: ".manden_bag",
+		start: "100 start",
 		end: "1200 center",
 		// markers: true,
 	},
@@ -179,17 +179,29 @@ import Video from "../components/Video.astro";
 	duration:0.5,
 	});  
 
-  gsap.from(".kontakt", {
+  gsap.from(".manden", {
 	scrollTrigger: {
 		scrub: true,
-		trigger: ".testimonials",
-		start: "-100 start",
+		trigger: ".video",
+		start: "-200 start",
 		end: "1000 center",
 		// markers: true,
 	},
 	opacity:0,
 	duration:0.5,
 	}); 
+
+  gsap.from(".kontakt", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".manden",
+		start: "250 start",
+		end: "1500 center",
+		// markers: true,
+	},
+	opacity:0,
+	duration:0.5,
+	});
 
 });
 </script>
