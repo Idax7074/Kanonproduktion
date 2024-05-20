@@ -121,6 +121,12 @@ import Button from "../components/Button.astro";
     
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
 	
+     //Web + iPad
+  // create
+  let mm = gsap.matchMedia();
+
+// add a media query. When it matches, the associated function will run
+mm.add("(min-width: 431px)", () => {
 	
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -128,11 +134,11 @@ import Button from "../components/Button.astro";
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".logo",
-		start: "0 start",
+		start: "-300 start",
 		end: "1000 center",
 		//markers: true,
 	},
-    opacity:0.4,
+    opacity:0,
 	duration:0.5,
 	}); 
 
@@ -161,7 +167,55 @@ import Button from "../components/Button.astro";
 	duration:0.5,
 	}); 
 	
+});
+//iPhone
+  // create
+  let sm = gsap.matchMedia();
+
+  // add a media query. When it matches, the associated function will run
+  sm.add("(max-width: 430px)", () => {
 	
+	gsap.registerPlugin(ScrollTrigger);
+	
+    gsap.from(".juni", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".logo",
+		start: "-100 start",
+		end: "1000 center",
+		//markers: true,
+	},
+    opacity:0,
+	duration:0.5,
+	}); 
+
+
+    gsap.from(".juli", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".artister",
+		start: "-100 start",
+		end: "1000 center",
+		//markers: true,
+	},
+    opacity:0,
+	duration:0.5,
+	}); 
+
+    gsap.from(".august", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: "#animated-text-strip-reverse",
+		start: "-100 start",
+		end: "1000 center",
+		//markers: true,
+	},
+    opacity:0,
+	duration:0.5,
+	}); 
+	
+
+});
 </script>
 
 <style>
