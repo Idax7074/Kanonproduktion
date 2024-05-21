@@ -9,9 +9,9 @@ import Video from "../components/Video.astro";
       <article>
         <h1>Manden bag</h1>
       </article>
-        <article class="citat1">
+        <!-- <article class="citat1">
             <h2>"Livet, stemningen, menneskerne"</h2>
-        </article>
+        </article> -->
     </section>
 <section class="manden_bag">
     <article class="om">
@@ -21,35 +21,37 @@ import Video from "../components/Video.astro";
                 <div class="citat2">
                     <span>"</span>
                     <div class="tekst">
-                       <p>Lorem ipsum</p>
+                       <p>Jeg har ikke tænkt mig at stoppe</p>
                     <p>-Torsten Gutterman</p> 
                     </div>
             </div>
-                <p>Vi er et firma der tilbyder professionelle skræddersyet løsninger i underholdningsbranchen. 
-                Vi arbejder projektorienteret med artister, events og færdig produktion af radiobroadcast og liveoptræden. Kanonproduktion </p>
+                <p>Mit navn er Torsten og jeg er manden bag Kanonproduktion.
+                  Jeg er 56 år gammel, men har ikke tænkt mig at stoppe.</p>
+                 <p>Selvom det godt kan se sådan ud, så har jeg ikke altid arbejdet i dette fag, og det lå faktisk heller ikke i kortene. Da min far var landmand i Slagelse lå det nok mere til højrebenet, at det var landmand jeg skulle være, og tog også en landmandsuddannelse - men det var nu ikke helt min fars 180 grise og 200 tønder land der trak så forfærdeligt meget i mig.</p> 
+                 <p> Jeg startede derfor inden for denne branche med at lave lokal radio og derefter startede Kanonproduktion i 2001. </p>
         </div>
     </article>
 </section>
 <section class="video">
-    <h2>Placeholder intro</h2>
+    <h2>“Mit arbejde er mit drive”</h2>
     <Video></Video>
 </section>
 <section class="manden">
-    <h2>Placeholder intro</h2>
     <article class="om">
         <div class="om_tekst">
             <div class="citat2 blue">
                 <span>"</span>
                 <div class="tekst">
-                   <p>Lorem ipsum</p>
+                   <p>Kanonproduktion er i konstant bevægelse</p>
                 <p>-Torsten Gutterman</p> 
                 </div>
         </div>
-            <p>Vi er et firma der tilbyder professionelle skræddersyet løsninger i underholdningsbranchen. 
-            Vi arbejder projektorienteret med artister, events og færdig produktion af radiobroadcast og liveoptræden. Kanonproduktion </p>
+            <p>Når vi får en ide, så skal den føres ud i verden, det er netop derfor min passion er så stor for Kanonproduktion.
+              Vi har gennem årene hjulpet kunder, store som små med at føre deres ideer ud i livet og vil blive ved med at gøre det de næste mange år.</p>
+              <p>Vi sætter en stor ære i at skabe lige præcis det DU gerne vil have og elsker at høre alle de ideer folk har til events, shows, koncerter eller noget helt fjerde - derfor er vores kunder og samarbejdspartnere dem der er i fokus 100%, når vi arbejder på at skabe noget fedt sammen.</p>
     </div>
     <div class="line"></div>
-    <img src="/img/uffe_holm.webp" alt="">
+    <img src="/img/instrumenter-frame.webp" alt="">
     </article>
 </section>
 <section class="kontakt">
@@ -210,7 +212,7 @@ import Video from "../components/Video.astro";
 
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
   }
     article{
 		padding-inline: var(--gap11);
@@ -222,6 +224,10 @@ import Video from "../components/Video.astro";
 
 	section {
 		padding-block: 74px;
+	}
+
+.manden_bag {
+		padding-block: 0px;
 	}
 
     .line {
