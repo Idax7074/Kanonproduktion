@@ -9,9 +9,6 @@ import Video from "../components/Video.astro";
       <article>
         <h1>Manden bag</h1>
       </article>
-        <!-- <article class="citat1">
-            <h2>"Livet, stemningen, menneskerne"</h2>
-        </article> -->
     </section>
 <section class="manden_bag">
     <article class="om">
@@ -74,13 +71,13 @@ import Video from "../components/Video.astro";
 	
 	gsap.registerPlugin(ScrollTrigger);
 	
-	gsap.from(".citat", {
+	gsap.from(".manden_bag", {
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".citat",
-		start: "-300 start",
-		end: "500 center",
-		// markers: true,
+		start: "-450 start",
+		end: "800 center",
+		markers: true,
 	},
 	opacity:0,
 	duration:0.5,
@@ -217,10 +214,6 @@ import Video from "../components/Video.astro";
     article{
 		padding-inline: var(--gap11);
 	}
-
-  h1 {
-    padding-bottom: 74px;
-  }
 
 	section {
 		padding-block: 74px;

@@ -6,7 +6,9 @@ import KontaktFormular from "../components/KontaktFormular.astro";
 <section class="kontakt">
     <article>
     <h1>Kontakt</h1>
+    <div class="formular">
     <KontaktFormular></KontaktFormular>
+  </div>
     </article>
 </section>
 </MainLayout>
@@ -25,12 +27,12 @@ import KontaktFormular from "../components/KontaktFormular.astro";
 	
 	gsap.registerPlugin(ScrollTrigger);
 	
-	gsap.from(".kontakt", {
+	gsap.from(".formular", {
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".kontakt",
 		start: "-300 start",
-		end: "500 center",
+		end: "400 center",
 		// markers: true,
 	},
 	opacity:0,

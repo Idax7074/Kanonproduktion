@@ -65,13 +65,13 @@ import Button from "../components/Button.astro";
 	
 	gsap.registerPlugin(ScrollTrigger);
 	
-	gsap.from(".booking", {
+	gsap.from(".om", {
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".booking",
-		start: "-300 start",
+		start: "-250 start",
 		end: "500 center",
-		// markers: true,
+		 //markers: true,
 	},
 	opacity:0,
 	duration:0.5,
@@ -93,9 +93,9 @@ import Button from "../components/Button.astro";
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".faq",
-		start: "300 start",
+		start: "0 start",
 		end: "1200 center",
-		// markers: true,
+		//markers: true,
 	},
 	opacity:0,
 	duration:0.5,
