@@ -11,10 +11,10 @@ console.log("props",Astro.props)
     <article class={status}>
         <div class="hvem">
             <div class="kunstner">
-                <div class="billede">
+                <a href={`../../artist/${slug}`} class="billede">
                     <span class="tekst">Udsolgt</span>
                     <img src={image} alt="billede af artisten">
-                </div>
+                </a>
                 <h3>{name}</h3>
             </div>
             <div class="type">

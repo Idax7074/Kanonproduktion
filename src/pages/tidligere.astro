@@ -77,26 +77,15 @@ mm.add("(min-width: 431px)", () => {
       gsap.from(".animeret", {
     scrollTrigger: {
       scrub: true,
-      trigger: ".logo",
+      trigger: ".intro",
       start: "-300 start",
-      end: "1000 center",
-     // markers: true,
+      end: "800 center",
+     //markers: true,
     },
-    opacity:0,
+    opacity:0.2,
     duration:0.5,
     }); 
 
-    gsap.from(".tidligere", {
-    scrollTrigger: {
-      scrub: true,
-      trigger: ".menu",
-      start: "0 start",
-      end: "1000 center",
-     // markers: true,
-    },
-    opacity:0,
-    duration:0.5,
-    }); 
 }); 
 
 //iPhone
@@ -111,26 +100,15 @@ mm.add("(min-width: 431px)", () => {
     gsap.from(".animeret", {
     scrollTrigger: {
       scrub: true,
-      trigger: ".logo",
+      trigger: ".intro",
       start: "-300 start",
-      end: "1000 center",
+      end: "800 center",
       //markers: true,
     },
-    opacity:0,
+    opacity:0.2,
     duration:0.5,
     }); 
 
-    gsap.from(".tidligere", {
-    scrollTrigger: {
-      scrub: true,
-      trigger: ".menu",
-      start: "-100 start",
-      end: "1000 center",
-     // markers: true,
-    },
-    opacity:0,
-    duration:0.5,
-    }); 
 }); 
 </script>
 <style>
@@ -139,9 +117,9 @@ article {
         padding-inline: var(--gap11);
     }
 
-
     section {
-        padding-block: 74px;
+        margin-top: 80px;
+        margin-bottom: 80px;
     }
         a {
         font-size: var(--Label-large);
@@ -186,18 +164,18 @@ article {
     }
 
     .tidligere1 a {
-        background-color: var(--color-background-button-secondary);
+        background-color: var(--color-background-button-primary);
         outline-style: solid;
-        outline-color: var(--color-background-button-secondary-stroke);
+        outline-color: var(--color-background-button-primary-stroke);
         outline-width: 2px;
         color: var(--color-background-button-hover);
     }
 
     .tidligere1 a:hover {
         background-color: var(--color-button-primary);
-        color: var(--color-background-button-secondary);
+        color: var(--color-background-button-primary);
         outline-style: solid;
-        outline-color: var(--color-background-button-secondary);
+        outline-color: var(--color-background-button-primary);
         outline-width: 2px;
     }
 
@@ -207,7 +185,7 @@ article {
 		column-gap: var(--gap6);
         row-gap: var(--gap7);
 		justify-content: flex-start;
-        padding-block: var(--gap7);
+        padding-top: 40px;
 	}
 
     #animated-text-strip{
@@ -274,6 +252,11 @@ article {
 }
 
     @media (max-width: 430px) {
+
+        section {
+		margin-top: 60px;
+		margin-bottom: 60px;
+	}
         a {
             font-size: var(--Label-small);
         }
@@ -282,6 +265,7 @@ article {
         }
         .artister {
             column-gap: var(--gap3);
+            padding-top: 20px;
         }
         .text h3 {
         font-size: 13.33px;

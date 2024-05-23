@@ -32,10 +32,10 @@ import KontaktFormular from "../components/KontaktFormular.astro";
 		scrub: true,
 		trigger: ".kontakt",
 		start: "-300 start",
-		end: "400 center",
+		end: "345 center",
 		// markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
@@ -50,15 +50,15 @@ import KontaktFormular from "../components/KontaktFormular.astro";
 	
 	gsap.registerPlugin(ScrollTrigger);
 	
-	gsap.from(".kontakt", {
+	gsap.from(".formular", {
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".kontakt",
 		start: "-200 start",
-		end: "600 center",
+		end: "500 center",
 		// markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 });
@@ -67,12 +67,12 @@ import KontaktFormular from "../components/KontaktFormular.astro";
 <style>
 
   h1 {
-    padding-bottom: 74px;		
     padding-inline: var(--gap11);
   }
 
 	section {
-		padding-block: 74px;
+		margin-top: 80px;
+		margin-bottom: 80px;
 	}
 
   @media (max-width:1024px) {
@@ -86,5 +86,10 @@ import KontaktFormular from "../components/KontaktFormular.astro";
     h1 {		
     padding-inline: var(--gap4);
   }
+
+  section {
+		margin-top: 60px;
+		margin-bottom: 60px;
+	}
   }
 </style>

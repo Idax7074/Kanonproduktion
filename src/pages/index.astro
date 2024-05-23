@@ -28,41 +28,7 @@ import Button from "../components/Button.astro";
 <section class="hero">
 	<Video/>
 </section>
-<section class="cta">
-	<div class="events">
-		<h2>Find dit næste event</h2>
-		<p>Er du også på udkig efter de fedeste events, den næste gave til fødselaren eller bare en unik oplevelse med dem du holder af?
-			Kanonproduktion har det hele lige fra de største danske artister, til de sjoveste komikere og den fedeste fest eller event.
-			Tjek vores kalender for at se det næste event tæt på dig.
-			</p>
-		<div class="large">
-			<Button size="lg" link="/events" variant="primary">Se events</Button>
-		</div>
-		<div class="medium">
-			<Button size="me" link="/events" variant="primary">Se events</Button>
-		</div>
-		<div class="small">
-			<Button size="sm" link="/events" variant="primary">Se events</Button>
-		</div>
-	</div>
-	<div class="line"></div>
-	<div class="booking">
-		<h2>Booking og promoting</h2>
-		<p>Hos kanonproduktion tilbyder vi professionelle skræddersyet løsninger i underholdningsbranchen.
-			Vi arbejder projektorienteret med artister, events og færdig produktion af radio podcast og liveoptræden.
-			Vi tilbyder en lang række af danske artister og færdige koncepter, lige fra de små lokale scener til de store venues, kontakt os nu og lad os snakke om dit næste event allerede i dag.
-			</p>
-		<div class="large">
-			<Button size="lg" link="/booking" variant="secondary">Læs mere</Button>
-		</div>
-		<div class="medium">
-			<Button size="me" link="/events" variant="primary">Se events</Button>
-		</div>
-		<div class="small">
-			<Button size="sm" link="/booking" variant="secondary">Læs mere</Button>
-		</div>
-	</div>
-</section>
+
 <section class="kommende_events">
 	<h2>Kommende events</h2>
 	<article class="cards">
@@ -81,6 +47,43 @@ import Button from "../components/Button.astro";
             )}
 	</article>
 </section>
+
+<section class="cta">
+	<div class="events">
+		<h2>Find dit næste event</h2>
+		<p>Er du også på udkig efter de fedeste events, den næste gave til fødselaren eller bare en unik oplevelse med dem du holder af?
+			Kanonproduktion har det hele lige fra de største danske artister, til de sjoveste komikere og den fedeste fest eller event.
+			Tjek vores kalender for at se det næste event tæt på dig.
+			</p>
+		<div class="large">
+			<Button size="lg" link="/events" variant="primary">Se events</Button>
+		</div>
+		<div class="medium">
+			<Button size="me" link="/events" variant="primary">Se events</Button>
+		</div>
+		<div class="small">
+			<Button size="sm" link="/events" variant="primary">Se events</Button>
+		</div>
+	</div>
+
+	<div class="booking">
+		<h2>Booking og promoting</h2>
+		<p>Hos kanonproduktion tilbyder vi professionelle skræddersyet løsninger i underholdningsbranchen.
+			Vi arbejder projektorienteret med artister, events og færdig produktion af radio podcast og liveoptræden.
+			Vi tilbyder en lang række af danske artister og færdige koncepter, lige fra de små lokale scener til de store venues, kontakt os nu og lad os snakke om dit næste event allerede i dag.
+			</p>
+		<div class="large">
+			<Button size="lg" link="/booking" variant="secondary">Læs mere</Button>
+		</div>
+		<div class="medium">
+			<Button size="me" link="/events" variant="secondary">Se events</Button>
+		</div>
+		<div class="small">
+			<Button size="sm" link="/booking" variant="secondary">Læs mere</Button>
+		</div>
+	</div>
+</section>
+
 <section class="andre_siger">
 	<h2>Hvad andre siger om os</h2>
 	<article class="testimonials">
@@ -118,7 +121,7 @@ import Button from "../components/Button.astro";
 		</div>
 		<div class="testimonial">
 			<div class="stars">
-				<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="">
 			<img src="/img/star_1.svg" alt="">
 			<img src="/img/star_1.svg" alt="">
 			<img src="/img/star_1.svg" alt="">
@@ -138,52 +141,53 @@ import Button from "../components/Button.astro";
     
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
 	
-	 //Web + iPad
+	 //Web 
   // create
-  let mm = gsap.matchMedia();
+  let la = gsap.matchMedia();
 
   // add a media query. When it matches, the associated function will run
-  mm.add("(min-width: 431px)", () => {
+  la.add("(min-width: 431px)", () => {
 
 	gsap.registerPlugin(ScrollTrigger);
 	
-	gsap.from(".cta", {
-	scrollTrigger: {
-		scrub: true,
-		trigger: ".hero",
-		start: "100 start",
-		end: "1000 center",
-		 //markers: true,
-	},
-	opacity:0,
-	duration:0.5,
-	}); 
-
 	gsap.from(".kommende_events", {
 	scrollTrigger: {
 		scrub: true,
-		trigger: ".cta",
-		start: "-100 start",
-		end: "1000 center",
+		trigger: ".hero",
+		start: "200 start",
+		end: "1100 center",
+		// markers: true,
+	},
+	opacity:0.2,
+	duration:0.5,
+	}); 
+
+	gsap.from(".cta", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".kommende_events",
+		start: "100 start",
+		end: "900 center",
 		//markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
 	gsap.from(".andre_siger", {
 	scrollTrigger: {
 		scrub: true,
-		trigger: ".kommende_events",
-		start: "150 start",
-		end: "1000 center",
+		trigger: ".cta",
+		start: "-100 start",
+		end: "900 center",
 		//markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
 });
+
 
 //iPhone
   // create
@@ -194,40 +198,40 @@ import Button from "../components/Button.astro";
 	
 	gsap.registerPlugin(ScrollTrigger);
 	
-	gsap.from(".cta", {
+	gsap.from(".kommende_events", {
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".hero",
-		start: "-150 start",
+		start: "0 start",
 		end: "600 center",
-		 //markers: true,
+		//markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
 
-	gsap.from(".kommende_events", {
+	gsap.from(".cta", {
 	scrollTrigger: {
 		scrub: true,
-		trigger: ".cta",
-		start: "250 start",
-		end: "1000 center",
+		trigger: ".kommende_events",
+		start: "0 start",
+		end: "900 center",
 		//markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
 	gsap.from(".andre_siger", {
 	scrollTrigger: {
 		scrub: true,
-		trigger: ".kommende_events",
+		trigger: ".cta",
 		start: "0 start",
 		end: "1000 center",
 		//markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
@@ -241,11 +245,12 @@ import Button from "../components/Button.astro";
 	}
 
 	.hero{
-		padding-block: 0px;
+		margin-block: 0px;
 	}
 
 	section {
-		padding-block: 74px;
+		margin-top: 80px;
+		margin-bottom: 80px;
 	}
 
 	.cta {
@@ -253,35 +258,48 @@ import Button from "../components/Button.astro";
 		justify-content: center;
 		align-items: center;
 
-		padding: 0px var(--gap11);
-		gap: var(--gap13);
-		height: 520px;
+		padding: 0px 0px;
+		border-top: 2px solid var(--color-background-stroke);
+	}
+
+	.events {
+		height: 500px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-end;
+		
+		border-right: 2px solid var(--color-background-stroke);
 	}
 	.events h2 {
 		color: var(--color-text-h2-tertiary);
-		padding-bottom: 30px;
-		width: 500px;
+	padding-bottom: 30px;
+	width: 550px;
 	}
 
 	.events p {
-		width: 500px;
-		padding-bottom: 70px;
+	width: 550px;
+	padding-bottom: 100px;
 	}
-
+	
+	.booking {
+	height: 500px;
+	width: 100%;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: flex-end;
+	}
 	.booking h2 {
-		color: var(--color-text-h2-secondary);
-		padding-bottom: 30px;
-		width: 500px;
+	color: var(--color-text-h2-secondary);
+	padding-bottom: 30px;
+	width: 550px;
 	}
 
 	.booking p {
-		width: 550px;
-		padding-bottom: 70px;
-	}
-
-	.line {
-		border-left: 2px solid var(--color-background-stroke);
-		height: 475px;
+	width: 550px;
+	padding-bottom: 100px;
 	}
 
 	.medium {
@@ -292,10 +310,20 @@ import Button from "../components/Button.astro";
 		display: none;
 	}
 
+	.large {
+    display: flex;
+    width: 100%;
+    height: 3px;
+    align-items: center;
+	justify-content: center;
+    flex-shrink: 0;
+    border-bottom: 2px solid var(--color-background-stroke);
+  }
+
 	.kommende_events {
 		display: flex;
 		flex-direction: column;
-		gap: 74px;
+		gap: 40px;
 	}
 
 	.kommende_events h2 {
@@ -315,13 +343,13 @@ import Button from "../components/Button.astro";
 	.andre_siger {
 		display: flex;
 		flex-direction: column;
-		gap: 74px;
+
+		margin-top: 100px;
 	}
 	
 	.andre_siger h2 {
 		padding-block: var(--gap7);
 		border-top: 2px solid var(--color-background-stroke);
-		border-bottom: 2px solid var(--color-background-stroke);
 
 		display: flex;
 		justify-content: center;
@@ -365,16 +393,12 @@ import Button from "../components/Button.astro";
 		padding-inline: var(--gap6);
 	}
 
-	.cta {
-		gap: var(--gap4);
-	}
-
 	.events h2 {
 		padding-bottom: 30px;
 	}
 
 	.events p {
-		padding-bottom: 70px;
+		padding-bottom: 100px;
 	}
 
 	.events h2 {
@@ -401,6 +425,16 @@ import Button from "../components/Button.astro";
     .medium {
         display: flex;
     }
+
+	.medium {
+    display: flex;
+    width: 100%;
+    height: 3px;
+    align-items: center;
+	justify-content: center;
+    flex-shrink: 0;
+    border-bottom: 2px solid var(--color-background-stroke);
+  }
 
 	.cards {
 		overflow: auto;
@@ -446,19 +480,20 @@ import Button from "../components/Button.astro";
 }
 
 @media (max-width: 430px){
+
+	section {
+		margin-top: 60px;
+		margin-bottom: 60px;
+	}
 	article{
 		padding-inline: var(--gap4);
-	}
-
-	.line {
-		display: none;
 	}
 
 	.cta {
 		display: flex;
 		flex-direction: column;
-	height: auto;
-	padding: 0px var(--gap7);
+		height: auto;
+		padding: 0px 0px;
 	}
 
 	.events h2 {
@@ -467,13 +502,25 @@ import Button from "../components/Button.astro";
 	}
 
 	.events{
-		border-bottom: 2px solid var(--color-background-stroke);
 		padding-bottom: 4rem;
+		border-right: 0px;
+
+		height: fit-content;
 	}
 
 	.events p {
 		width: auto;
 		padding-bottom: 70px;
+		padding-inline: var(--gap4);
+	}
+
+	.andre_siger {
+		margin-top: 80px;
+	}
+
+
+	.booking {
+		height: fit-content;
 	}
 
 	.booking h2 {
@@ -482,6 +529,7 @@ import Button from "../components/Button.astro";
 
 	.booking p {
 		width: auto;
+		padding-inline: var(--gap4);
 	}
 	.medium {
         display: none;
@@ -489,7 +537,18 @@ import Button from "../components/Button.astro";
 
 	.small {
         display: flex;
+		padding-inline: 0px;
     }
+
+	.small {
+    display: flex;
+    width: 100%;
+    height: 3px;
+    align-items: center;
+	justify-content: center;
+    flex-shrink: 0;
+    border-bottom: 2px solid var(--color-background-stroke);
+  }
 
 	.cards {
 		overflow: auto;

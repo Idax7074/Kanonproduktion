@@ -28,14 +28,14 @@ import Button from "../components/Button.astro";
         <Button size="sm" link="/kontakt" variant="secondary">Læs mere</Button>
         </div>
   </div>
-  <img src="/img/uffe_holm.webp" alt="">
+  <img src="/img/instrumenter-frame.webp" alt="">
   </article>
 </section>
 <section class="faq">
     <h2>Faq</h2>
-    <article class="FAQ">
+    <div class="FAQ">
     <Faq></Faq>
-</article>
+    </div>
 </section>
 <section class="testimonials">
  <h2>Hvad artisterne siger</h2>
@@ -73,7 +73,7 @@ import Button from "../components/Button.astro";
 		end: "500 center",
 		 //markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
@@ -81,11 +81,11 @@ import Button from "../components/Button.astro";
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".button",
-		start: "-600 start",
+		start: "-400 start",
 		end: "500 center",
-		// markers: true,
+		 //markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
@@ -94,10 +94,10 @@ import Button from "../components/Button.astro";
 		scrub: true,
 		trigger: ".faq",
 		start: "0 start",
-		end: "1200 center",
+		end: "1000 center",
 		//markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	});  
 
@@ -105,11 +105,11 @@ import Button from "../components/Button.astro";
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".testimonials",
-		start: "-200 start",
-		end: "1000 center",
+		start: "-100 start",
+		end: "800 center",
 		// markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
@@ -124,15 +124,15 @@ import Button from "../components/Button.astro";
 	
 	gsap.registerPlugin(ScrollTrigger);
 	
-	gsap.from(".booking", {
+	gsap.from(".om", {
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".booking",
 		start: "-300 start",
-		end: "800 center",
-		// markers: true,
+		end: "700 center",
+		 //markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
@@ -144,7 +144,7 @@ import Button from "../components/Button.astro";
 		end: "500 center",
 		// markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
@@ -153,10 +153,10 @@ import Button from "../components/Button.astro";
 		scrub: true,
 		trigger: ".faq",
 		start: "200 start",
-		end: "1200 center",
+		end: "900 center",
 		// markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	});  
 
@@ -165,10 +165,10 @@ import Button from "../components/Button.astro";
 		scrub: true,
 		trigger: ".testimonials",
 		start: "-100 start",
-		end: "1000 center",
-		// markers: true,
+		end: "700 center",
+		 //markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
@@ -193,7 +193,8 @@ import Button from "../components/Button.astro";
   }
 
 	section {
-		padding-block: 74px;
+    margin-top: 80px;
+    margin-bottom: 80px;
 	}
 
   .line {
@@ -243,6 +244,14 @@ import Button from "../components/Button.astro";
 		border-bottom: 2px solid var(--color-background-stroke);
   }
 
+  .tekst {
+    width: 100%;
+  }
+
+  .FAQ {
+    padding-top: 40px;
+  }
+
   .tekst h2{
     color: var(--color-text-h2-secondary);
     padding-bottom: 30px;
@@ -258,7 +267,7 @@ import Button from "../components/Button.astro";
 
   .button {
     display: flex;
-    width: 800px;
+    width: 100%;
     height: 3px;
     align-items: center;
     flex-shrink: 0;
@@ -316,12 +325,21 @@ import Button from "../components/Button.astro";
   }
 
   @media (max-width: 430px) {
+
+    section {
+		margin-top: 60px;
+		margin-bottom: 60px;
+	}
     article{
 		padding-inline: var(--gap4);
 	}
 
   .tekst > * {
     width: 20rem;
+  }
+
+  .FAQ {
+    padding-top: 20px;
   }
 
   .large {

@@ -50,7 +50,8 @@ import MainLayout from "../../layouts/MainLayout.astro";
 <MainLayout title="Artist">
     <section class="artist">
         <h1>{person.name}</h1>
-        <img src={`/img/${person.img}`} alt="">
+        <img class="image web" src={`/img/${person.img}`} alt="">
+        <img class="image phone" src={`/img/${person.image}`} alt="">
         <a class="tidligere" href="/events">
           <div class="pil">&#10094;</div>
           <p>Andre artister</p>
@@ -105,15 +106,15 @@ import MainLayout from "../../layouts/MainLayout.astro";
 	
 	gsap.registerPlugin(ScrollTrigger);
 	
-	gsap.from(".artist", {
+	gsap.from(".image", {
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".artist",
 		start: "-300 start",
-		end: "500 center",
-		// markers: true,
+		end: "200 center",
+		 //markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
@@ -121,11 +122,11 @@ import MainLayout from "../../layouts/MainLayout.astro";
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".artist",
-		start: "400 start",
-		end: "1500 center",
+		start: "100 start",
+		end: "1000 center",
 		// markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
@@ -140,15 +141,15 @@ import MainLayout from "../../layouts/MainLayout.astro";
 	
 	gsap.registerPlugin(ScrollTrigger);
 	
-	gsap.from(".artist", {
+	gsap.from(".image", {
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".artist",
-		start: "-300 start",
-		end: "800 center",
+		start: "-400 start",
+		end: "700 center",
 		// markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
@@ -160,7 +161,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 		end: "800 center",
 		// markers: true,
 	},
-	opacity:0,
+	opacity:0.2,
 	duration:0.5,
 	}); 
 
@@ -171,21 +172,26 @@ import MainLayout from "../../layouts/MainLayout.astro";
 <style>
 
   img{
-    width: 70%;
+    width: 100%;
     height: auto;
     margin-inline: auto;
   }
   section {
-		padding-block: 74px;
+    margin-top: 80px;
+		margin-bottom: 80px;
     padding-inline: var(--gap11);
 	}
   h1{
     text-align: center;
-    padding-bottom: 74px;
+    padding-bottom: 80px;
+  }
+
+  .phone {
+    display: none;
   }
 
   .tidligere{
-    padding-top: 74px;
+    padding-top: 30px;
 
     display: flex;
     flex-direction: row;
@@ -216,14 +222,14 @@ import MainLayout from "../../layouts/MainLayout.astro";
   }
 
   .tekst > *{
-    width: 539px;
+    width: 650px;
   }
 
   .information {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: var(--gap5);
+    justify-content: flex-start;
+    gap: 15rem;
   }
 
   h4 {
@@ -281,6 +287,14 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
   @media (max-width: 430px) {
 
+    .web {
+    display: none;
+  }
+
+  .phone {
+    display: flex;
+  }
+
     img{
     width: 100%;
     height: auto;
@@ -288,6 +302,8 @@ import MainLayout from "../../layouts/MainLayout.astro";
   }
     section{
 		padding-inline: var(--gap4);
+    margin-top: 60px;
+		margin-bottom: 60px;
 	}
 
   .tekst > *{
@@ -304,6 +320,10 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
   .artist {
     padding-bottom: 0px;
+  }
+
+  .information {
+    gap: 30px;
   }
   }
 </style>
