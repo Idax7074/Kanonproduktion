@@ -77,7 +77,8 @@ import Button from "../components/Button.astro";
         <article class="artister">
             {filterJuni.map((person) => 
             <EventCard 
-                image={`/img/${person.image}`} 
+                image={`/img/${person.image}`}
+                alt={`${person.alt}`}  
                 status={person.status} 
                 name={person.name} 
                 price={person.price} 
@@ -99,7 +100,8 @@ import Button from "../components/Button.astro";
         <article class="artister">
             {filterJuli.map((person) => 
                 <EventCard 
-                    image={`/img/${person.image}`} 
+                    image={`/img/${person.image}`}
+                    alt={`${person.alt}`} 
                     status={`${person.status}`} 
                     name={person.name} 
                     price={person.price} 
@@ -121,7 +123,8 @@ import Button from "../components/Button.astro";
         <article class="artister">
             {filterAugust.map((person) => 
                 <EventCard 
-                    image={`/img/${person.image}`} 
+                    image={`/img/${person.image}`}
+                    alt={`${person.alt}`}  
                     status={`${person.status}`} 
                     name={person.name} 
                     price={person.price} 

@@ -1,6 +1,6 @@
 ---
 //Props er en stedholder for vores ting fra databasen
-const { image, name, price, date, place, type, status, slug, link } = Astro.props;
+const { image, alt, name, price, date, place, type, status, slug, link } = Astro.props;
 
 
 
@@ -13,7 +13,7 @@ console.log("props",Astro.props)
             <div class="kunstner">
                 <a href={`../../artist/${slug}`} class="billede">
                     <span class="tekst">Udsolgt</span>
-                    <img src={image} alt="billede af artisten">
+                    <img src={image} alt={alt}>
                 </a>
                 <h3>{name}</h3>
             </div>
