@@ -50,8 +50,8 @@ import MainLayout from "../../layouts/MainLayout.astro";
 <MainLayout title="Artist">
     <section class="artist">
         <h1>{person.name}</h1>
-        <img class="image web" src={`/img/${person.img}`} alt="">
-        <img class="image phone" src={`/img/${person.image}`} alt="">
+        <img class="image web" src={`/img/${person.img}`} alt={`${person.alt}`} ">
+        <img class="image phone" src={`/img/${person.image}`} alt={`${person.alt}`}>
         <a class="tidligere" href="/events">
           <div class="pil">&#10094;</div>
           <p>Andre artister</p>

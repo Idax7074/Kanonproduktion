@@ -1,1 +1,61 @@
-<video autoplay muted loop src="/img/kanonproduktion_video.mp4" width="100%" height="auto" autoplay></video>
+<div class="hero-video">
+    <div class="hero-video_container"></div>
+    <div class="hero-video_video">
+        <video playsinline="" autoplay muted loop src="/img/kanonproduktion_video.mp4"></video>
+    </div>
+</div>
+
+
+
+<style>
+    .hero-video {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 16/9;
+        align-content: center;
+        justify-content: center; 
+    }
+
+    .hero-video_container {
+        position: relative;
+        z-index: 10;
+    }
+
+    .hero-video_video {
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        display: block;
+        vertical-align: middle;
+    }
+
+    @media screen and (min-width:768px) {
+        .hero-video {
+            display: grid;
+        }
+    }
+
+    @media (max-width: 1024px){
+        .hero-video_video {
+            height: auto;
+        }
+
+        .hero-video {
+            height: auto;
+        }
+
+        video {
+            height: auto;
+        }
+    }
+</style>

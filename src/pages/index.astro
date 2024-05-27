@@ -24,10 +24,9 @@ import Video from "../components/Video.astro";
 import Button from "../components/Button.astro";
 ---
 
-<MainLayout title="Forside">
-<section class="hero">
+<MainLayout title="Kanonproduktion: booking, promoting og events">
 	<Video/>
-</section>
+
 
 <section class="kommende_events">
 	<h2>Kommende events</h2>
@@ -35,6 +34,7 @@ import Button from "../components/Button.astro";
 		{filterJuni.map((person) => 
             <EventCard 
                 image={`/img/${person.image}`} 
+                alt={`${person.alt}`} 
                 status={person.status}
                 name={person.name} 
                 price={person.price} 
@@ -90,7 +90,7 @@ import Button from "../components/Button.astro";
 		<div class="testimonial">
 			<div class="stars">
 				<img src="/img/star_1.svg" alt="">
-			<img src="/img/star_1.svg" alt="">
+			<img src="/img/star_1.svg" alt="Stjerne fra testimonials">
 			<img src="/img/star_1.svg" alt="">
 			<img src="/img/star_1.svg" alt="">
 		</div>
