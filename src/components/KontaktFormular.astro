@@ -4,7 +4,7 @@ import Button from "./Button.astro"
 ---
 <div class="container">
     <div class="form">
-    <form action="contact_form" data-netlify="true">
+    <form name="contact_form" method="POST" data-netlify="true">
 
         <div class="flex">
             <div class="firma">
@@ -46,7 +46,10 @@ import Button from "./Button.astro"
             </div>
         </div>
     </div>
-    <button class="knap" type="submit">Indsend</button>
+
+        <div class="indsend">
+       <button type="submit">Indsend</button>
+        </div>
     </form>
 </div>
 <style> 
@@ -101,9 +104,8 @@ textarea::placeholder  {
 button[type=submit] {
     background-color: var(--color-background-button-secondary);
     color: var(--color-button-primary);
-    display: flex;
     border: none;
-    outline: none;
+    display: flex;
     padding: var(--spacing-vertical-button-lg) var(--spacing-horizontal-button-lg);
     justify-content: center;
     align-items: center;
