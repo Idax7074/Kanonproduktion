@@ -29,12 +29,7 @@ import Video from "../components/Video.astro";
         </div>
     </article>
 </section>
-<section class="video">
-    <h2>“Mit arbejde er mit drive”</h2>
-    <div class="videoen">
-      <Video></Video>
-    </div>
-</section>
+
 <section class="manden">
     <article class="om">
         <div class="om_tekst">
@@ -77,32 +72,21 @@ import Video from "../components/Video.astro";
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".citat",
-		start: "-300 start",
-		end: "600 center",
+		start: "-400 start",
+		end: "500 center",
 		// markers: true,
 	},
 	opacity:0.2,
 	duration:0.5,
 	}); 
 
-  gsap.from(".video", {
-	scrollTrigger: {
-		scrub: true,
-		trigger: ".manden_bag",
-		start: "50 start",
-		end: "1200 center",
-		// markers: true,
-	},
-	opacity:0.2,
-	duration:0.5,
-	});  
 
   gsap.from(".manden", {
 	scrollTrigger: {
 		scrub: true,
-		trigger: ".video",
-		start: "600 start",
-		end: "1500 center",
+		trigger: ".manden_bag",
+		start: "200 start",
+		end: "900 center",
 		// markers: true,
 	},
 	opacity:0.2,
@@ -114,7 +98,7 @@ import Video from "../components/Video.astro";
 		scrub: true,
 		trigger: ".manden",
 		start: "200 start",
-		end: "900 center",
+		end: "800 center",
 		 // markers: true,
 	},
 	opacity:0.2,
