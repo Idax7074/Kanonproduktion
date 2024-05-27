@@ -4,7 +4,8 @@ import Button from "./Button.astro"
 ---
 <div class="container">
     <div class="form">
-    <form name="contact_form" method="POST" data-netlify="true">
+    <form action="contact_form" name="contact_form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact_form">
 
         <div class="flex">
             <div class="firma">
@@ -104,7 +105,7 @@ textarea::placeholder  {
 button[type=submit] {
     background-color: var(--color-background-button-secondary);
     color: var(--color-button-primary);
-    border: none;
+    border: 2px solid var(--color-background-button-secondary-stroke);
     display: flex;
     cursor: pointer;
     padding: var(--spacing-vertical-button-lg) var(--spacing-horizontal-button-lg);
@@ -114,6 +115,12 @@ button[type=submit] {
     font-family: "Inter", sans-serif;
     font-weight: 900;
     width: 205px;
+}
+
+button[type=submit]:hover {
+    background-color: var(--color-button-primary);
+    color: var(--color-button-secondary-hover);
+    border: 2px solid var(--color-background-button-secondary-stroke);
 }
 
 .indsend {
