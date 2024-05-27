@@ -4,14 +4,14 @@ import Button from "./Button.astro"
 ---
 <div class="container">
     <div class="form">
-    <form action="contact_form" name="contact_form" method="post" netlify netlify-honeypot="bot-field">
+    <form action="contact_form" name="contact_form" method="post" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="contact_form" value="contact_form">
 
         <div class="flex">
             <div class="firma">
                 <label for="firma">Firma</label>
                 <input type="text" id="firma" name="firma" placeholder="Dit firmas navn...">
-        </div>
+            </div>
     
             <div class="email">
                 <label for="email">Email <span class="req">*</span> </label>
@@ -46,12 +46,12 @@ import Button from "./Button.astro"
                 <label for="mail">Ønsker dialog på mail</label>
             </div>
         </div>
-    </div>
 
         <div class="indsend">
-       <button type="submit">Indsend</button>
+            <button type="submit">Indsend</button>
         </div>
     </form>
+</div>
 </div>
 <style> 
 
