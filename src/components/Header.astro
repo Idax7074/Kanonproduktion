@@ -1,5 +1,6 @@
 ---
 import Logo from "./Logo.astro"
+const {title} = Astro.props
 ---
 <header class="banner" id="myHeader">
     <div class="logo" id="logo">
@@ -15,10 +16,10 @@ import Logo from "./Logo.astro"
         <span class="bar3"></span>
       </button>
      <ul>
-        <li><a href="/events">Events</a></li>
-        <li><a href="/booking">Booking & promoting</a></li>
-        <li><a href="/about">Om os</a></li>
-        <li><a href="/kontakt">Kontakt</a></li>
+        <li><a href="/events" class={title==="Events" && "active"}>Events</a></li>
+        <li><a href="/booking" class={title==="Booking & promoting" && "active"} >Booking & promoting</a></li>
+        <li><a href="/about"class={title==="Manden bag" && "active"} >Om os</a></li>
+        <li><a href="/kontakt"class={title==="Kontakt" && "active"} >Kontakt</a></li>
       </ul>
     </nav>
   </header>
@@ -43,7 +44,9 @@ import Logo from "./Logo.astro"
 
       transition: all 0.3s ease-in-out;
     }
-
+  .active {
+    border-bottom: 2px solid var(--color-text-nav-stroke-hover);
+  }
     .logo {
       width: 100%;
       height: auto;

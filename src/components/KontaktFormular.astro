@@ -1,10 +1,10 @@
 ---
 
-const { size } = Astro.props
+import Button from "./Button.astro"
 ---
 <div class="container">
     <div class="form">
-    <form action="contact_form" class={size}>
+    <form action="contact_form" data-netlify="true">
 
         <div class="flex">
             <div class="firma">
@@ -46,10 +46,7 @@ const { size } = Astro.props
             </div>
         </div>
     </div>
-
-        <div class="indsend">
-        <input type="submit" value="Indsend">
-        </div>
+    <button class="knap" type="submit">Indsend</button>
     </form>
 </div>
 <style> 
@@ -101,10 +98,12 @@ textarea::placeholder  {
     font-weight: 300;
 }
 
-input[type=submit] {
+button[type=submit] {
     background-color: var(--color-background-button-secondary);
     color: var(--color-button-primary);
     display: flex;
+    border: none;
+    outline: none;
     padding: var(--spacing-vertical-button-lg) var(--spacing-horizontal-button-lg);
     justify-content: center;
     align-items: center;

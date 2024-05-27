@@ -1,6 +1,6 @@
 ---
 //Lav variablen "url" med vores URL fra supabase
-const url = "https://muqgfdguddfkghqhbdai.supabase.co/rest/v1/kanonproduktion_events?";
+const url = "https://muqgfdguddfkghqhbdai.supabase.co/rest/v1/kanonproduktion_events?order=date";
 
 //Lav variablen "api" med vores api nøgle
 const api = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im11cWdmZGd1ZGRma2docWhiZGFpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTQ3NTI1MjcsImV4cCI6MjAzMDMyODUyN30.V1cmTeBITytZYDHSYEemvpkdSObU40QtSWsIqANjXBY";
@@ -26,8 +26,6 @@ import Button from "../components/Button.astro";
 
 <MainLayout title="Kanonproduktion: booking, promoting og events">
 	<Video/>
-
-
 <section class="kommende_events">
 	<h2>Kommende events</h2>
 	<article class="cards">
@@ -360,6 +358,10 @@ import Button from "../components/Button.astro";
     	justify-content: center;
 		padding-bottom: 2rem;
     }
+
+	.stars img {
+		width: 10%;
+	}
 	.testimonials{
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
