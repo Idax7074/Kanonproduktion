@@ -63,26 +63,14 @@ import Button from "../components/Button.astro";
   // add a media query. When it matches, the associated function will run
   mm.add("(min-width: 431px)", () => {
 	
-	gsap.registerPlugin(ScrollTrigger);
-	
-	gsap.from(".om", {
-	scrollTrigger: {
-		scrub: true,
-		trigger: ".booking",
-		start: "-300 start",
-		end: "430 center",
-		 //markers: true,
-	},
-	opacity:0.2,
-	duration:0.5,
-	}); 
+	gsap.registerPlugin(ScrollTrigger); 
 
   gsap.from(".faq", {
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".button",
 		start: "-500 start",
-		end: "400 center",
+		end: "350 center",
 		 //markers: true,
 	},
 	opacity:0.2,
@@ -94,7 +82,7 @@ import Button from "../components/Button.astro";
 		scrub: true,
 		trigger: ".faq",
 		start: "-300 start",
-		end: "1000 center",
+		end: "900 center",
 		//markers: true,
 	},
 	opacity:0.2,
@@ -106,7 +94,7 @@ import Button from "../components/Button.astro";
 		scrub: true,
 		trigger: ".testimonials",
 		start: "-300 start",
-		end: "700 center",
+		end: "600 center",
 		// markers: true,
 	},
 	opacity:0.2,

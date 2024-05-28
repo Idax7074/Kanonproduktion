@@ -105,25 +105,13 @@ import MainLayout from "../../layouts/MainLayout.astro";
   mm.add("(min-width: 431px)", () => {
 	
 	gsap.registerPlugin(ScrollTrigger);
-	
-	gsap.from(".image", {
-	scrollTrigger: {
-		scrub: true,
-		trigger: ".artist",
-		start: "-300 start",
-		end: "200 center",
-		 //markers: true,
-	},
-	opacity:0.2,
-	duration:0.5,
-	}); 
 
   gsap.from(".information", {
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".artist",
 		start: "100 start",
-		end: "1000 center",
+		end: "800 center",
 		// markers: true,
 	},
 	opacity:0.2,
@@ -140,18 +128,6 @@ import MainLayout from "../../layouts/MainLayout.astro";
   sm.add("(max-width: 430px)", () => {
 	
 	gsap.registerPlugin(ScrollTrigger);
-	
-	gsap.from(".image", {
-	scrollTrigger: {
-		scrub: true,
-		trigger: ".artist",
-		start: "-400 start",
-		end: "700 center",
-		// markers: true,
-	},
-	opacity:0.2,
-	duration:0.5,
-	}); 
 
   gsap.from(".information", {
 	scrollTrigger: {

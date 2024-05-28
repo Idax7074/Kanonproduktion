@@ -68,19 +68,6 @@ import Video from "../components/Video.astro";
 	
 	gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from(".manden_bag", {
-	scrollTrigger: {
-		scrub: true,
-		trigger: ".citat",
-		start: "-400 start",
-		end: "500 center",
-		// markers: true,
-	},
-	opacity:0.2,
-	duration:0.5,
-	}); 
-
-
   gsap.from(".manden", {
 	scrollTrigger: {
 		scrub: true,
@@ -98,7 +85,7 @@ import Video from "../components/Video.astro";
 		scrub: true,
 		trigger: ".manden",
 		start: "200 start",
-		end: "800 center",
+		end: "700 center",
 		 // markers: true,
 	},
 	opacity:0.2,
