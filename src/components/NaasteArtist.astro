@@ -1,0 +1,144 @@
+---
+import Button from "./Button.astro"
+const {image, img, name, alt, slug } = Astro.props
+---
+
+<article class="naaste">
+<img src={img} class="web" alt={alt}>
+<img src={image} class="phone" alt={alt}>
+<div class="tekst">
+<h2>{name}</h2>
+<p>Bag om</p>
+<p><span>Badehotellet</span></p>
+<div class="button">
+    <div class="large">
+        <Button size="lg" link={`../../artist/${slug}`} variant="primary">Læs mere</Button>
+    </div>
+    <div class="medium">
+        <Button size="me" link={`../../artist/${slug}`} variant="primary">Læs mere</Button>
+    </div>
+    <div class="small">
+        <Button size="sm" link={`../../artist/${slug}`} variant="primary">Læs mere</Button>
+    </div>
+</div>
+</div>
+</article>
+
+<style>
+        .naaste {
+        position: relative;
+        text-align: center;
+    }
+
+    .phone {
+        display: none;
+    }
+
+    .tekst {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .tekst > * {
+        color: var(--color-button-primary);
+    }
+
+    .tekst span {
+        font-size: var(--Headline2-large);
+        font-weight: 900;
+    }
+
+    .tekst p {
+        font-size: var(--Headline3-large);
+        font-weight: 700;
+    }
+
+    .button {
+        padding-top: 2rem;
+    }
+
+    .medium, .small {
+        display: none;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        padding-bottom: var(--gap7);
+    }
+
+    @media (max-width: 1024px) {
+        .tekst {
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+    }
+
+        .tekst span {
+        font-size: var(--Headline2-medium);
+        font-weight: 900;
+    }
+
+    .tekst p {
+        font-size: var(--Headline3-medium);
+        font-weight: 700;
+    }
+
+    .button {
+        padding-top: 0.7rem;
+    }
+
+    .large {
+        display: none;
+    }
+
+    .medium {
+        display: flex;
+    }
+    }
+
+    @media (max-width: 431px) {
+        .web {
+        display: none;
+    }
+
+    .phone {
+        display: flex;
+    }
+
+    .tekst {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .tekst > * {
+        color: var(--color-button-primary);
+    }
+
+    .tekst span {
+        font-size: var(--Headline2-small);
+        font-weight: 900;
+    }
+
+    .tekst p {
+        font-size: var(--Headline3-small);
+        font-weight: 700;
+    }
+
+    .button {
+        padding-top: 2rem;
+    }
+    }
+</style>

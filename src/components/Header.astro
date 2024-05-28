@@ -65,10 +65,18 @@ const {title} = Astro.props
       display: none;
     }
 
+    .banner {
+      transition: top 0.3s ease-in-out;
+      height: auto;
+    }
+
     .banner.sticky {
       position: fixed;
       gap: 0px;
+      width: 100%;
       padding-top: 0px;
+      height: auto;
+      transition: top 0.3s ease-in-out;
     }
 
     .banner.sticky .logo {
@@ -139,6 +147,11 @@ const {title} = Astro.props
     img {
       height: auto;
       width: 100%;
+    }
+
+    .logoet {
+      display: flex;
+      width: 350px;
     }
 
     .stickLogo {
@@ -244,9 +257,10 @@ const {title} = Astro.props
       font-size: var(--Nav-small);
     }
 
-    .logo {
+    .logoet {
       width: 250px;
     }
+
   }
   </style>
   

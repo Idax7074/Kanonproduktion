@@ -14,6 +14,8 @@ const data = await fetch(url, {
   },
 }).then((res) => res.json());
 
+const next= data.filter((one)=> one.slug === "Jens-Jacob-Tychsen")
+
 const filterJuni= data.filter((one)=> one.tags === "juni")
 
 const filterJuli= data.filter((one)=> one.tags === "juli")
@@ -26,7 +28,7 @@ console.log(filterJuni)
 //Dataen bliver hentet som JSON-fil
 import MainLayout from "../layouts/MainLayout.astro";
 import EventCard from "../components/EventCard.astro";
-import Button from "../components/Button.astro";
+import NaasteArtist from "../components/NaasteArtist.astro";
 ---
 <MainLayout title="Events">
     <section class="intro">
@@ -49,24 +51,15 @@ import Button from "../components/Button.astro";
         </article>
     </section>
     <section class="naaste">
-        <img src="/img/jens_jacob-bred.webp" class="web" alt="">
-        <img src="/img/jens_jacob.webp" class="phone" alt="">
-        <div class="tekst">
-        <h2>Jens Jacob Tychsen</h2>
-        <p>Bag om</p>
-        <p><span>Badehotellet</span></p>
-        <div class="button">
-            <div class="large">
-                <Button size="lg" link="/events" variant="primary">Læs mere</Button>
-            </div>
-            <div class="medium">
-                <Button size="me" link="/events" variant="primary">Læs mere</Button>
-            </div>
-            <div class="small">
-                <Button size="sm" link="/events" variant="primary">Læs mere</Button>
-            </div>
-        </div>
-        </div>
+        {next.map((person) => 
+            <NaasteArtist 
+                image={`/img/${person.image}`}
+                img={`/img/${person.img}`}
+                alt={`${person.alt}`}  
+                name={person.name} 
+                slug={person.slug}
+                />
+            )}
     </section>
     <section class="juni">
     <div id="animated-text-strip">
@@ -320,60 +313,13 @@ mm.add("(min-width: 431px)", () => {
         outline-width: 2px;
     }
 
-    .phone {
-        display: none;
-    }
-
-    .naaste {
-        position: relative;
-        text-align: center;
-    }
-
-    .tekst {
-        position: absolute;
-        top: 50%;
-        left: 25%;
-        transform: translate(-50%, -50%);
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .tekst > * {
-        color: var(--color-button-primary);
-    }
-
-    .tekst span {
-        font-size: var(--Headline2-large);
-        font-weight: 900;
-    }
-
-    .tekst p {
-        font-size: var(--Headline3-large);
-        font-weight: 700;
-    }
-
-    .button {
-        padding-top: 2rem;
-    }
-
-    .medium, .small {
-        display: none;
-    }
-
-    .text {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-
-        padding-bottom: var(--gap7);
-    }
-
     .text h3 {
         font-size: 27.64px;
         font-weight: 400;
+    }
+
+    .text {
+        margin-bottom: var(--gap7);
     }
 
     #animated-text-strip{
@@ -475,28 +421,6 @@ mm.add("(min-width: 431px)", () => {
         width: var(--gap3);
         height: var(--gap3);
     }
-
-    .tekst span {
-        font-size: var(--Headline2-medium);
-        font-weight: 900;
-    }
-
-    .tekst p {
-        font-size: var(--Headline3-medium);
-        font-weight: 700;
-    }
-
-    .button {
-        padding-top: 0.7rem;
-    }
-
-    .large {
-        display: none;
-    }
-
-    .medium {
-        display: flex;
-    }
 }
     @media (max-width: 430px){
 
@@ -531,39 +455,6 @@ mm.add("(min-width: 431px)", () => {
     .circle {
         width: var(--gap2);
         height: var(--gap2);
-    }
-
-    .web {
-        display: none;
-    }
-
-    .phone {
-        display: flex;
-    }
-
-    .tekst {
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .tekst > * {
-        color: var(--color-button-primary);
-    }
-
-    .tekst span {
-        font-size: var(--Headline2-small);
-        font-weight: 900;
-    }
-
-    .tekst p {
-        font-size: var(--Headline3-small);
-        font-weight: 700;
-    }
-
-    .button {
-        padding-top: 2rem;
     }
 }
    
