@@ -21,14 +21,21 @@ import Button from "../components/Button.astro";
       <br>
       Lad os gøre jeres næste arrangement til en uforglemmelig oplevelse!</p>
       </div>
-      <div class="button large" id="jump">
-      <Button size="lg" link="/kontakt" variant="secondary">Kontakt os</Button>
+      <div class="large" id="jump">
+      <Button size="lg" link="/kontakt" variant="secondary">Kontakt</Button>
       </div>
-      <div class="button small">
-        <Button size="sm" link="/kontakt" variant="secondary">Kontakt os</Button>
+
+      <div class="medium">
+        <Button size="me" link="/kontakt" variant="secondary">Kontakt</Button>
+        </div>
+
+      <div class="small">
+        <Button size="sm" link="/kontakt" variant="secondary">Kontakt</Button>
         </div>
   </div>
+  <div class="billede">
   <img src="/img/instrumenter-frame.webp" alt="Instrumenter fra en koncert">
+</div>
   </article>
 </section>
 <section class="faq">
@@ -182,14 +189,14 @@ import Button from "../components/Button.astro";
     display: grid;
     grid-template-columns: 2fr 2fr;
 		justify-content: center;
-		align-items: center;
+		align-items: stretch;
 
 		padding: 0px var(--gap11);
 		gap: var(--gap13);
   }
 
   img {
-    width: 100%;
+    width: 75%;
     height: auto;
   }
 
@@ -241,25 +248,38 @@ import Button from "../components/Button.astro";
     width: 576px;
   }
 
-  .button {
+  .large {
     display: flex;
     width: 100%;
     height: 3px;
     align-items: center;
     flex-shrink: 0;
-    border-bottom: 2px solid var(--color-background-stroke);
   }
 
-  .small {
+  .small, .medium {
     display: none;
   }
 
   .indhold {
-    height: 705px;
+    /* height: 705px; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     border-right:  2px solid var(--color-background-stroke);
+    padding-top: var(--gap6);
+  }
+
+  .billede {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media (min-width:1025px) {
+    .om {
+      border-top: 2px solid var(--color-background-stroke);
+    border-bottom: 2px solid var(--color-background-stroke);
+    }
   }
 
   @media (max-width: 1024px) {
@@ -270,14 +290,17 @@ import Button from "../components/Button.astro";
   .om {
     display: flex;
     flex-direction: column-reverse;
-    align-items: flex-start;
+    align-items: center;
 
 		padding: 0px 0px;
-		gap: var(--gap13);
+		gap: var(--gap6);
   }
 
   .tekst {
     padding-inline: var(--gap6);
+    display: flex;
+        flex-direction: column;
+        align-items: center;
   }
 
   .tekst > * {
@@ -290,14 +313,25 @@ import Button from "../components/Button.astro";
     width: 100%;
   }
 
-  .button {
+  img {
+    width: 100%;
+  }
+
+  .small, .large {
+    display: none;
+  }
+
+  .medium {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
+    height: 3px;
     flex-shrink: 0;
     border-bottom: 2px solid var(--color-background-stroke);
   }
+
+
   }
 
   @media (max-width: 430px) {
@@ -318,12 +352,18 @@ import Button from "../components/Button.astro";
     padding-top: 20px;
   }
 
-  .large {
+  .large, .medium {
     display: none;
   }
   
   .small {
     display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 3px;
+    flex-shrink: 0;
+    border-bottom: 2px solid var(--color-background-stroke);
   }
   }
 </style>

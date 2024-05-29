@@ -30,6 +30,19 @@ import Video from "../components/Video.astro";
     </article>
 </section>
 
+<section class="instagram">
+  <div class="h2">
+  <h2>Opdag nye projekter</h2>
+  <a href="https://www.instagram.com/kanonproduktion/">@Kanonproduktion</a>
+  </div>
+  <article class="grid_4-2">
+    <a href="https://www.instagram.com/kanonproduktion/"><img class="billede" src="/img/billede_1.webp" alt="Instagrambillede" /></a>
+    <a href="https://www.instagram.com/kanonproduktion/"><img class="billede" src="/img/billede_3.webp" alt="Instagrambillede" /></a>
+    <a href="https://www.instagram.com/kanonproduktion/"><img class="billede" src="/img/billede_2.webp" alt="Instagrambillede" /></a>
+    <a href="https://www.instagram.com/kanonproduktion/"><img class="billede" src="/img/billede_4.webp" alt="Instagrambillede" /></a>
+  </article>
+</section>
+
 <section class="manden">
     <article class="om">
         <div class="om_tekst">
@@ -247,12 +260,52 @@ import Video from "../components/Video.astro";
 
   }
 
+  .h2 {
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+  align-items: center;
+
+    padding-block: var(--gap7);
+    border-top: 2px solid var(--color-background-stroke);
+    border-bottom: 2px solid var(--color-background-stroke);
+  }
+
+  .h2 a {
+
+padding-top: 5px;    
+color: var(--color-text-body);
+    font-size: 0.6554rem;
+  }
+
   .blue span {
     color: var(--color-text-h2-tertiary);
   }
 
   .blue p {
     color: var(--color-text-h2-tertiary);
+  }
+
+  .grid_4-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-top: 40px;
+    gap: 2rem;
+  }
+
+  .billede {
+    filter: grayscale(100%);
+  }
+
+  .billede:hover {
+    filter: grayscale(0);
+  }
+
+  @media (min-width:1025px) {
+    .om {
+      border-top: 2px solid var(--color-background-stroke);
+  border-bottom: 2px solid var(--color-background-stroke);
+    }
   }
 
   @media (max-width: 1024px) {
@@ -268,10 +321,15 @@ import Video from "../components/Video.astro";
     display: none;
   }
 
+  img {
+    width: 75%;
+  }
+
   .om {
     display: flex;
     flex-direction: column;
     padding: 0px var(--gap6);
+    gap: var(--gap6);
   }
   }
 
@@ -314,6 +372,16 @@ import Video from "../components/Video.astro";
 
   .citat2 p {
     font-size: 18.33px;
+  }
+
+  .grid_4-2 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .grid_4-2 img {
+    width: 100%;
   }
 
   }
