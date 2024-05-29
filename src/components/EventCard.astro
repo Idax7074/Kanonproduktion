@@ -46,9 +46,6 @@ console.log("props",Astro.props)
 
 <style>
 
-    article:hover {
-        box-shadow: 10px 10px 2px var(--color-card-event-label);
-    }
     article{
         width: 22.5rem;
         height: 31rem;
@@ -61,6 +58,17 @@ console.log("props",Astro.props)
 
         border: 2px solid var(--color-background-stroke);
         background-color: var(--color-background-body);
+    }
+
+    .billede {
+        display: contents;
+        width: 20rem;
+        height: 20rem;
+    }
+
+    img {
+        filter: grayscale(100%);
+        width: 20rem;
     }
 
     .kunstner {
@@ -176,6 +184,7 @@ console.log("props",Astro.props)
 
     .udsolgt img {
         filter: blur(2px);
+        filter: grayscale(100%);
     }
 
     .udsolgt .tekst {
@@ -192,7 +201,7 @@ console.log("props",Astro.props)
         align-items: center;
         position: absolute;
         top: 30%;
-        left: 20%;
+        left: 15%;
         z-index: 1;
     }
 
@@ -208,6 +217,16 @@ console.log("props",Astro.props)
         width: 7.29169rem;
         justify-content: center;
         align-items: center;
+    }
+
+    @media (min-width:1024px) {
+        article:hover {
+        box-shadow: 10px 10px 2px var(--color-card-event-label);
+    }
+
+    img:hover {
+        filter: grayscale(0%);
+    }
     }
 
     @media (max-width: 1024px) {
