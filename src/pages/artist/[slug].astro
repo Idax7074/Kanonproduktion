@@ -84,10 +84,18 @@ import MainLayout from "../../layouts/MainLayout.astro";
             </div>
             <div class="pris">
                 <p>Pris inkl. gebyr</p>
-                <h3>{person.price}</h3>
+                <h3>{person.price} kr.</h3>
             </div>
             </div>
-            <Button size="lg" link=`${person.link}` variant="primary">Køb billet</Button>
+            <div class="large">
+              <Button size="lg" link=`${person.link}` variant="primary">Køb billet</Button>
+            </div>
+            <div class="medium">
+              <Button size="me" link=`${person.link}` variant="primary">Køb billet</Button>
+            </div>
+            <div class="small">
+              <Button size="sm" link=`${person.link}` variant="primary">Køb billet</Button>
+            </div>
         </div>  
     </section>
 </MainLayout>
@@ -166,6 +174,10 @@ import MainLayout from "../../layouts/MainLayout.astro";
     display: none;
   }
 
+  .medium, .small {
+    display: none;
+  }
+
   .tidligere{
     padding-top: 30px;
 
@@ -228,6 +240,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding-block: 25px;
     padding-inline: 15px;
     gap: var(--gap9);
@@ -256,8 +269,23 @@ import MainLayout from "../../layouts/MainLayout.astro";
     width: 485px;
   }
 
+  .information {
+    gap: 5rem;
+  }
+
+  .box {
+
+  }
+
   .infoboks {
     width: 340px;
+  }
+  .medium {
+    display: flex;
+  }
+
+  .large, .small {
+    display: none;
   }
   }
 
@@ -300,6 +328,14 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
   .information {
     gap: 30px;
+  }
+
+  .medium {
+    display: none;
+  }
+
+  .small {
+    display: flex;
   }
   }
 </style>
