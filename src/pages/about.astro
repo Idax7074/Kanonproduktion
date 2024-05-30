@@ -81,12 +81,25 @@ import Video from "../components/Video.astro";
 	
 	gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from(".manden", {
+  gsap.from(".instagram", {
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".manden_bag",
 		start: "200 start",
 		end: "900 center",
+		// markers: true,
+	},
+	opacity:0.2,
+	duration:0.5,
+	}); 
+
+
+  gsap.from(".manden", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".instagram",
+		start: "200 start",
+		end: "800 center",
 		// markers: true,
 	},
 	opacity:0.2,
@@ -116,10 +129,22 @@ import Video from "../components/Video.astro";
 	
 	gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from(".manden", {
+  gsap.from(".instagram", {
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".manden_bag",
+		start: "200 start",
+		end: "1200 center",
+		// markers: true,
+	},
+	opacity:0.2,
+	duration:0.5,
+	}); 
+
+  gsap.from(".manden", {
+	scrollTrigger: {
+		scrub: true,
+		trigger: ".instagram",
 		start: "200 start",
 		end: "1000 center",
 		// markers: true,
@@ -132,7 +157,7 @@ import Video from "../components/Video.astro";
 	scrollTrigger: {
 		scrub: true,
 		trigger: ".manden",
-		start: "0 start",
+		start: "-200 start",
 		end: "1000 center",
 		// markers: true,
 	},
