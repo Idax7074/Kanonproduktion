@@ -184,7 +184,7 @@ article {
         flex-wrap: wrap;
 		column-gap: var(--gap6);
         row-gap: var(--gap7);
-		justify-content: space-between;
+		justify-content: flex-start;
         padding-top: 40px;
 	}
 
@@ -230,6 +230,12 @@ article {
         border-radius: 50%;
         background-color: var(--color-background-stroke);
         margin-bottom: 5px;
+    }
+
+    @media (max-width:1440px) {
+        .artister {
+            justify-content: space-between;
+        }
     }
 
     @media (max-width: 1024px) {
